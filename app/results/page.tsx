@@ -323,8 +323,8 @@ export default function ResultsPage() {
             <button
               onClick={() => handleShare("whatsapp")}
               disabled={sharing !== null}
-              className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 py-4 font-rubik font-medium transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60"
-              style={{ borderColor: "#25D366", color: "#25D366" }}
+              className="flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 font-rubik font-medium text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60"
+              style={{ background: "#25D366" }}
             >
               <MessageCircle size={18} strokeWidth={2} />
               {sharing === "whatsapp" ? "Generando…" : "WhatsApp"}
