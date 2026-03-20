@@ -178,7 +178,7 @@ export default function ResultsPage() {
         <UnlockModal
           localScore={accumulatedScore}
           onSuccess={handleUnlockSuccess}
-          onDismiss={() => { setShowUnlockModal(false); setShowRegisterCTA(false); }}
+          onDismiss={() => setShowUnlockModal(false)}
         />
       )}
 
