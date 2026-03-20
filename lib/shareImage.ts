@@ -1,6 +1,7 @@
 const MAX_SCORE = 1500;
 const MEDALS = ["🥇", "🥈", "🥉"];
 const PAD = 72;
+const CX = 80;
 
 export interface ShareImageParams {
   score: number;
@@ -13,7 +14,15 @@ export interface ShareImageParams {
 }
 
 export async function generateShareImage(params: ShareImageParams): Promise<Blob> {
-  const W = 1080, H = 1920;
+  const W = 1080;
+  const CW = W - CX * 2;   // 920
+  const MID = CX + CW / 2;
+
+  // Compute card height first so canvas height is exact
+  const CY = 120;
+  const CH = calcCardHeight(params);
+  const H = CY + CH + 200;  // 200px below card: branding + bottom margin
+
   const canvas = document.createElement("canvas");
   canvas.width = W;
   canvas.height = H;
@@ -22,17 +31,10 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
   // ── Background gradient ──────────────────────
   const bg = ctx.createLinearGradient(0, 0, W, H);
   bg.addColorStop(0, "#2e2840");
-  bg.addColorStop(0.5, "#5a4a6b");
+  bg.addColorStop(0.55, "#5a4a6b");
   bg.addColorStop(1, "#9993C0");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
-
-  // Card geometry
-  const CX = 80, CY = 200, CW = W - CX * 2;  // 920px wide
-  const MID = CX + CW / 2;
-
-  // ── Pre-calculate card height ────────────────
-  const CH = calcCardHeight(params);
 
   // ── White card ───────────────────────────────
   rrect(ctx, CX, CY, CW, CH, 44);
@@ -47,19 +49,19 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
   ctx.font = "600 30px -apple-system, Arial, sans-serif";
   ctx.textAlign = "center";
   ctx.fillText("SUKHA TRIVIA", MID, y + 26);
-  y += 26 + 32;
+  y += 26 + 36;   // baseline + gap below
 
   // Category
   ctx.fillStyle = "#9ca3af";
   ctx.font = "400 30px -apple-system, Arial, sans-serif";
   ctx.fillText(params.categoryLabel, MID, y);
-  y += 100;
+  y += 160;       // large gap: 170px score cap-height is ~126px, need clearance
 
-  // Score number
+  // Score number (baseline at y, visually spans ~126px above)
   ctx.fillStyle = "#434344";
   ctx.font = "700 170px -apple-system, Arial, sans-serif";
   ctx.fillText(String(params.score), MID, y);
-  y += 56;
+  y += 52;
 
   // "de N puntos posibles"
   ctx.fillStyle = "#9ca3af";
@@ -105,7 +107,6 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
 
   // Ranking section
   if (params.top3 && params.top3.length > 0) {
-    // Divider
     ctx.strokeStyle = "#ebebeb";
     ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(CX + PAD, y); ctx.lineTo(CX + CW - PAD, y); ctx.stroke();
@@ -131,7 +132,6 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
       y += 68;
     }
 
-    // User row (if outside top 3)
     const userInTop3 = params.userName && params.top3.some(e => e.name === params.userName);
     if (params.userRankEntry && params.userName && !userInTop3) {
       y += 16;
@@ -147,43 +147,41 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
     }
   }
 
-  // ── Branding below card ──────────────────────
-  const brandY = CY + CH + 90;
-  ctx.fillStyle = "rgba(255,255,255,0.82)";
-  ctx.font = "500 32px -apple-system, Arial, sans-serif";
+  // ── CTA below card ───────────────────────────
+  const brandY = CY + CH + 56;
+  ctx.fillStyle = "rgba(255,255,255,0.90)";
+  ctx.font = "500 28px -apple-system, Arial, sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("sukhaonline.com.ar", W / 2, brandY);
-  ctx.fillStyle = "rgba(255,255,255,0.50)";
-  ctx.font = "400 26px -apple-system, Arial, sans-serif";
-  ctx.fillText("sukha-yoga-trivia.vercel.app", W / 2, brandY + 46);
+  ctx.fillText("¿Cuánto sabés sobre yoga?", W / 2, brandY);
+  ctx.fillStyle = "rgba(255,255,255,0.60)";
+  ctx.font = "400 24px -apple-system, Arial, sans-serif";
+  ctx.fillText("Jugá en sukha-yoga-trivia.vercel.app", W / 2, brandY + 40);
 
   return new Promise(res => canvas.toBlob(b => res(b!), "image/png"));
 }
 
-// Pre-calculate card height from the same increments used during drawing
 function calcCardHeight(params: ShareImageParams): number {
   let h = PAD;          // top padding
-  h += 26 + 32;         // SUKHA TRIVIA baseline + gap
-  h += 100;             // category + gap to score
-  h += 56;              // score baseline + gap
+  h += 26 + 36;         // SUKHA TRIVIA + gap
+  h += 160;             // category + gap to score (must clear 170px cap height)
+  h += 52;              // score + gap
   h += 64;              // subtext + gap
   h += 18 + 80;         // bar + gap
   h += 122;             // stats + gap
 
   if (params.top3 && params.top3.length > 0) {
-    h += 54;            // divider gap
-    h += 62;            // RANKING label + gap
+    h += 54;
+    h += 62;
     h += params.top3.length * 68;
     const userInTop3 = params.userName && params.top3.some(e => e.name === params.userName);
     if (params.userRankEntry && params.userName && !userInTop3) {
-      h += 16 + 58;     // user highlight row
+      h += 16 + 58;
     }
   }
   h += PAD;             // bottom padding
   return h;
 }
 
-// Helpers
 function rrect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
