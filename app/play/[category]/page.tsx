@@ -166,6 +166,7 @@ export default function GamePage({ params }: GamePageProps) {
       if (currentIndex === TOTAL_QUESTIONS - 1) {
         const result: GameResult = {
           category: category as Category,
+          level,
           totalScore: updatedAnswers.reduce((s, a) => s + a.pointsEarned + a.bonusEarned, 0),
           totalBonus: updatedAnswers.reduce((s, a) => s + a.bonusEarned, 0),
           correctCount: updatedAnswers.filter((a) => a.isCorrect).length,
@@ -205,6 +206,16 @@ export default function GamePage({ params }: GamePageProps) {
   }, [timeLeft, answered, handleAnswer]);
 
   useEffect(() => () => clearTimers(), [clearTimers]);
+
+  // Analytics: track game started once on mount
+  useEffect(() => {
+    fetch("/api/analytics", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ event: "game_started" }),
+    }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (questions.length === 0) return null;
   const question = questions[currentIndex];

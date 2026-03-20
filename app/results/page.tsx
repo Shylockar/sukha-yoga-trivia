@@ -61,6 +61,17 @@ export default function ResultsPage() {
     setResult(parsed);
     setTimeout(() => setVisible(true), 60);
 
+    // Analytics: track game completed
+    fetch("/api/analytics", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event: "game_completed",
+        category: parsed.category,
+        level: parsed.level ?? 1,
+      }),
+    }).catch(() => {});
+
     // Accumulate score in localStorage
     const newTotal = addLocalScore(parsed.totalScore);
     setAccumulatedScore(newTotal);
@@ -167,6 +178,12 @@ export default function ResultsPage() {
           window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, "_blank");
         }
       }
+      // Analytics: track successful share
+      fetch("/api/analytics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ event: "share" }),
+      }).catch(() => {});
     } catch {
       // User cancelled or API not available — silent
     } finally {

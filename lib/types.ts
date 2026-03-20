@@ -40,6 +40,7 @@ export interface LeaderboardEntry {
 
 export interface GameResult {
   category: Category;
+  level: number;
   totalScore: number;
   totalBonus: number;
   correctCount: number;

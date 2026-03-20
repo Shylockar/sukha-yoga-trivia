@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { redis } from "@/lib/redis";
+import { trackEvent } from "@/lib/analytics";
 
 export async function POST(req: NextRequest) {
   try {
@@ -34,6 +35,7 @@ export async function POST(req: NextRequest) {
     // Add to leaderboard sorted set
     await redis.zadd("leaderboard", { score: totalScore, member: email });
 
+    await trackEvent("analytics:registrations");
     return NextResponse.json({ success: true, totalScore });
   } catch (err) {
     console.error("[/api/register] error:", err);
