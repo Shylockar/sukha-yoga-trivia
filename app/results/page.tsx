@@ -134,6 +134,8 @@ export default function ResultsPage() {
   async function handleShare(mode: "stories" | "whatsapp") {
     if (!result) return;
     setSharing(mode);
+    // Safety reset in case the share sheet never resolves (e.g. iOS + Instagram)
+    const safetyTimer = setTimeout(() => setSharing(null), 10000);
     try {
       const blob = await generateShareImage({
         score: result.totalScore,
@@ -168,6 +170,7 @@ export default function ResultsPage() {
     } catch {
       // User cancelled or API not available — silent
     } finally {
+      clearTimeout(safetyTimer);
       setSharing(null);
     }
   }
@@ -212,7 +215,7 @@ export default function ResultsPage() {
             <p className="font-bree text-7xl leading-none text-sukha-dark tabular-nums">
               {result.totalScore}
             </p>
-            <p className="mt-1 font-rubik text-sm text-sukha-mid">
+            <p className="mt-4 font-rubik text-sm text-sukha-mid">
               de {MAX_SCORE} puntos posibles
             </p>
 

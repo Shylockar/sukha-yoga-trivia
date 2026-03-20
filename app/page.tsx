@@ -35,13 +35,13 @@ export default function Home() {
         {/* ── Score badge (client-only) ── */}
         <ScoreBadge />
 
-        {/* ── Level-aware grid: Aleatorio + Categorías con selector de nivel ── */}
-        <LevelAwareCategoryGrid />
-
         {/* ── Cómo se juega ── */}
-        <div className="animate-fadeInUp mt-3 mb-8" style={{ animationDelay: "100ms" }}>
+        <div className="animate-fadeInUp mb-4" style={{ animationDelay: "60ms" }}>
           <HowToPlayModal />
         </div>
+
+        {/* ── Level-aware grid: Aleatorio + Categorías con selector de nivel ── */}
+        <LevelAwareCategoryGrid />
 
         {/* ── Mini leaderboard ── */}
         <div className="mt-2">
