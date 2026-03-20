@@ -1,18 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Trophy, Star, Sprout } from "lucide-react";
+import { Trophy, Star, Sprout, Share2, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { GameResult, LeaderboardEntry } from "@/lib/types";
 import {
   addLocalScore,
-  getLocalScore,
   getRegisteredUser,
   getLevel,
   getNextThreshold,
 } from "@/lib/progress";
 import UnlockModal from "@/components/UnlockModal";
+import { generateShareImage } from "@/lib/shareImage";
 
 const CATEGORY_LABELS: Record<string, string> = {
   historia: "Historia",
@@ -52,6 +52,7 @@ export default function ResultsPage() {
   const [showUnlockModal, setShowUnlockModal] = useState(false);
   const [top3, setTop3] = useState<LeaderboardEntry[] | null>(null);
   const [userRankEntry, setUserRankEntry] = useState<LeaderboardEntry | null>(null);
+  const [sharing, setSharing] = useState<"stories" | "whatsapp" | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("gameResult");
@@ -128,6 +129,47 @@ export default function ResultsPage() {
   function handleUnlockSuccess(name: string, email: string) {
     setRegisteredUser({ name, email });
     setShowUnlockModal(false);
+  }
+
+  async function handleShare(mode: "stories" | "whatsapp") {
+    if (!result) return;
+    setSharing(mode);
+    try {
+      const blob = await generateShareImage({
+        score: result.totalScore,
+        correctCount: result.correctCount,
+        totalBonus: result.totalBonus,
+        categoryLabel: CATEGORY_LABELS[result.category] ?? result.category,
+        top3,
+        userRankEntry,
+        userName: registeredUser?.name,
+      });
+      const file = new File([blob], "sukha-trivia.png", { type: "image/png" });
+      const shareText = "¿Cuánto sabés sobre yoga? Jugá en sukha-yoga-trivia.vercel.app";
+
+      if (mode === "stories") {
+        if (navigator.canShare?.({ files: [file] })) {
+          await navigator.share({ files: [file], title: "Sukha Trivia" });
+        } else {
+          // Fallback: download the image
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url; a.download = "sukha-trivia.png"; a.click();
+          URL.revokeObjectURL(url);
+        }
+      } else {
+        if (navigator.canShare?.({ files: [file] })) {
+          await navigator.share({ files: [file], text: shareText, title: "Sukha Trivia" });
+        } else {
+          // Fallback: WhatsApp web link
+          window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, "_blank");
+        }
+      }
+    } catch {
+      // User cancelled or API not available — silent
+    } finally {
+      setSharing(null);
+    }
   }
 
   return (
@@ -258,6 +300,35 @@ export default function ResultsPage() {
                 )}
               </div>
             )}
+          </div>
+
+          {/* Share buttons */}
+          <div
+            className="mb-4 flex gap-3 transition-all duration-700"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+              transitionDelay: "110ms",
+            }}
+          >
+            <button
+              onClick={() => handleShare("stories")}
+              disabled={sharing !== null}
+              className="flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 font-rubik font-medium text-white transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60"
+              style={{ background: "linear-gradient(135deg, #9993C0, #7b74a8)" }}
+            >
+              <Share2 size={18} strokeWidth={2} />
+              {sharing === "stories" ? "Generando…" : "Compartir"}
+            </button>
+            <button
+              onClick={() => handleShare("whatsapp")}
+              disabled={sharing !== null}
+              className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 py-4 font-rubik font-medium transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60"
+              style={{ borderColor: "#25D366", color: "#25D366" }}
+            >
+              <MessageCircle size={18} strokeWidth={2} />
+              {sharing === "whatsapp" ? "Generando…" : "WhatsApp"}
+            </button>
           </div>
 
           {/* Accumulated progress card */}
