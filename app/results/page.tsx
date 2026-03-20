@@ -1,0 +1,354 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Trophy, Star, Sprout } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { GameResult } from "@/lib/types";
+import {
+  addLocalScore,
+  getLocalScore,
+  getRegisteredUser,
+  getLevel,
+  getNextThreshold,
+  INTERMEDIATE_THRESHOLD,
+  ADVANCED_THRESHOLD,
+} from "@/lib/progress";
+import UnlockModal from "@/components/UnlockModal";
+
+const CATEGORY_LABELS: Record<string, string> = {
+  historia: "Historia",
+  filosofia: "Filosofía",
+  posturas: "Posturas",
+  anatomia: "Anatomía",
+  curiosidades: "Curiosidades",
+  aleatorio: "Modo Aleatorio",
+};
+
+const MAX_SCORE = 1500;
+
+function getAchievement(score: number): { icon: React.ReactNode; title: string; subtitle: string } {
+  if (score >= 1200) return {
+    icon: <Trophy size={52} strokeWidth={1.5} className="text-sukha-accent" />,
+    title: "Maestro yogui",
+    subtitle: "Conocimiento digno de un gurú. ¡Impresionante!",
+  };
+  if (score >= 800) return {
+    icon: <Star size={52} strokeWidth={1.5} className="text-sukha-accent" />,
+    title: "Buen camino",
+    subtitle: "Sólido conocimiento del yoga. Seguí practicando.",
+  };
+  return {
+    icon: <Sprout size={52} strokeWidth={1.5} className="text-sukha-accent" />,
+    title: "Seguí practicando",
+    subtitle: "Cada clase te acerca más. ¡La constancia es todo!",
+  };
+}
+
+export default function ResultsPage() {
+  const router = useRouter();
+  const [result, setResult] = useState<GameResult | null>(null);
+  const [visible, setVisible] = useState(false);
+  const [accumulatedScore, setAccumulatedScore] = useState(0);
+  const [registeredUser, setRegisteredUser] = useState<{ email: string; name: string } | null>(null);
+  const [showUnlockModal, setShowUnlockModal] = useState(false);
+  const [showRegisterCTA, setShowRegisterCTA] = useState(false);
+
+  useEffect(() => {
+    const raw = sessionStorage.getItem("gameResult");
+    if (!raw) { router.replace("/"); return; }
+    const parsed: GameResult = JSON.parse(raw);
+    setResult(parsed);
+    setTimeout(() => setVisible(true), 60);
+
+    // Accumulate score in localStorage
+    const newTotal = addLocalScore(parsed.totalScore);
+    setAccumulatedScore(newTotal);
+
+    // Check registered user
+    const user = getRegisteredUser();
+    setRegisteredUser(user);
+
+    if (user) {
+      // Sync score to backend
+      fetch("/api/progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: user.email, score: parsed.totalScore }),
+      }).catch(() => {/* silent fail */});
+    } else {
+      // Show unlock modal if threshold reached, otherwise show CTA
+      if (newTotal >= INTERMEDIATE_THRESHOLD) {
+        setShowUnlockModal(true);
+      } else {
+        setShowRegisterCTA(true);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (!result) {
+    return (
+      <main className="flex min-h-screen items-center justify-center">
+        <p className="font-rubik text-sukha-mid">Cargando…</p>
+      </main>
+    );
+  }
+
+  const scorePct = Math.round((result.totalScore / MAX_SCORE) * 100);
+  const achievement = getAchievement(result.totalScore);
+  const level = getLevel(accumulatedScore);
+  const nextThreshold = getNextThreshold(accumulatedScore);
+  const progressPct = level === "avanzado"
+    ? 100
+    : Math.min(100, Math.round((accumulatedScore / nextThreshold) * 100));
+  const ptsToNext = Math.max(0, nextThreshold - accumulatedScore);
+  const levelLabel = level === "principiante" ? "Principiante" : level === "intermedio" ? "Intermedio" : "Avanzado";
+  const nextLevelLabel = level === "principiante" ? "Intermedio" : "Avanzado";
+
+  function handleUnlockSuccess(name: string, email: string) {
+    setRegisteredUser({ name, email });
+    setShowUnlockModal(false);
+    setShowRegisterCTA(false);
+  }
+
+  return (
+    <>
+      {showUnlockModal && (
+        <UnlockModal
+          localScore={accumulatedScore}
+          onSuccess={handleUnlockSuccess}
+          onDismiss={() => { setShowUnlockModal(false); setShowRegisterCTA(false); }}
+        />
+      )}
+
+      <main className="min-h-screen">
+        <div className="mx-auto w-full max-w-[512px] px-4 pb-16 pt-12">
+
+          {/* Achievement hero */}
+          <div
+            className="mb-10 text-center transition-all duration-700"
+            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
+          >
+            <div className="mb-5 flex justify-center">{achievement.icon}</div>
+            <h1 className="font-bree text-4xl text-sukha-dark">{achievement.title}</h1>
+            <p className="mt-2 font-rubik text-base font-light text-sukha-dark">
+              {achievement.subtitle}
+            </p>
+            <p className="mt-1 font-rubik text-xs text-sukha-mid">
+              {CATEGORY_LABELS[result.category] ?? result.category}
+            </p>
+          </div>
+
+          {/* Score hero card */}
+          <div
+            className="mb-4 rounded-3xl bg-white p-8 text-center transition-all duration-700 delay-100"
+            style={{
+              boxShadow: "0 2px 0 rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.10)",
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(16px)",
+            }}
+          >
+            <p className="font-bree text-7xl leading-none text-sukha-dark tabular-nums">
+              {result.totalScore}
+            </p>
+            <p className="mt-1 font-rubik text-sm text-sukha-mid">
+              de {MAX_SCORE} puntos posibles
+            </p>
+
+            {/* Score bar */}
+            <div className="mx-auto mb-6 mt-5 h-2 max-w-xs overflow-hidden rounded-full bg-gray-100">
+              <div
+                className="h-full rounded-full transition-all duration-1000 delay-300"
+                style={{
+                  width: visible ? `${scorePct}%` : "0%",
+                  background: "linear-gradient(90deg, #9993C0, #7b74a8)",
+                }}
+              />
+            </div>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-3 divide-x divide-gray-100">
+              <div className="px-3">
+                <p className="font-rubik text-2xl font-medium text-sukha-dark">
+                  {result.correctCount}
+                  <span className="text-sm font-normal text-sukha-mid">/10</span>
+                </p>
+                <p className="mt-0.5 font-rubik text-xs text-sukha-mid">Correctas</p>
+              </div>
+              <div className="px-3">
+                <p className="font-rubik text-2xl font-medium text-sukha-correct">
+                  +{result.totalBonus}
+                </p>
+                <p className="mt-0.5 font-rubik text-xs text-sukha-mid">Bonus</p>
+              </div>
+              <div className="px-3">
+                <p className="font-rubik text-2xl font-medium text-sukha-dark">
+                  {scorePct}<span className="text-sm font-normal text-sukha-mid">%</span>
+                </p>
+                <p className="mt-0.5 font-rubik text-xs text-sukha-mid">Aciertos</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Accumulated progress card */}
+          <div
+            className="mb-4 rounded-3xl bg-white p-6 transition-all duration-700"
+            style={{
+              boxShadow: "0 2px 0 rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.10)",
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+              transitionDelay: "120ms",
+            }}
+          >
+            <div className="mb-3 flex items-center justify-between">
+              <p className="font-rubik text-xs font-medium uppercase tracking-widest text-sukha-mid/60">
+                Tu progreso
+              </p>
+              <span
+                className="rounded-full px-2.5 py-0.5 font-rubik text-xs font-medium"
+                style={{
+                  background: level === "principiante" ? "#F0F0F0" : "#F3F1F9",
+                  color: level === "principiante" ? "#606060" : "#6B6494",
+                }}
+              >
+                {levelLabel}
+              </span>
+            </div>
+
+            <div className="mb-1 flex items-end justify-between">
+              <p className="font-bree text-3xl text-sukha-dark tabular-nums">
+                {accumulatedScore.toLocaleString()}
+              </p>
+              <p className="mb-1 font-rubik text-xs text-sukha-mid">
+                {level !== "avanzado" ? `/ ${nextThreshold.toLocaleString()} pts` : "Nivel máximo"}
+              </p>
+            </div>
+
+            {/* Progress bar toward next level */}
+            <div className="mb-2 h-2 overflow-hidden rounded-full bg-gray-100">
+              <div
+                className="h-full rounded-full transition-all duration-1000"
+                style={{
+                  width: visible ? `${progressPct}%` : "0%",
+                  background: "linear-gradient(90deg, #9993C0, #7b74a8)",
+                  transitionDelay: "400ms",
+                }}
+              />
+            </div>
+
+            {level !== "avanzado" && (
+              <p className="font-rubik text-xs text-sukha-mid">
+                Te faltan <strong>{ptsToNext.toLocaleString()} pts</strong> para el nivel {nextLevelLabel}
+              </p>
+            )}
+
+            {registeredUser && (
+              <p className="mt-2 font-rubik text-xs text-gray-400">
+                Guardado como {registeredUser.name} ·{" "}
+                <Link href="/leaderboard" className="text-sukha-accent hover:underline">
+                  Ver ranking →
+                </Link>
+              </p>
+            )}
+          </div>
+
+          {/* Answer review */}
+          <div
+            className="mb-4 rounded-3xl bg-white p-5 transition-all duration-700"
+            style={{
+              boxShadow: "0 2px 0 rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.10)",
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+              transitionDelay: "150ms",
+            }}
+          >
+            <p className="mb-3 font-rubik text-xs font-medium uppercase tracking-widest text-sukha-mid/60">
+              Repaso
+            </p>
+            <div className="flex flex-col gap-2">
+              {result.answers.map((a, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl px-3 py-2.5"
+                  style={{
+                    backgroundColor: a.isCorrect
+                      ? "rgba(107,175,122,0.08)"
+                      : "rgba(212,114,106,0.07)",
+                  }}
+                >
+                  <span
+                    className="mt-0.5 shrink-0 text-sm font-medium"
+                    style={{ color: a.isCorrect ? "#6BAF7A" : "#D4726A" }}
+                  >
+                    {a.isCorrect ? "✓" : "✕"}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="font-rubik text-xs leading-snug text-sukha-dark">
+                      {a.question.question}
+                    </p>
+                    {!a.isCorrect && (
+                      <p className="mt-0.5 font-rubik text-xs text-sukha-mid">
+                        {a.question.options[a.question.correct]}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div
+            className="flex flex-col gap-3 transition-all duration-700"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(12px)",
+              transitionDelay: "200ms",
+            }}
+          >
+            <Link
+              href={`/play/${result.category}`}
+              className="flex w-full items-center justify-center rounded-2xl py-4 font-rubik font-medium text-white transition-all hover:opacity-90 active:scale-[0.98]"
+              style={{ background: "linear-gradient(135deg, #9993C0, #7b74a8)" }}
+            >
+              Jugar de nuevo
+            </Link>
+            <Link
+              href="/"
+              className="flex w-full items-center justify-center rounded-2xl border-2 border-gray-200 py-4 font-rubik font-medium text-sukha-dark transition-all hover:border-sukha-accent hover:text-sukha-accent active:scale-[0.98]"
+            >
+              Elegir otra categoría
+            </Link>
+            {!registeredUser && (
+              <div className="flex items-center justify-between rounded-2xl border border-gray-100 px-4 py-3">
+                <p className="font-rubik text-xs text-sukha-mid">
+                  Guardá tu progreso y entrá al ranking
+                </p>
+                <button
+                  onClick={() => setShowUnlockModal(true)}
+                  className="ml-3 shrink-0 rounded-xl px-3 py-1.5 font-rubik text-xs font-medium text-white"
+                  style={{ background: "linear-gradient(135deg, #9993C0, #7b74a8)" }}
+                >
+                  Registrarme
+                </button>
+              </div>
+            )}
+            {registeredUser && (
+              <Link
+                href="/leaderboard"
+                className="flex w-full items-center justify-center rounded-2xl border-2 border-gray-100 py-3 font-rubik text-sm font-medium text-sukha-mid transition-all hover:border-sukha-accent hover:text-sukha-accent active:scale-[0.98]"
+              >
+                Ver ranking global →
+              </Link>
+            )}
+          </div>
+
+          <p className="mt-10 text-center font-rubik text-xs text-sukha-mid">
+            Una experiencia de <a href="https://www.sukhaonline.com.ar" className="hover:underline">SUKHA</a> · www.sukhaonline.com.ar
+          </p>
+        </div>
+      </main>
+    </>
+  );
+}

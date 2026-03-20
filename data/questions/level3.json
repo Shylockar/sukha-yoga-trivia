@@ -1,0 +1,688 @@
+{
+  "meta": {
+    "version": "1.0",
+    "level": 3,
+    "level_name": "Avanzado",
+    "total_questions": 75,
+    "categories": ["historia", "filosofia", "posturas", "anatomia", "curiosidades"],
+    "questions_per_category": 15,
+    "notes": "Nivel avanzado para Sukha Yoga Trivia (Argentina). Preguntas técnicas, números de sutras específicos, anatomía precisa y datos poco conocidos. Lenguaje en español rioplatense."
+  },
+  "questions": [
+    {
+      "id": "hist-201",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cuál es el texto exacto del Yoga Sutra I.2 de Patanjali, la definición clásica del yoga?",
+      "options": ["Atha yoga anushasanam", "Yogas chitta vritti nirodhah", "Tada drashtuh svarupe avasthanam", "Abhyasa vairagyabhyam tan nirodhah"],
+      "correct": 1,
+      "hint": "La cesación de las fluctuaciones mentales."
+    },
+    {
+      "id": "hist-202",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cuántos sutras en total componen los Yoga Sutras de Patanjali?",
+      "options": ["108", "156", "196", "256"],
+      "correct": 2,
+      "hint": "Distribuidos en cuatro padas o capítulos."
+    },
+    {
+      "id": "hist-203",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Quién fue Gorakhnath y cuál es su importancia en la historia del yoga?",
+      "options": ["Un discípulo directo de Patanjali que recopiló los Sutras", "Un maestro medieval de la tradición Natha, posiblemente fundador del Hatha Yoga y autor de textos como el Goraksha Samhita", "El primer maestro que llevó yoga a Occidente en el siglo XVIII", "El rey que financió el Yoga de Mysore de Krishnamacharya"],
+      "correct": 1,
+      "hint": "La tradición Natha es clave en el desarrollo del Hatha Yoga."
+    },
+    {
+      "id": "hist-204",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cómo se llama el texto de yoga atribuido a T. Krishnamacharya, supuestamente revelado por Nathamuni?",
+      "options": ["Yoga Rahasya", "Yoga Makaranda", "Vinyasa Krama", "Yoga Mala"],
+      "correct": 0,
+      "hint": "Rahasya significa 'secreto' en sánscrito."
+    },
+    {
+      "id": "hist-205",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Qué es el sistema Vinyasa Krama que desarrolló Krishnamacharya?",
+      "options": ["Una secuencia fija de 60 posturas para practicantes avanzados", "Un método de enseñanza que adapta las posturas y la respiración progresivamente a las necesidades del individuo", "El nombre original del Ashtanga Yoga antes de que Jois lo sistematizara", "Un sistema de pranayama de 8 etapas"],
+      "correct": 1,
+      "hint": "Krama = paso a paso; vinculado a la filosofía del Viniyoga."
+    },
+    {
+      "id": "hist-206",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cuál es la datación aproximada más aceptada del Hatha Yoga Pradipika?",
+      "options": ["Siglo V a.C.", "Siglo VIII d.C.", "Siglo XIV-XV d.C. (ca. 1350–1450)", "Siglo XVIII d.C."],
+      "correct": 2,
+      "hint": "Lo escribió Svami Svatmarama; posterior a Gorakhnath."
+    },
+    {
+      "id": "hist-207",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Qué conexión tuvo el Palacio de Mysore con el desarrollo del yoga moderno postural?",
+      "options": ["El maharajá Krishnaraja Wadiyar IV financió a Krishnamacharya para enseñar yoga en el palacio desde 1931", "El palacio albergó la primera Olimpíada de Yoga en 1920", "El maharajá de Mysore escribió el Hatha Yoga Pradipika", "Pattabhi Jois nació en el palacio de Mysore"],
+      "correct": 0,
+      "hint": "El patrocinio real fue fundamental para el yoga postural moderno."
+    },
+    {
+      "id": "hist-208",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Qué figura encontrada en sellos del Valle del Indo (ca. 2500 a.C.) se interpreta a veces como la primera evidencia de yoga?",
+      "options": ["Una figura en postura de loto rodeada de animales, conocida como el sello Pashupati", "Una figura de pie con los brazos extendidos hacia los lados", "Un texto grabado que menciona la palabra 'yoga'", "Una figura corriendo que simboliza el movimiento"],
+      "correct": 0,
+      "hint": "Pashupati es un epíteto de Shiva como señor de los animales."
+    },
+    {
+      "id": "hist-209",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cuál es la diferencia filosófica central entre el Vedanta y el Samkhya como bases del yoga clásico?",
+      "options": ["El Vedanta es dualista y el Samkhya es monista", "El Samkhya es dualista (Purusha y Prakriti son distintos), mientras que el Vedanta Advaita es no dualista (todo es Brahman)", "Ambos son idénticos; son nombres distintos del mismo sistema", "El Vedanta rechaza la práctica de asanas y el Samkhya las acepta"],
+      "correct": 1,
+      "hint": "Advaita = no-dos; Samkhya sostiene la separación primordial."
+    },
+    {
+      "id": "hist-210",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cómo describió Swami Vivekananda el Raja Yoga en su libro homónimo de 1896?",
+      "options": ["Como el yoga de la acción desinteresada", "Como el yoga de la devoción y el amor a Dios", "Como el camino científico y psicológico del control mental, basado en los Yoga Sutras de Patanjali", "Como el yoga del conocimiento y la discriminación"],
+      "correct": 2,
+      "hint": "Raja = rey; el yoga de la mente como ciencia."
+    },
+    {
+      "id": "hist-211",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Qué es la Gheranda Samhita y cuándo fue escrita aproximadamente?",
+      "options": ["Un comentario de Patanjali del siglo II a.C.", "Un texto de Hatha Yoga del siglo XVII-XVIII que describe 32 asanas y 25 mudras", "La autobiografía de BKS Iyengar", "Un manual de meditación budista adaptado al yoga hindú"],
+      "correct": 1,
+      "hint": "Junto al HYP y al Shiva Samhita, es uno de los tres textos clásicos de Hatha Yoga."
+    },
+    {
+      "id": "hist-212",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cuántos Upanishads principales (Mukhya Upanishads) se reconocen en la tradición vedántica?",
+      "options": ["7", "10", "12", "14"],
+      "correct": 3,
+      "hint": "Shankaracharya comentó específicamente sobre estos textos."
+    },
+    {
+      "id": "hist-213",
+      "category": "historia",
+      "level": 3,
+      "question": "¿En qué parte del Mahabharata aparece el yoga como tema filosófico central?",
+      "options": ["En el Ramayana, no en el Mahabharata", "En el Bhagavad Gita, que es parte del libro VI (Bhishma Parva) del Mahabharata", "En los primeros cantos del Adi Parva", "Solo en el apéndice del Harivamsa"],
+      "correct": 1,
+      "hint": "Krishna enseña a Arjuna los caminos del yoga en el campo de batalla."
+    },
+    {
+      "id": "hist-214",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Cuántos sutras tiene el Samadhi Pada (primer capítulo) de los Yoga Sutras?",
+      "options": ["51", "55", "60", "65"],
+      "correct": 0,
+      "hint": "El primer pada tiene 51 sutras; el más largo es el Sadhana Pada con 55."
+    },
+    {
+      "id": "hist-215",
+      "category": "historia",
+      "level": 3,
+      "question": "¿Qué texto yóguico medieval describe 84 asanas clásicas y fue compilado por Svami Svatmarama?",
+      "options": ["Yoga Rahasya", "Gheranda Samhita", "Hatha Yoga Pradipika", "Shiva Samhita"],
+      "correct": 2,
+      "hint": "El HYP menciona 84 asanas pero describe solo 15 en detalle."
+    },
+    {
+      "id": "filo-201",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuál es el significado literal del Sutra I.2 'Yogas chitta vritti nirodhah'?",
+      "options": ["El yoga es la unión del sol y la luna", "El yoga es la cesación de las modificaciones o fluctuaciones de la mente", "El yoga es el camino hacia la liberación del ciclo del karma", "El yoga es la práctica de las posturas sagradas"],
+      "correct": 1,
+      "hint": "Chitta=mente, vritti=fluctuaciones, nirodhah=cesación."
+    },
+    {
+      "id": "filo-202",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuáles son las cinco Vrittis (modificaciones mentales) que describe Patanjali en el Sutra I.6?",
+      "options": ["Sattva, Rajas, Tamas, Dharma y Karma", "Pramana, Viparyaya, Vikalpa, Nidra y Smriti", "Dharana, Dhyana, Samadhi, Pratyahara y Pranayama", "Ahimsa, Satya, Asteya, Brahmacharya y Aparigraha"],
+      "correct": 1,
+      "hint": "Conocimiento correcto, incorrecto, imaginación, sueño y memoria."
+    },
+    {
+      "id": "filo-203",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué es Viveka Khyati según la filosofía yoga de Patanjali?",
+      "options": ["La capacidad de memorizar los Yoga Sutras", "La sabiduría discriminativa que distingue entre Purusha (conciencia pura) y Prakriti (materia)", "Un tipo de meditación con objeto visual", "La práctica de los Yamas en la vida diaria"],
+      "correct": 1,
+      "hint": "Viveka = discriminación; el paso previo a Kaivalya."
+    },
+    {
+      "id": "filo-204",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué es Kaivalya en el contexto del yoga de Patanjali?",
+      "options": ["La unión mística con Dios", "El estado de aislamiento o liberación del Purusha de su identificación con Prakriti", "El cuarto nivel de Samadhi", "Una postura de meditación avanzada"],
+      "correct": 1,
+      "hint": "Da nombre al cuarto y último pada de los Yoga Sutras."
+    },
+    {
+      "id": "filo-205",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuál es la diferencia entre Samprajnata Samadhi y Asamprajnata Samadhi?",
+      "options": ["Uno es diurno y el otro nocturno", "Samprajnata es Samadhi con semilla (con apoyo de un objeto), mientras que Asamprajnata es sin semilla ni apoyo cognitivo", "Samprajnata es para principiantes y Asamprajnata para expertos sin ninguna diferencia esencial", "Son nombres equivalentes del mismo estado en diferentes tradiciones"],
+      "correct": 1,
+      "hint": "Samprajnata = con conocimiento; Asamprajnata = más allá del conocimiento."
+    },
+    {
+      "id": "filo-206",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuál es la diferencia entre Sabija Samadhi y Nirbija Samadhi?",
+      "options": ["Sabija es meditación con mantra y Nirbija sin mantra", "Sabija es Samadhi con semilla o impresiones latentes (samskaras); Nirbija es sin semilla, el estado más puro de Kaivalya", "Sabija se practica de día y Nirbija de noche", "Son los dos primeros estados del Samadhi según el Vedanta"],
+      "correct": 1,
+      "hint": "Bija = semilla; sin semilla no quedan impresiones kármicas."
+    },
+    {
+      "id": "filo-207",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuál es el Niyama llamado Santosha y por qué es filosóficamente relevante?",
+      "options": ["La pureza externa e interna; relevante porque prepara el cuerpo para la meditación", "El contentamiento; filosóficamente importante porque corta el ciclo de deseo insatisfecho que genera sufrimiento", "La entrega a Ishvara; relevante por su dimensión teísta", "La austeridad; relevante porque genera calor purificador"],
+      "correct": 1,
+      "hint": "El contentamiento como práctica activa, no como resignación pasiva."
+    },
+    {
+      "id": "filo-208",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué sostiene el Advaita Vedanta de Shankaracharya en relación al yoga?",
+      "options": ["Que la práctica de asanas es la única vía hacia la liberación", "Que la realidad es no-dual: solo existe Brahman (conciencia pura), y la aparente multiplicidad es Maya (ilusión)", "Que el dualismo Purusha-Prakriti es la verdad última", "Que la meditación yóguica es incompatible con el Vedanta"],
+      "correct": 1,
+      "hint": "Advaita = no-dos; el Jnana Yoga es el camino vedántico."
+    },
+    {
+      "id": "filo-209",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cómo define el yoga de Patanjali al Purusha?",
+      "options": ["Como el cuerpo físico en su expresión más pura", "Como la conciencia pura e inmutable, testigo silencioso de toda experiencia, que no actúa ni cambia", "Como el ego o sentido de identidad individual", "Como la fuerza vital que anima el cuerpo"],
+      "correct": 1,
+      "hint": "Purusha no hace nada; solo observa; es Drashtr, el Vidente."
+    },
+    {
+      "id": "filo-210",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué es Avidya según Patanjali y por qué es el Klesha raíz?",
+      "options": ["La pereza en la práctica; es raíz porque impide el progreso físico", "La ignorancia o no-saber; es el Klesha raíz porque confundir lo impermanente con lo permanente genera todos los demás sufrimientos", "El miedo a la muerte; es raíz porque paraliza al practicante", "El exceso de ego; es raíz porque impide recibir enseñanzas"],
+      "correct": 1,
+      "hint": "Confundir Prakriti (materia) con Purusha (conciencia) es Avidya."
+    },
+    {
+      "id": "filo-211",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué significa la distinción Drashtr (el Vidente) / Drishya (lo Visto) en la epistemología de Patanjali?",
+      "options": ["La diferencia entre ver con los ojos abiertos y cerrados en meditación", "La distinción fundamental entre el Purusha que observa y todo el campo de la experiencia (incluyendo la mente) que es observado", "La práctica de drishti (puntos de mirada) en las posturas", "La diferencia entre el maestro que enseña y el alumno que aprende"],
+      "correct": 1,
+      "hint": "La confusión entre el Vidente y lo Visto es la causa del sufrimiento."
+    },
+    {
+      "id": "filo-212",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué son Abhyasa y Vairagya según Patanjali (Sutra I.12) y cómo se complementan?",
+      "options": ["Dos tipos de pranayama que se alternan en la práctica", "La práctica constante (Abhyasa) y el desapego (Vairagya); juntos son los dos medios para aquietar las vrittis mentales", "El esfuerzo físico y el esfuerzo mental en las asanas", "Los dos primeros miembros del Ashtanga Yoga"],
+      "correct": 1,
+      "hint": "Sin los dos juntos, la mente no se aquieta."
+    },
+    {
+      "id": "filo-213",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuál es el significado preciso del Sutra II.46 'Sthira Sukham Asanam'?",
+      "options": ["La postura debe practicarse durante al menos dos horas sin moverse", "La postura (asana) debe ser firme (sthira) y confortable/placentera (sukham); esa es la única instrucción de Patanjali sobre asanas", "Las posturas deben hacerse primero fuertes y luego suaves", "Toda postura tiene una firmeza y una suavidad que son opuestos irreconciliables"],
+      "correct": 1,
+      "hint": "Los Sutras no dan instrucciones de alineación; solo este principio general."
+    },
+    {
+      "id": "filo-214",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Qué es Prajna en el contexto del yoga y los Yoga Sutras?",
+      "options": ["Un tipo de meditación específica del budismo", "La sabiduría o conocimiento discriminativo que emerge de la práctica profunda de Samadhi", "El primer paso del camino yóguico para principiantes", "Un nombre alternativo para el pranayama Ujjayi"],
+      "correct": 1,
+      "hint": "Rtambhara Prajna es la sabiduría que porta la verdad (Sutra I.48)."
+    },
+    {
+      "id": "filo-215",
+      "category": "filosofia",
+      "level": 3,
+      "question": "¿Cuál es el primer Sutra de los Yoga Sutras y qué establece?",
+      "options": ["'Yogas chitta vritti nirodhah': define el yoga", "'Atha yoga anushasanam': establece que 'ahora comienza la instrucción sobre el yoga'; el 'ahora' implica que el alumno ya está listo", "'Tada drashtuh svarupe avasthanam': describe el estado del Vidente en Samadhi", "'Abhyasa vairagyabhyam tan nirodhah': da los dos medios del yoga"],
+      "correct": 1,
+      "hint": "Atha = ahora; una sola palabra cargada de significado."
+    },
+    {
+      "id": "post-201",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cuál es el nombre completo en sánscrito del Triángulo con Torsión?",
+      "options": ["Utthita Trikonasana", "Parivrtta Trikonasana", "Ardha Chandrasana", "Parivrtta Parsvakonasana"],
+      "correct": 1,
+      "hint": "Parivrtta = girado o en torsión."
+    },
+    {
+      "id": "post-202",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cómo se llama en sánscrito la Media Luna?",
+      "options": ["Ardha Matsyendrasana", "Ardha Chandrasana", "Chandra Namaskar", "Anjaneyasana"],
+      "correct": 1,
+      "hint": "Ardha = medio, Chandra = luna."
+    },
+    {
+      "id": "post-203",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cuál es el nombre en sánscrito de la postura Supta Padangusthasana?",
+      "options": ["Postura del Guerrero reclinado", "Postura reclinada con el pulgar del pie (Supta = reclinado, Pada = pie, Angustha = pulgar)", "Postura del Héroe reclinado", "Postura del Ángulo reclinado"],
+      "correct": 1,
+      "hint": "Se estira la pierna hacia arriba sujetando el dedo gordo."
+    },
+    {
+      "id": "post-204",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cómo se llama en sánscrito la postura del Palomo (Pigeon Pose) en su variante completa?",
+      "options": ["Kapotasana", "Eka Pada Rajakapotasana", "Supta Kapotasana", "Rajakapotasana"],
+      "correct": 1,
+      "hint": "Eka Pada = una pierna, Raja = rey, Kapota = palomo."
+    },
+    {
+      "id": "post-205",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cómo se llama la postura del Pavo Real con antebrazos (Forearm Balance)?",
+      "options": ["Bakasana", "Adho Mukha Vrksasana", "Pincha Mayurasana", "Tittibasana"],
+      "correct": 2,
+      "hint": "Pincha = pluma, Mayura = pavo real."
+    },
+    {
+      "id": "post-206",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cómo se llama Dwi Pada Viparita Dandasana y en qué familia de posturas se clasifica?",
+      "options": ["Postura del bastón invertido con dos piernas; es una inversión suave", "Postura del bastón invertido con dos piernas; es una extensión profunda de espalda que combina inversión y backbend", "Postura del barco con dos piernas; fortalece el core", "Una torsión profunda en el suelo con dos piernas extendidas"],
+      "correct": 1,
+      "hint": "Dwi = dos, Pada = piernas, Viparita = invertido, Danda = bastón."
+    },
+    {
+      "id": "post-207",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Qué es Kapotasana y por qué se considera una de las backbends más intensas?",
+      "options": ["La postura del Camello; intenso por la extensión cervical", "Una extensión de espalda profunda de rodillas donde se toman los talones desde atrás, creando un arco extremo en toda la columna", "La postura del Puente completa con brazos extendidos", "Una torsión sentada que comprime la columna dorsal"],
+      "correct": 1,
+      "hint": "Kapota = palomo; requiere gran apertura de pecho y flexibilidad lumbar."
+    },
+    {
+      "id": "post-208",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Con qué postura comienza la Serie Primaria (Primary Series) del Ashtanga Yoga después de los Saludos al Sol?",
+      "options": ["Trikonasana", "Padangusthasana", "Virabhadrasana I", "Sirsasana"],
+      "correct": 1,
+      "hint": "La primera de las posturas de pie después del calentamiento."
+    },
+    {
+      "id": "post-209",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿En honor a quién se llama Marichyasana?",
+      "options": ["Al dios Shiva en su aspecto de guerrero", "Al sabio Marichi, nieto de Brahma y uno de los Saptarishis (siete sabios védicos)", "A la diosa Mariachi, patrona del yoga", "A Krishnamacharya, cuyo nombre completo era Marichi"],
+      "correct": 1,
+      "hint": "Marichi = rayo de luz; es uno de los Prajapatis en la cosmología hindú."
+    },
+    {
+      "id": "post-210",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cuál es la primera postura de la Serie Intermedia (Second Series) del Ashtanga Yoga?",
+      "options": ["Kapotasana", "Pashasana", "Krounchasana", "Shalabhasana"],
+      "correct": 1,
+      "hint": "Pasha = lazo; es una torsión profunda en cuclillas."
+    },
+    {
+      "id": "post-211",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Qué se 'enlaza' o 'enlaza' en Marichyasana C para lograr el bind?",
+      "options": ["Los pies con las manos detrás de la espalda", "El brazo que envuelve la rodilla doblada enlaza con la mano que viene por detrás de la espalda", "Las dos manos en el suelo frente a las rodillas", "El tobillo con la mano opuesta"],
+      "correct": 1,
+      "hint": "El bind requiere suficiente torsión y apertura de hombros."
+    },
+    {
+      "id": "post-212",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿En qué dirección rota el torso en Parivrtta Parsvakonasana (Ángulo Lateral en Torsión)?",
+      "options": ["Hacia atrás, alejándose de la pierna delantera", "Hacia adentro, en dirección a la pierna delantera, cruzando el codo por afuera de la rodilla delantera", "Lateralmente hacia la pierna trasera", "No hay torsión; el torso se extiende hacia adelante"],
+      "correct": 1,
+      "hint": "El codo opuesto a la rodilla delantera crea la palanca de torsión."
+    },
+    {
+      "id": "post-213",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Qué significa Gomukhasana y cómo se relaciona con la forma de la postura?",
+      "options": ["Cara de vaca; las piernas apiladas evocan la boca de una vaca y los brazos sus cuernos", "Cara de cabra; la postura imita la postura de una cabra en las rocas", "Cara de toro; los brazos elevados imitan los cuernos del toro", "Cara de elefante; la postura honra a Ganesha"],
+      "correct": 0,
+      "hint": "Go = vaca, Mukha = cara; la forma global recuerda la cabeza de una vaca."
+    },
+    {
+      "id": "post-214",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Cuál es el nombre en sánscrito del Ángulo Lateral Extendido?",
+      "options": ["Parivrtta Parsvakonasana", "Utthita Parsvakonasana", "Virabhadrasana II", "Utthita Trikonasana"],
+      "correct": 1,
+      "hint": "Utthita = extendido, Parsva = lateral, Kona = ángulo."
+    },
+    {
+      "id": "post-215",
+      "category": "posturas",
+      "level": 3,
+      "question": "¿Qué significa Navasana?",
+      "options": ["Postura de la cobra", "Postura del barco", "Postura de la montaña", "Postura del pez"],
+      "correct": 1,
+      "hint": "Nava = barco; el cuerpo forma una forma de V como un barco."
+    },
+    {
+      "id": "anat-201",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Qué nervio específico puede comprimirse en la postura del Palomo (Eka Pada Rajakapotasana) si hay tensión excesiva en el músculo piriforme?",
+      "options": ["Nervio femoral", "Nervio ciático", "Nervio obturador", "Nervio tibial posterior"],
+      "correct": 1,
+      "hint": "El síndrome del piriforme es la causa más frecuente de ciatalgia no discal."
+    },
+    {
+      "id": "anat-202",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cuál es el rol del músculo cuadrado lumbar (QL - Quadratus Lumborum) en las extensiones de espalda?",
+      "options": ["Es el principal flexor de la columna; no participa en extensiones", "Actúa como extensor y estabilizador lateral de la columna lumbar; su tensión unilateral puede causar inclinación y dolor en backbends", "Solo estabiliza la pelvis en posturas de equilibrio", "Conecta la columna torácica con las costillas superiores"],
+      "correct": 1,
+      "hint": "Conecta la 12ª costilla con la cresta ilíaca y las vértebras lumbares."
+    },
+    {
+      "id": "anat-203",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Qué es la fascia toracolumbar y por qué es importante en la práctica de yoga?",
+      "options": ["Un músculo profundo de la espalda que sostiene la columna torácica", "Una vasta lámina de tejido conectivo que recubre la espalda baja y conecta múltiples músculos; transmite fuerzas entre piernas, columna y brazos", "Un nervio que recorre la columna lumbar hasta la cadera", "Un ligamento específico de la articulación sacroilíaca"],
+      "correct": 1,
+      "hint": "Es fundamental para la transmisión de fuerza en posturas de extensión y torsión."
+    },
+    {
+      "id": "anat-204",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Qué significa 'anteversión pélvica' (anterior pelvic tilt) y cómo afecta la práctica de yoga?",
+      "options": ["La pelvis se inclina hacia atrás, aplanando la curva lumbar; facilita las extensiones", "La pelvis se inclina hacia adelante, aumentando la lordosis lumbar; puede causar compresión en backbends y acortar el psoas", "La pelvis rota hacia afuera, abriendo las caderas; es ideal para posturas de cadera", "La pelvis se mueve lateralmente; genera escoliosis temporal"],
+      "correct": 1,
+      "hint": "Muy común en personas con psoas acortado por pasar muchas horas sentadas."
+    },
+    {
+      "id": "anat-205",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Por qué las personas con disfunción de la articulación sacroilíaca (SI joint) deben tener precaución en ciertas posturas de yoga?",
+      "options": ["Porque el yoga siempre está contraindicado para problemas sacroilíacos", "Porque posturas asimétricas de cadera (como Trikonasana o Pigeon) pueden generar fuerzas de cizallamiento en una articulación ya inestable", "Solo las inversiones son peligrosas para el SI joint", "Porque el nervio ciático pasa directamente por la articulación SI"],
+      "correct": 1,
+      "hint": "El SI joint conecta la columna sacra con los huesos ilíacos."
+    },
+    {
+      "id": "anat-206",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cómo afecta el Uddiyana Bandha a la presión intraabdominal?",
+      "options": ["La aumenta significativamente, comprimiendo los órganos", "La reduce al elevar el diafragma y retraer el abdomen; esto descomprime la columna lumbar y masajea los órganos viscerales", "No tiene efecto en la presión intraabdominal", "La estabiliza sin cambios, como un cinturón de seguridad"],
+      "correct": 1,
+      "hint": "Se practica con los pulmones vacíos (retención tras exhalación)."
+    },
+    {
+      "id": "anat-207",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Por qué sostener una postura durante más de 30 segundos es más efectivo para ganar flexibilidad?",
+      "options": ["Porque el cuerpo entra en estado de trance después de 30 segundos", "Porque se supera el reflejo de estiramiento (stretch reflex) del huso muscular, permitiendo que el músculo se relaje y alargue sin contraerse defensivamente", "Porque el corazón late más lento después de 30 segundos y envía más sangre", "Porque los 30 segundos permiten que el ácido láctico se disipe completamente"],
+      "correct": 1,
+      "hint": "El huso muscular reduce su señal de alarma con el tiempo en el estiramiento."
+    },
+    {
+      "id": "anat-208",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cuál es la diferencia entre un Nadi (concepto yóguico) y un nervio (concepto anatómico occidental)?",
+      "options": ["Son exactamente lo mismo; los yoguis simplemente usaron otro nombre", "Los Nadis son canales del cuerpo sutil por donde fluye el Prana; no tienen correlato anatómico directo aunque algunos se solapan conceptualmente con el sistema nervioso", "Los Nadis son más grandes que los nervios y visibles con microscopio", "Los Nadis son arterias y las venas son los canales del Apana"],
+      "correct": 1,
+      "hint": "Los sistemas son de paradigmas diferentes: energético vs anatómico-físico."
+    },
+    {
+      "id": "anat-209",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cuáles son Prana Vayu y Apana Vayu dentro de los cinco Prana Vayus?",
+      "options": ["Dos tipos de pranayama para la mañana y la noche respectivamente", "Prana Vayu es la fuerza ascendente en el tórax (inhalación, entrada); Apana Vayu es la fuerza descendente en el abdomen inferior (exhalación, eliminación)", "Son los dos Bandhas principales del cuerpo", "Son dos chakras que regulan la energía de entrada y salida"],
+      "correct": 1,
+      "hint": "Los 5 Vayus son Prana, Apana, Samana, Udana y Vyana."
+    },
+    {
+      "id": "anat-210",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cómo afecta el Jalandhara Bandha a la tiroides según la medicina tradicional yoguica?",
+      "options": ["Estimula la tiroides al comprimir su irrigación arterial", "Al comprimir la garganta y los senos carotídeos, regula la presión sanguínea en el cerebro y, según la tradición, estimula la tiroides y las paratiroides mediante presión directa", "No tiene efecto sobre la tiroides; solo afecta las cuerdas vocales", "Inhibe completamente la función tiroidea si se practica diariamente"],
+      "correct": 1,
+      "hint": "Jala = red, Dhara = sostenimiento; la barbilla se baja al esternón."
+    },
+    {
+      "id": "anat-211",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Qué compone el complejo iliopsoas y por qué es tan relevante en yoga?",
+      "options": ["El glúteo mayor y el piriforme; son los principales rotadores externos de cadera", "El ilíaco y el psoas mayor que se unen y se insertan en el trocánter menor del fémur; es el flexor de cadera más potente y afecta directamente la postura lumbar y pélvica", "El cuádriceps y el tensor de la fascia lata; forman el frente del muslo", "El isquiotibial y el glúteo mayor; son los extensores principales de cadera"],
+      "correct": 1,
+      "hint": "Conecta la columna lumbar (psoas) y el ilíaco con el fémur."
+    },
+    {
+      "id": "anat-212",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Por qué Savasana activa el sistema nervioso parasimpático?",
+      "options": ["Porque la inmovilidad total activa la respuesta de congelamiento del sistema simpático", "Porque la quietud, la respiración lenta y la reducción de estímulos sensoriales permiten al sistema nervioso cambiar del modo simpático ('lucha o huida') al parasimpático ('descanso y digestión')", "Porque la temperatura del suelo activa receptores de frío que estimulan el nervio vago", "Porque el silencio activa el lóbulo frontal que inhibe el sistema límbico"],
+      "correct": 1,
+      "hint": "El nervio vago es el principal componente del sistema parasimpático."
+    },
+    {
+      "id": "anat-213",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cómo afectan las torsiones espinales a los discos intervertebrales?",
+      "options": ["Las comprimen uniformemente, lo cual puede ser dañino siempre", "Generan una acción de exprimido y reabsorción: la compresión asimétrica exuda fluido y al salir de la torsión el disco reabsorbe nutrientes; esto puede ser beneficioso con alineación correcta", "No tienen efecto en los discos intervertebrales, solo en los ligamentos", "Las torsiones solo afectan las articulaciones cigapofisarias, no los discos"],
+      "correct": 1,
+      "hint": "Se habla de un efecto de 'esponja' en los discos con las torsiones."
+    },
+    {
+      "id": "anat-214",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Qué rol juega la propiocepción en las posturas de equilibrio del yoga?",
+      "options": ["Ninguno; el equilibrio en yoga depende exclusivamente de la vista", "Los receptores propioceptivos en músculos, tendones y articulaciones (especialmente del tobillo y pie) envían información constante al cerebelo para ajustar la postura en tiempo real", "La propiocepción solo funciona durante el movimiento, no en posturas estáticas", "Solo los receptores del oído interno (vestibular) regulan el equilibrio en yoga"],
+      "correct": 1,
+      "hint": "Practicar con ojos cerrados desafía el sistema propioceptivo."
+    },
+    {
+      "id": "anat-215",
+      "category": "anatomia",
+      "level": 3,
+      "question": "¿Cómo afectan las inversiones (como Sirsasana o Sarvangasana) al retorno venoso?",
+      "options": ["Lo dificultan porque el corazón debe trabajar más contra la gravedad", "Lo facilitan en piernas y pelvis, ya que la gravedad ayuda a drenar la sangre venosa y la linfa desde las extremidades inferiores hacia el corazón", "No tienen ningún efecto en el retorno venoso", "Lo detienen completamente durante el tiempo que se mantiene la inversión"],
+      "correct": 1,
+      "hint": "Por eso las inversiones pueden aliviar la pesadez de piernas y varices leves."
+    },
+    {
+      "id": "curi-201",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Qué país fue el primero de Occidente en reconocer oficialmente el yoga como patrimonio cultural intangible tras la inscripción de la UNESCO en 2016?",
+      "options": ["Estados Unidos", "Francia", "India fue inscrita, no un país occidental específicamente", "España"],
+      "correct": 2,
+      "hint": "La UNESCO inscribió al yoga como patrimonio de la India, no de países occidentales."
+    },
+    {
+      "id": "curi-202",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿En qué año inscribió la UNESCO al yoga en su Lista del Patrimonio Cultural Inmaterial de la Humanidad?",
+      "options": ["2010", "2014", "2016", "2019"],
+      "correct": 2,
+      "hint": "El mismo año en que la propuesta de India fue aprobada en la sesión de la UNESCO en Etiopía."
+    },
+    {
+      "id": "curi-203",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuál es el verdadero significado de 'Hatha' en Hatha Yoga, según la interpretación esotérica de las escuelas natha?",
+      "options": ["Fuerza bruta o esfuerzo físico intenso", "Ha = sol (Prana, fosa nasal derecha) y Tha = luna (Apana, fosa nasal izquierda); la unión de estas dos fuerzas opuestas", "Hatha es simplemente el nombre del fundador del sistema", "Ha = fuego y Tha = agua; los elementos que purifican el cuerpo"],
+      "correct": 1,
+      "hint": "La unión de las energías solar y lunar es el objetivo del Hatha Yoga."
+    },
+    {
+      "id": "curi-204",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuántas asanas se dice que BKS Iyengar dominó y documentó a lo largo de su vida?",
+      "options": ["84", "108", "200", "Más de 200"],
+      "correct": 3,
+      "hint": "Iyengar documentó más de 200 asanas en su libro 'Light on Yoga' (1966)."
+    },
+    {
+      "id": "curi-205",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuántas horas de formación requiere una certificación RYT-200 de Yoga Alliance?",
+      "options": ["100 horas", "150 horas", "200 horas", "250 horas"],
+      "correct": 2,
+      "hint": "El número está en el nombre de la certificación: RYT-200."
+    },
+    {
+      "id": "curi-206",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuál fue el primer libro de yoga publicado en inglés y por quién fue escrito?",
+      "options": ["'Light on Yoga' de BKS Iyengar (1966)", "'Raja Yoga' de Swami Vivekananda (1896)", "'Autobiography of a Yogi' de Paramahansa Yogananda (1946)", "'The Complete Book of Yoga' de Swami Vishnu-devananda (1960)"],
+      "correct": 1,
+      "hint": "Basado en las conferencias de Vivekananda en Nueva York tras el Parlamento de Religiones."
+    },
+    {
+      "id": "curi-207",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuáles son los 5 principios del yoga según Swami Vishnu-devananda, que sistematizó las enseñanzas de Sivananda?",
+      "options": ["Fe, Práctica, Desapego, Devoción y Meditación", "Ejercicio (asanas), Respiración (pranayama), Relajación (savasana), Dieta vegetariana y Pensamiento positivo/meditación", "Yama, Niyama, Asana, Pranayama y Pratyahara", "Pureza, Contentamiento, Disciplina, Autoestudio y Devoción"],
+      "correct": 1,
+      "hint": "Un sistema integral y accesible diseñado para el mundo moderno."
+    },
+    {
+      "id": "curi-208",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Quién fue el discípulo de Krishnamacharya que llevó el Ashtanga Yoga a Occidente y lo popularizó globalmente?",
+      "options": ["BKS Iyengar", "Desikachar", "Sri K. Pattabhi Jois", "Indra Devi"],
+      "correct": 2,
+      "hint": "Fundó el KPJAYI (Ashtanga Yoga Research Institute) en Mysore."
+    },
+    {
+      "id": "curi-209",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuántas posturas (asanas) contiene aproximadamente la Serie Primaria (Primary Series) del Ashtanga Yoga?",
+      "options": ["Aproximadamente 40", "Aproximadamente 55", "Aproximadamente 75", "Aproximadamente 100"],
+      "correct": 2,
+      "hint": "Depende si se cuentan las variantes; la cifra estándar es alrededor de 75."
+    },
+    {
+      "id": "curi-210",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Qué significa literalmente la palabra 'vinyasa' en sánscrito?",
+      "options": ["Postura fija y estable", "Movimiento sincronizado con la respiración; colocar (nyasa) de manera especial (vi)", "Secuencia de posturas sin descanso", "El sonido del aliento Ujjayi durante la práctica"],
+      "correct": 1,
+      "hint": "Vi = de manera especial, nyasa = colocar; cada movimiento tiene su respiración."
+    },
+    {
+      "id": "curi-211",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Los Yoga Sutras de Patanjali nombran alguna asana específica por su nombre?",
+      "options": ["Sí, nombran Padmasana, Sukhasana y Vajrasana", "Sí, nombran las 84 asanas clásicas en el capítulo de Vibhuti", "No; los Sutras no nombran ninguna asana específica; solo definen el principio de 'Sthira Sukham Asanam'", "Sí, solo nombran Savasana como la postura de liberación"],
+      "correct": 2,
+      "hint": "El detalle de las asanas vino mucho después, con el Hatha Yoga."
+    },
+    {
+      "id": "curi-212",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Quién acuñó el término 'Power Yoga' en la década de 1990?",
+      "options": ["Bryan Kest en Los Ángeles", "Beryl Bender Birch en Nueva York", "Baron Baptiste en Boston", "Rodney Yee en San Francisco"],
+      "correct": 1,
+      "hint": "Beryl Bender Birch publicó el libro 'Power Yoga' en 1995."
+    },
+    {
+      "id": "curi-213",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿En qué año abrió Bikram Choudhury su primer estudio de yoga en los Estados Unidos?",
+      "options": ["1968", "1971", "1973", "1976"],
+      "correct": 2,
+      "hint": "Abrió en Beverly Hills, Los Ángeles, California."
+    },
+    {
+      "id": "curi-214",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿Cuál fue el primer prop (accesorio) introducido por BKS Iyengar en su método y qué función tenía?",
+      "options": ["Los bloques de madera para apoyar las manos", "Las sogas de pared (wall ropes) para trabajar inversiones y extensiones de espalda con soporte y mayor tiempo de permanencia", "Las bolsters (almohadones) para posturas restaurativas", "Las correas para alcanzar los pies en posturas de estiramiento"],
+      "correct": 1,
+      "hint": "Las sogas son el elemento más distintivo de las salas Iyengar tradicionales."
+    },
+    {
+      "id": "curi-215",
+      "category": "curiosidades",
+      "level": 3,
+      "question": "¿A qué tejido del cuerpo está principalmente dirigido el Yin Yoga, a diferencia del yoga activo o Yang?",
+      "options": ["Al tejido muscular, para elongarlo más que en el yoga Yang", "Al tejido conectivo (fascia, ligamentos, tendones y cápsulas articulares) mediante posturas pasivas mantenidas durante minutos", "Al tejido nervioso, para reducir la tensión del sistema nervioso simpático", "Al tejido cardíaco, para fortalecer el corazón mediante poses de extensión"],
+      "correct": 1,
+      "hint": "El tejido conectivo responde al estrés sostenido y lento, no al dinámico."
+    }
+  ]
+}
