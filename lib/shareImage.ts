@@ -12,22 +12,36 @@ const CY     = 140;          // card top
 // Flor SVG size drawn on canvas
 const FLOR_SIZE = 56;
 
+function getAchievement(score: number): { title: string; subtitle: string } {
+  if (score >= 1200) return {
+    title:    "Maestro yogui",
+    subtitle: "Conocimiento digno de un gurú. ¡Impresionante!",
+  };
+  if (score >= 800) return {
+    title:    "Buen camino",
+    subtitle: "Sólido conocimiento del yoga. Seguí practicando.",
+  };
+  return {
+    title:    "Seguí practicando",
+    subtitle: "Cada clase te acerca más. ¡La constancia es todo!",
+  };
+}
+
 export interface ShareImageParams {
   score: number;
   correctCount: number;
   totalBonus: number;
-  categoryLabel: string;
   top3: { rank: number; name: string; totalScore: number }[] | null;
   userRankEntry: { rank: number; name: string; totalScore: number } | null;
   userName?: string;
 }
 
 export async function generateShareImage(params: ShareImageParams): Promise<Blob> {
-  // Load flor SVG (graceful degradation if it fails)
-  const florImg = await loadSvgImage("/flor-sukha.svg").catch(() => null);
+  const florImg    = await loadSvgImage("/flor-sukha.svg").catch(() => null);
+  const achievement = getAchievement(params.score);
 
   const CH = calcCardHeight(params, florImg !== null);
-  const H  = CY + CH + 220; // 220px below card: CTA text + margin
+  const H  = CY + CH + 220;
 
   const canvas = document.createElement("canvas");
   canvas.width  = W;
@@ -57,29 +71,29 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
   }
 
   // "SUKHA TRIVIA"
-  ctx.fillStyle   = "#9993C0";
-  ctx.font        = "600 32px -apple-system, Arial, sans-serif";
-  ctx.textAlign   = "center";
+  ctx.fillStyle = "#9993C0";
+  ctx.font      = "600 32px -apple-system, Arial, sans-serif";
+  ctx.textAlign = "center";
   ctx.fillText("SUKHA TRIVIA", MID, y + 28);
-  y += 28 + 52; // baseline + gap
+  y += 28 + 52;
 
-  // Category label
+  // Achievement title (most prominent text after the score)
+  ctx.fillStyle = "#434344";
+  ctx.font      = "700 52px -apple-system, Arial, sans-serif";
+  ctx.fillText(achievement.title, MID, y + 44);
+  y += 44 + 24;
+
+  // Achievement subtitle
   ctx.fillStyle = "#9ca3af";
-  ctx.font      = "400 32px -apple-system, Arial, sans-serif";
-  ctx.fillText(params.categoryLabel, MID, y);
-  y += 178; // gap to score (170px font → cap ~128px above baseline → 178 clears with 50px buffer)
+  ctx.font      = "400 28px -apple-system, Arial, sans-serif";
+  ctx.fillText(achievement.subtitle, MID, y);
+  y += 140; // gap to score (170px cap ~128px → 140 clears with 12px buffer)
 
   // Score number
   ctx.fillStyle = "#434344";
   ctx.font      = "700 170px -apple-system, Arial, sans-serif";
   ctx.fillText(String(params.score), MID, y);
-  y += 64; // below baseline + gap
-
-  // "de N puntos posibles"
-  ctx.fillStyle = "#9ca3af";
-  ctx.font      = "400 30px -apple-system, Arial, sans-serif";
-  ctx.fillText(`de ${MAX_SCORE} puntos posibles`, MID, y);
-  y += 80; // gap
+  y += 64;
 
   // Score bar
   const BAR_X = CX + PAD;
@@ -92,7 +106,7 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
   barGrad.addColorStop(1, "#7b74a8");
   ctx.fillStyle = barGrad;
   rrect(ctx, BAR_X, y, Math.max(28, BAR_W * (params.score / MAX_SCORE)), BAR_H, 10); ctx.fill();
-  y += BAR_H + 96; // bar + gap
+  y += BAR_H + 96;
 
   // Stats row (3 cols)
   const COL = (CW - PAD * 2) / 3;
@@ -120,11 +134,10 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
     ctx.font      = "400 28px -apple-system, Arial, sans-serif";
     ctx.fillText(s.label, cx2, y + 104);
   });
-  y += 140; // stats block height
+  y += 140;
 
   // ── Ranking section ──────────────────────────────────
   if (params.top3 && params.top3.length > 0) {
-    // Divider
     ctx.strokeStyle = "#ebebeb";
     ctx.lineWidth   = 2;
     ctx.beginPath();
@@ -133,14 +146,12 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
     ctx.stroke();
     y += 54;
 
-    // "RANKING" label
     ctx.fillStyle = "#c0bbd4";
     ctx.font      = "500 26px -apple-system, Arial, sans-serif";
     ctx.textAlign = "left";
     ctx.fillText("RANKING", CX + PAD, y);
     y += 68;
 
-    // Top 3 rows
     for (let i = 0; i < params.top3.length; i++) {
       const entry = params.top3[i];
       ctx.fillStyle = "#434344";
@@ -155,17 +166,14 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
       y += 68;
     }
 
-    // User row (if outside top 3)
     const userInTop3 = params.userName && params.top3.some(e => e.name === params.userName);
     if (params.userRankEntry && params.userName && !userInTop3) {
-      // "···" separator
       ctx.fillStyle = "#d1d5db";
       ctx.font      = "400 28px -apple-system, Arial, sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("···", MID, y + 12);
       y += 42;
 
-      // Highlighted row background
       ctx.fillStyle = "rgba(153,147,192,0.12)";
       rrect(ctx, CX + PAD, y - 36, CW - PAD * 2, 62, 14);
       ctx.fill();
@@ -202,19 +210,19 @@ function calcCardHeight(params: ShareImageParams, hasFlor: boolean): number {
 
   if (hasFlor) h += FLOR_SIZE + 22; // flor + gap
   h += 28 + 52;  // "SUKHA TRIVIA" baseline + gap
-  h += 178;       // category + gap to score
+  h += 44 + 24;  // achievement title baseline + gap
+  h += 140;       // subtitle + gap to score
   h += 64;        // score + gap
-  h += 80;        // "de N pts" + gap
   h += 20 + 96;   // bar + gap
   h += 140;       // stats block
 
   if (params.top3 && params.top3.length > 0) {
-    h += 54;                      // divider
-    h += 68;                      // "RANKING" + gap
-    h += params.top3.length * 68; // top3 rows
+    h += 54;
+    h += 68;
+    h += params.top3.length * 68;
     const userInTop3 = params.userName && params.top3.some(e => e.name === params.userName);
     if (params.userRankEntry && params.userName && !userInTop3) {
-      h += 42 + 62 + 40;          // "···" + highlighted row + gap
+      h += 42 + 62 + 40;
     }
   }
 

@@ -152,7 +152,6 @@ export default function ResultsPage() {
         score: result.totalScore,
         correctCount: result.correctCount,
         totalBonus: result.totalBonus,
-        categoryLabel: CATEGORY_LABELS[result.category] ?? result.category,
         top3,
         userRankEntry,
         userName: registeredUser?.name,
