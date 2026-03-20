@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Trophy, Star, Sprout } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { GameResult } from "@/lib/types";
+import { GameResult, LeaderboardEntry } from "@/lib/types";
 import {
   addLocalScore,
   getLocalScore,
@@ -53,6 +53,8 @@ export default function ResultsPage() {
   const [registeredUser, setRegisteredUser] = useState<{ email: string; name: string } | null>(null);
   const [showUnlockModal, setShowUnlockModal] = useState(false);
   const [showRegisterCTA, setShowRegisterCTA] = useState(false);
+  const [top3, setTop3] = useState<LeaderboardEntry[] | null>(null);
+  const [userRankEntry, setUserRankEntry] = useState<LeaderboardEntry | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("gameResult");
@@ -84,6 +86,26 @@ export default function ResultsPage() {
         setShowRegisterCTA(true);
       }
     }
+
+    // Fetch leaderboard for ranking snapshot (graceful degradation)
+    const lbUrl = user
+      ? `/api/leaderboard?email=${encodeURIComponent(user.email)}`
+      : "/api/leaderboard";
+    fetch(lbUrl)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!data.entries) return;
+        setTop3((data.entries as LeaderboardEntry[]).slice(0, 3));
+        if (data.userEntry) {
+          setUserRankEntry(data.userEntry);
+        } else if (user) {
+          const found = (data.entries as LeaderboardEntry[]).find(
+            (e: LeaderboardEntry) => e.name === user.name
+          );
+          setUserRankEntry(found ?? null);
+        }
+      })
+      .catch(() => {/* silent fail — card shows without ranking */});
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -189,6 +211,57 @@ export default function ResultsPage() {
                 <p className="mt-0.5 font-rubik text-xs text-sukha-mid">Aciertos</p>
               </div>
             </div>
+
+            {/* Compact ranking snapshot */}
+            {top3 && top3.length > 0 && (
+              <div style={{ marginTop: 20, paddingTop: 16, borderTop: "1px solid #f3f4f6" }}>
+                <p className="mb-2 font-rubik text-xs font-medium uppercase tracking-widest text-sukha-mid/60">
+                  Ranking
+                </p>
+                <div className="flex flex-col gap-1">
+                  {top3.map((entry, i) => {
+                    const MEDALS = ["🥇", "🥈", "🥉"];
+                    return (
+                      <div key={entry.rank} className="flex items-center gap-2">
+                        <span style={{ fontSize: 14, width: 20, textAlign: "center", flexShrink: 0 }}>
+                          {MEDALS[i]}
+                        </span>
+                        <span className="flex-1 truncate font-rubik text-xs text-sukha-dark">
+                          {entry.name}
+                        </span>
+                        <span className="font-rubik text-xs tabular-nums text-sukha-mid">
+                          {entry.totalScore.toLocaleString()}
+                          <span className="ml-0.5 text-[10px] text-gray-300">pts</span>
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+                {userRankEntry && !top3.some((e) => e.name === registeredUser?.name) && (
+                  <div
+                    className="mt-2 flex items-center gap-2 rounded-lg px-2 py-1"
+                    style={{ background: "rgba(153,147,192,0.08)" }}
+                  >
+                    <span className="font-rubik text-xs font-medium" style={{ color: "#9993C0" }}>
+                      Vos: #{userRankEntry.rank}
+                    </span>
+                    <span className="font-rubik text-xs tabular-nums" style={{ color: "#9993C0" }}>
+                      · {userRankEntry.totalScore.toLocaleString()} pts
+                    </span>
+                  </div>
+                )}
+                {registeredUser && top3.some((e) => e.name === registeredUser.name) && (
+                  <div
+                    className="mt-2 flex items-center gap-2 rounded-lg px-2 py-1"
+                    style={{ background: "rgba(153,147,192,0.08)" }}
+                  >
+                    <span className="font-rubik text-xs font-medium" style={{ color: "#9993C0" }}>
+                      ¡Estás en el top 3! 🎉
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           {/* Accumulated progress card */}
