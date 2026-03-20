@@ -12,7 +12,6 @@ interface UnlockModalProps {
 export default function UnlockModal({ localScore, onSuccess, onDismiss }: UnlockModalProps) {
   const [name, setName]       = useState("");
   const [email, setEmail]     = useState("");
-  const [optIn, setOptIn]     = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState<string | null>(null);
 
@@ -63,13 +62,12 @@ export default function UnlockModal({ localScore, onSuccess, onDismiss }: Unlock
           padding: "24px 24px 20px",
           textAlign: "center",
         }}>
-          <p style={{ fontSize: 32, margin: "0 0 6px" }}>🧘</p>
+          <p style={{ fontSize: 32, margin: "0 0 6px" }}>🏆</p>
           <h2 style={{ fontSize: 22, fontWeight: 600, color: "white", margin: "0 0 6px", fontFamily: "var(--font-bree)" }}>
-            ¡Namaste, yogui!
+            ¿Querés guardar tu puntaje?
           </h2>
           <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", margin: 0, fontFamily: "var(--font-rubik)", lineHeight: 1.4 }}>
-            Desbloqueaste el nivel Intermedio con {localScore.toLocaleString()} pts.
-            Registrate para guardar tu progreso.
+            Registrate en 2 segundos y entrá al ranking global. Los jugadores registrados desbloquean cupones de descuento y premios exclusivos de Sukha.
           </p>
         </div>
 
@@ -106,18 +104,6 @@ export default function UnlockModal({ localScore, onSuccess, onDismiss }: Unlock
                 }}
               />
             </div>
-            <label style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 20, cursor: "pointer" }}>
-              <input
-                type="checkbox"
-                checked={optIn}
-                onChange={(e) => setOptIn(e.target.checked)}
-                style={{ marginTop: 2, accentColor: "#9993C0", flexShrink: 0 }}
-              />
-              <span style={{ fontSize: 12, color: "#9ca3af", fontFamily: "var(--font-rubik)", lineHeight: 1.5 }}>
-                Quiero recibir novedades de Sukha (clases, lanzamientos, descuentos).
-              </span>
-            </label>
-
             {error && (
               <p style={{ fontSize: 12, color: "#D4726A", marginBottom: 12, fontFamily: "var(--font-rubik)" }}>
                 {error}
@@ -136,7 +122,7 @@ export default function UnlockModal({ localScore, onSuccess, onDismiss }: Unlock
                 marginBottom: 10,
               }}
             >
-              {loading ? "Guardando…" : "Guardar mi progreso"}
+              {loading ? "Guardando…" : "Registrarme"}
             </button>
             <button
               type="button"
@@ -148,7 +134,7 @@ export default function UnlockModal({ localScore, onSuccess, onDismiss }: Unlock
                 fontSize: 13, fontFamily: "var(--font-rubik)", cursor: "pointer",
               }}
             >
-              Ahora no
+              Más adelante
             </button>
           </form>
         </div>

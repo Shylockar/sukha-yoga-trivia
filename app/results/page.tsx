@@ -11,8 +11,6 @@ import {
   getRegisteredUser,
   getLevel,
   getNextThreshold,
-  INTERMEDIATE_THRESHOLD,
-  ADVANCED_THRESHOLD,
 } from "@/lib/progress";
 import UnlockModal from "@/components/UnlockModal";
 
@@ -52,7 +50,6 @@ export default function ResultsPage() {
   const [accumulatedScore, setAccumulatedScore] = useState(0);
   const [registeredUser, setRegisteredUser] = useState<{ email: string; name: string } | null>(null);
   const [showUnlockModal, setShowUnlockModal] = useState(false);
-  const [showRegisterCTA, setShowRegisterCTA] = useState(false);
   const [top3, setTop3] = useState<LeaderboardEntry[] | null>(null);
   const [userRankEntry, setUserRankEntry] = useState<LeaderboardEntry | null>(null);
 
@@ -78,14 +75,12 @@ export default function ResultsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: user.email, score: parsed.totalScore }),
       }).catch(() => {/* silent fail */});
-    } else {
-      // Show unlock modal if threshold reached, otherwise show CTA
-      if (newTotal >= INTERMEDIATE_THRESHOLD) {
-        setShowUnlockModal(true);
-      } else {
-        setShowRegisterCTA(true);
-      }
     }
+
+    // Show registration modal after 5s for unregistered users
+    const registrationTimer = !user
+      ? setTimeout(() => setShowUnlockModal(true), 5000)
+      : null;
 
     // Fetch leaderboard for ranking snapshot (graceful degradation)
     const lbUrl = user
@@ -106,6 +101,8 @@ export default function ResultsPage() {
         }
       })
       .catch(() => {/* silent fail — card shows without ranking */});
+
+    return () => { if (registrationTimer) clearTimeout(registrationTimer); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -131,7 +128,6 @@ export default function ResultsPage() {
   function handleUnlockSuccess(name: string, email: string) {
     setRegisteredUser({ name, email });
     setShowUnlockModal(false);
-    setShowRegisterCTA(false);
   }
 
   return (
@@ -393,20 +389,6 @@ export default function ResultsPage() {
             >
               Elegir otra categoría
             </Link>
-            {!registeredUser && (
-              <div className="flex items-center justify-between rounded-2xl border border-gray-100 px-4 py-3">
-                <p className="font-rubik text-xs text-sukha-mid">
-                  Guardá tu progreso y entrá al ranking
-                </p>
-                <button
-                  onClick={() => setShowUnlockModal(true)}
-                  className="ml-3 shrink-0 rounded-xl px-3 py-1.5 font-rubik text-xs font-medium text-white"
-                  style={{ background: "linear-gradient(135deg, #9993C0, #7b74a8)" }}
-                >
-                  Registrarme
-                </button>
-              </div>
-            )}
             {registeredUser && (
               <Link
                 href="/leaderboard"
