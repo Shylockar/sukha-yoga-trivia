@@ -77,17 +77,22 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
   ctx.fillText("SUKHA TRIVIA", MID, y + 28);
   y += 28 + 52;
 
-  // Achievement title (most prominent text after the score)
+  // Achievement title
   ctx.fillStyle = "#434344";
   ctx.font      = "700 52px -apple-system, Arial, sans-serif";
   ctx.fillText(achievement.title, MID, y + 44);
-  y += 44 + 24;
+  y += 44; // y is now at title baseline
 
-  // Achievement subtitle
+  // Achievement subtitle — 12px gap below title
+  // title descender ~10px + 12px margin + subtitle cap ~18px = 40px to subtitle baseline
   ctx.fillStyle = "#b0b8c4";
   ctx.font      = "400 24px -apple-system, Arial, sans-serif";
-  ctx.fillText(achievement.subtitle, MID, y);
-  y += 168; // gap to score: 170px cap ~128px above baseline → 168 gives ~40px visual separation
+  ctx.fillText(achievement.subtitle, MID, y + 40);
+  y += 40; // y is now at subtitle baseline
+
+  // Score — 32px gap below subtitle
+  // subtitle descender ~6px + 32px margin + score cap ~128px = 166px to score baseline
+  y += 166;
 
   // Score number
   ctx.fillStyle = "#434344";
@@ -210,8 +215,8 @@ function calcCardHeight(params: ShareImageParams, hasFlor: boolean): number {
 
   if (hasFlor) h += FLOR_SIZE + 22; // flor + gap
   h += 28 + 52;  // "SUKHA TRIVIA" baseline + gap
-  h += 44 + 24;  // achievement title baseline + gap
-  h += 168;       // subtitle + gap to score
+  h += 44;        // achievement title baseline
+  h += 40 + 166;  // subtitle baseline + gap to score
   h += 64;        // score + gap
   h += 20 + 96;   // bar + gap
   h += 140;       // stats block
