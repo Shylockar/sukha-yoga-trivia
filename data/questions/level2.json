@@ -4,7 +4,13 @@
     "level": 2,
     "level_name": "Intermedio",
     "total_questions": 75,
-    "categories": ["historia", "filosofia", "posturas", "anatomia", "curiosidades"],
+    "categories": [
+      "historia",
+      "filosofia",
+      "posturas",
+      "anatomia",
+      "curiosidades"
+    ],
     "questions_per_category": 15,
     "notes": "Nivel intermedio para Sukha Yoga Trivia (Argentina). Requiere conocimiento básico de yoga. Lenguaje en español rioplatense."
   },
@@ -14,7 +20,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿En qué siglo aproximadamente vivió Patanjali, el compilador de los Yoga Sutras?",
-      "options": ["Siglo VII a.C.", "Siglo II a.C.", "Siglo III d.C.", "Siglo X d.C."],
+      "options": [
+        "Siglo VII a.C.",
+        "Siglo II a.C.",
+        "Siglo III d.C.",
+        "Siglo X d.C."
+      ],
       "correct": 1,
       "hint": "Aproximadamente 200 años antes de Cristo."
     },
@@ -23,7 +34,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Cómo se llama el texto clásico del Hatha Yoga escrito en el siglo XV?",
-      "options": ["Yoga Rahasya", "Gheranda Samhita", "Hatha Yoga Pradipika", "Yoga Vasistha"],
+      "options": [
+        "Yoga Rahasya",
+        "Gheranda Samhita",
+        "Hatha Yoga Pradipika",
+        "Yoga Vasistha"
+      ],
       "correct": 2,
       "hint": "Pradipika significa 'luz' o 'linterna'."
     },
@@ -32,7 +48,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Quién fue el responsable principal de difundir el yoga en Occidente a finales del siglo XIX?",
-      "options": ["BKS Iyengar", "Swami Vivekananda", "T. Krishnamacharya", "Pattabhi Jois"],
+      "options": [
+        "BKS Iyengar",
+        "Swami Vivekananda",
+        "T. Krishnamacharya",
+        "Pattabhi Jois"
+      ],
       "correct": 1,
       "hint": "Habló en el Parlamento Mundial de Religiones en 1893."
     },
@@ -41,7 +62,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Quién es considerado el 'padre del yoga moderno' y maestro de tanto Iyengar como Pattabhi Jois?",
-      "options": ["Swami Sivananda", "Yogi Bhajan", "T. Krishnamacharya", "Swami Vivekananda"],
+      "options": [
+        "Swami Sivananda",
+        "Yogi Bhajan",
+        "T. Krishnamacharya",
+        "Swami Vivekananda"
+      ],
       "correct": 2,
       "hint": "Enseñó en el Palacio de Mysore."
     },
@@ -50,7 +76,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Qué estilo de yoga fundó BKS Iyengar, conocido por el uso de props como bloques y sogas?",
-      "options": ["Ashtanga Vinyasa", "Kundalini", "Iyengar Yoga", "Viniyoga"],
+      "options": [
+        "Ashtanga Vinyasa",
+        "Kundalini",
+        "Iyengar Yoga",
+        "Viniyoga"
+      ],
       "correct": 2,
       "hint": "Lleva el apellido de su creador."
     },
@@ -59,7 +90,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Qué estilo de yoga sistematizó Sri K. Pattabhi Jois con una secuencia fija de posturas?",
-      "options": ["Hatha Yoga", "Ashtanga Vinyasa Yoga", "Bikram Yoga", "Restorative Yoga"],
+      "options": [
+        "Hatha Yoga",
+        "Ashtanga Vinyasa Yoga",
+        "Bikram Yoga",
+        "Restorative Yoga"
+      ],
       "correct": 1,
       "hint": "Se practica en 'Mysore style'."
     },
@@ -68,7 +104,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Cuáles son los cuatro caminos principales del yoga según la tradición clásica?",
-      "options": ["Hatha, Raja, Kundalini y Tantra", "Karma, Bhakti, Jnana y Raja", "Mantra, Yantra, Tantra y Hatha", "Vinyasa, Yin, Restaurativo y Aéreo"],
+      "options": [
+        "Hatha, Raja, Kundalini y Tantra",
+        "Karma, Bhakti, Jnana y Raja",
+        "Mantra, Yantra, Tantra y Hatha",
+        "Vinyasa, Yin, Restaurativo y Aéreo"
+      ],
       "correct": 1,
       "hint": "Acción, devoción, conocimiento y control mental."
     },
@@ -77,7 +118,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿En cuántos padas (capítulos) están divididos los Yoga Sutras de Patanjali?",
-      "options": ["Tres", "Cuatro", "Cinco", "Siete"],
+      "options": [
+        "Tres",
+        "Cuatro",
+        "Cinco",
+        "Siete"
+      ],
       "correct": 1,
       "hint": "Samadhi, Sadhana, Vibhuti y Kaivalya."
     },
@@ -86,7 +132,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Cuál es la diferencia principal entre el yoga clásico y el yoga moderno postural?",
-      "options": ["El yoga clásico incluía más posturas acrobáticas", "El yoga moderno enfatiza las asanas físicas más que la meditación y filosofía", "El yoga clásico solo se practicaba en la India del norte", "El yoga moderno es más espiritual que el clásico"],
+      "options": [
+        "El yoga clásico incluía más posturas acrobáticas",
+        "El yoga moderno enfatiza las asanas físicas más que la meditación y filosofía",
+        "El yoga clásico solo se practicaba en la India del norte",
+        "El yoga moderno es más espiritual que el clásico"
+      ],
       "correct": 1,
       "hint": "El énfasis en el cuerpo físico es relativamente reciente."
     },
@@ -95,7 +146,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Qué tradición hinduista fue fuente del yoga tántrico, que integra rituales, mantras y el cuerpo sutil?",
-      "options": ["Vaishnavismo", "Shaivismo y el Tantrismo", "Jainismo", "Budismo Theravada"],
+      "options": [
+        "Vaishnavismo",
+        "Shaivismo y el Tantrismo",
+        "Jainismo",
+        "Budismo Theravada"
+      ],
       "correct": 1,
       "hint": "Relacionado con Shiva y la energía Shakti."
     },
@@ -104,7 +160,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Cuáles son los 5 principios del yoga según Swami Sivananda?",
-      "options": ["Asana, Pranayama, Meditación, Mantra y Kirtan", "Ejercicio, respiración, relajación, dieta y pensamiento positivo/meditación", "Yama, Niyama, Asana, Pranayama y Pratyahara", "Ahimsa, Satya, Tapas, Svadhyaya e Ishvara Pranidhana"],
+      "options": [
+        "Asana, Pranayama, Meditación, Mantra y Kirtan",
+        "Ejercicio, respiración, relajación, dieta y pensamiento positivo/meditación",
+        "Yama, Niyama, Asana, Pranayama y Pratyahara",
+        "Ahimsa, Satya, Tapas, Svadhyaya e Ishvara Pranidhana"
+      ],
       "correct": 1,
       "hint": "Un sistema integral que incluye la alimentación y la actitud mental."
     },
@@ -113,7 +174,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Quién introdujo el Kundalini Yoga en Occidente, específicamente en Estados Unidos, en 1969?",
-      "options": ["Swami Rama", "Yogi Bhajan", "Swami Satchidananda", "Maharishi Mahesh Yogi"],
+      "options": [
+        "Swami Rama",
+        "Yogi Bhajan",
+        "Swami Satchidananda",
+        "Maharishi Mahesh Yogi"
+      ],
       "correct": 1,
       "hint": "Llegó a Los Ángeles desde Punjab."
     },
@@ -122,7 +188,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Por qué el yoga no es deporte olímpico, a pesar de que hubo intentos de incluirlo?",
-      "options": ["Porque el Comité Olímpico lo prohibió por razones religiosas", "Porque no hay consenso sobre cómo puntuarlo objetivamente y existe oposición de practicantes que lo consideran espiritual", "Porque no hay suficientes países que lo practiquen", "Porque ya es parte de los Juegos Asiáticos y eso lo excluye"],
+      "options": [
+        "Porque el Comité Olímpico lo prohibió por razones religiosas",
+        "Porque no hay consenso sobre cómo puntuarlo objetivamente y existe oposición de practicantes que lo consideran espiritual",
+        "Porque no hay suficientes países que lo practiquen",
+        "Porque ya es parte de los Juegos Asiáticos y eso lo excluye"
+      ],
       "correct": 1,
       "hint": "El debate mezcla deporte, espiritualidad y subjetividad."
     },
@@ -131,7 +202,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿En qué década comenzaron a aparecer los primeros estudios de yoga en Argentina?",
-      "options": ["1940s", "1960s", "1980s", "2000s"],
+      "options": [
+        "1940s",
+        "1960s",
+        "1980s",
+        "2000s"
+      ],
       "correct": 1,
       "hint": "La oleada de interés espiritual y contracultura influyó en esa época."
     },
@@ -140,7 +216,12 @@
       "category": "historia",
       "level": 2,
       "question": "¿Cuál de estos maestros desarrolló el sistema 'Vinyasa Krama', que adapta la práctica al individuo?",
-      "options": ["BKS Iyengar", "Pattabhi Jois", "T. Krishnamacharya", "Yogi Bhajan"],
+      "options": [
+        "BKS Iyengar",
+        "Pattabhi Jois",
+        "T. Krishnamacharya",
+        "Yogi Bhajan"
+      ],
       "correct": 2,
       "hint": "El mismo maestro que enseñó a Iyengar y Jois."
     },
@@ -149,7 +230,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Cuántas ramas tiene el Ashtanga (los 8 miembros del yoga) de Patanjali?",
-      "options": ["Cinco", "Seis", "Siete", "Ocho"],
+      "options": [
+        "Cinco",
+        "Seis",
+        "Siete",
+        "Ocho"
+      ],
       "correct": 3,
       "hint": "Ashta = ocho en sánscrito."
     },
@@ -158,7 +244,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Cuántos Yamas (restricciones éticas) hay en el sistema de Patanjali?",
-      "options": ["Tres", "Cuatro", "Cinco", "Siete"],
+      "options": [
+        "Tres",
+        "Cuatro",
+        "Cinco",
+        "Siete"
+      ],
       "correct": 2,
       "hint": "Ahimsa, Satya, Asteya, Brahmacharya y Aparigraha."
     },
@@ -167,7 +258,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Cuál es la diferencia entre Dharana, Dhyana y Samadhi?",
-      "options": ["Son tres tipos de pranayama", "Son tres posturas sentadas distintas", "Son tres etapas progresivas de concentración: enfoque, flujo meditativo y absorción total", "Son los tres primeros miembros del Ashtanga"],
+      "options": [
+        "Son tres tipos de pranayama",
+        "Son tres posturas sentadas distintas",
+        "Son tres etapas progresivas de concentración: enfoque, flujo meditativo y absorción total",
+        "Son los tres primeros miembros del Ashtanga"
+      ],
       "correct": 2,
       "hint": "Juntos forman el Samyama, los tres últimos miembros."
     },
@@ -176,7 +272,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué significa Pratyahara en el sistema de los 8 miembros del yoga?",
-      "options": ["El control de la respiración", "El retiro de los sentidos hacia adentro", "La postura correcta", "La concentración en un objeto"],
+      "options": [
+        "El control de la respiración",
+        "El retiro de los sentidos hacia adentro",
+        "La postura correcta",
+        "La concentración en un objeto"
+      ],
       "correct": 1,
       "hint": "El quinto miembro, puente entre lo externo y lo interno."
     },
@@ -185,7 +286,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Cuántas capas o envolturas del ser (Koshas) reconoce la filosofía yoga?",
-      "options": ["Tres", "Cuatro", "Cinco", "Siete"],
+      "options": [
+        "Tres",
+        "Cuatro",
+        "Cinco",
+        "Siete"
+      ],
       "correct": 2,
       "hint": "Desde el cuerpo físico hasta la bienaventuranza."
     },
@@ -194,7 +300,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Cuáles son las tres Gunas o cualidades de la naturaleza según la filosofía Samkhya-Yoga?",
-      "options": ["Prana, Apana y Samana", "Sattva, Rajas y Tamas", "Dharma, Artha y Kama", "Jnana, Bhakti y Karma"],
+      "options": [
+        "Prana, Apana y Samana",
+        "Sattva, Rajas y Tamas",
+        "Dharma, Artha y Kama",
+        "Jnana, Bhakti y Karma"
+      ],
       "correct": 1,
       "hint": "Claridad, actividad e inercia."
     },
@@ -203,7 +314,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué significa Ishvara Pranidhana, el último de los Niyamas?",
-      "options": ["La pureza del cuerpo y la mente", "La entrega o dedicación a un principio superior o Dios", "El estudio de los textos sagrados", "La austeridad en la práctica"],
+      "options": [
+        "La pureza del cuerpo y la mente",
+        "La entrega o dedicación a un principio superior o Dios",
+        "El estudio de los textos sagrados",
+        "La austeridad en la práctica"
+      ],
       "correct": 1,
       "hint": "Rendirse o dedicar la práctica a algo más grande que uno."
     },
@@ -212,7 +328,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Cuál es el concepto filosófico central de Ahimsa en el yoga?",
-      "options": ["La verdad absoluta", "La no violencia hacia todo ser vivo, en pensamiento, palabra y acción", "El desapego de los resultados", "La moderación en los placeres"],
+      "options": [
+        "La verdad absoluta",
+        "La no violencia hacia todo ser vivo, en pensamiento, palabra y acción",
+        "El desapego de los resultados",
+        "La moderación en los placeres"
+      ],
       "correct": 1,
       "hint": "Primer Yama; Gandhi lo adoptó como principio político."
     },
@@ -221,7 +342,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué significa Satya como práctica yóguica?",
-      "options": ["Pureza interna", "Veracidad y honestidad en pensamiento, palabra y acción", "Contentamiento", "Ausencia de codicia"],
+      "options": [
+        "Pureza interna",
+        "Veracidad y honestidad en pensamiento, palabra y acción",
+        "Contentamiento",
+        "Ausencia de codicia"
+      ],
       "correct": 1,
       "hint": "Segundo Yama; no mentir ni engañar."
     },
@@ -230,7 +356,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué es Aparigraha y cómo se aplica en la vida cotidiana?",
-      "options": ["La práctica de ayuno", "La no codicia o no acumulación; soltar el apego a posesiones y resultados", "La celibato o moderación sexual", "La pureza del entorno"],
+      "options": [
+        "La práctica de ayuno",
+        "La no codicia o no acumulación; soltar el apego a posesiones y resultados",
+        "La celibato o moderación sexual",
+        "La pureza del entorno"
+      ],
       "correct": 1,
       "hint": "Quinto Yama; vivir con lo necesario."
     },
@@ -239,7 +370,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué representa Brahmacharya en la filosofía yoga?",
-      "options": ["La devoción total a Brahma", "La moderación o continencia, especialmente de la energía sexual y vital", "El estudio de los Vedas", "La práctica de meditación avanzada"],
+      "options": [
+        "La devoción total a Brahma",
+        "La moderación o continencia, especialmente de la energía sexual y vital",
+        "El estudio de los Vedas",
+        "La práctica de meditación avanzada"
+      ],
       "correct": 1,
       "hint": "Cuarto Yama; no implica necesariamente celibato total."
     },
@@ -248,7 +384,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué es Tapas como Niyama en el yoga?",
-      "options": ["La relajación profunda", "La austeridad, disciplina y el calor generado por el esfuerzo sostenido en la práctica", "El canto de mantras", "La visualización meditativa"],
+      "options": [
+        "La relajación profunda",
+        "La austeridad, disciplina y el calor generado por el esfuerzo sostenido en la práctica",
+        "El canto de mantras",
+        "La visualización meditativa"
+      ],
       "correct": 1,
       "hint": "Fuego disciplinario que purifica y transforma."
     },
@@ -257,7 +398,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué significa Svadhyaya en el contexto de los Niyamas?",
-      "options": ["La limpieza del cuerpo", "El autoestudio y la lectura de textos sagrados o de autoconocimiento", "El contentamiento con lo que se tiene", "La entrega a Dios"],
+      "options": [
+        "La limpieza del cuerpo",
+        "El autoestudio y la lectura de textos sagrados o de autoconocimiento",
+        "El contentamiento con lo que se tiene",
+        "La entrega a Dios"
+      ],
       "correct": 1,
       "hint": "Cuarto Niyama; conocerse a uno mismo."
     },
@@ -266,7 +412,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "En la filosofía Samkhya que subyace al yoga, ¿qué son Prakriti y Purusha?",
-      "options": ["Dos dioses del panteón hindú", "La materia/naturaleza y la conciencia pura respectivamente; los dos principios fundamentales de la existencia", "Dos tipos de meditación", "El maestro y el discípulo"],
+      "options": [
+        "Dos dioses del panteón hindú",
+        "La materia/naturaleza y la conciencia pura respectivamente; los dos principios fundamentales de la existencia",
+        "Dos tipos de meditación",
+        "El maestro y el discípulo"
+      ],
       "correct": 1,
       "hint": "La dualidad fundamental: lo manifiesto y lo que observa."
     },
@@ -275,7 +426,12 @@
       "category": "filosofia",
       "level": 2,
       "question": "¿Qué son los Kleshas según Patanjali?",
-      "options": ["Las posturas más difíciles del yoga", "Las aflicciones o causas del sufrimiento que nublan la mente", "Los canales de energía del cuerpo sutil", "Los dioses protectores de la práctica"],
+      "options": [
+        "Las posturas más difíciles del yoga",
+        "Las aflicciones o causas del sufrimiento que nublan la mente",
+        "Los canales de energía del cuerpo sutil",
+        "Los dioses protectores de la práctica"
+      ],
       "correct": 1,
       "hint": "Avidya es el Klesha raíz de todos los demás."
     },
@@ -284,7 +440,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se llama en sánscrito la postura del Triángulo?",
-      "options": ["Trikonasana", "Parsvakonasana", "Virabhadrasana", "Utthita Hasta Padangusthasana"],
+      "options": [
+        "Trikonasana",
+        "Parsvakonasana",
+        "Virabhadrasana",
+        "Utthita Hasta Padangusthasana"
+      ],
       "correct": 0,
       "hint": "Trikona = triángulo."
     },
@@ -293,7 +454,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cuántas variaciones del Guerrero (Virabhadrasana) existen en el yoga clásico?",
-      "options": ["Dos", "Tres", "Cuatro", "Cinco"],
+      "options": [
+        "Dos",
+        "Tres",
+        "Cuatro",
+        "Cinco"
+      ],
       "correct": 1,
       "hint": "I, II y III; cada una trabaja aspectos distintos."
     },
@@ -302,7 +468,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se llama en sánscrito la postura del Puente?",
-      "options": ["Ustrasana", "Setu Bandhasana", "Dhanurasana", "Urdhva Mukha Svanasana"],
+      "options": [
+        "Ustrasana",
+        "Setu Bandhasana",
+        "Dhanurasana",
+        "Urdhva Mukha Svanasana"
+      ],
       "correct": 1,
       "hint": "Setu = puente, Bandha = cierre o llave."
     },
@@ -311,7 +482,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se llama en sánscrito la postura de la Pinza de pie (doblar el torso hacia las piernas de pie)?",
-      "options": ["Paschimottanasana", "Uttanasana", "Prasarita Padottanasana", "Janu Sirsasana"],
+      "options": [
+        "Paschimottanasana",
+        "Uttanasana",
+        "Prasarita Padottanasana",
+        "Janu Sirsasana"
+      ],
       "correct": 1,
       "hint": "Ut = intensa, tana = extensión."
     },
@@ -320,7 +496,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cuál es el nombre en sánscrito del Perro Boca Abajo?",
-      "options": ["Urdhva Mukha Svanasana", "Adho Mukha Svanasana", "Balasana", "Marjaryasana"],
+      "options": [
+        "Urdhva Mukha Svanasana",
+        "Adho Mukha Svanasana",
+        "Balasana",
+        "Marjaryasana"
+      ],
       "correct": 1,
       "hint": "Adho = hacia abajo, Mukha = cara, Svana = perro."
     },
@@ -329,7 +510,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se llama en sánscrito la Vela o Postura sobre los Hombros?",
-      "options": ["Sirsasana", "Halasana", "Salamba Sarvangasana", "Viparita Karani"],
+      "options": [
+        "Sirsasana",
+        "Halasana",
+        "Salamba Sarvangasana",
+        "Viparita Karani"
+      ],
       "correct": 2,
       "hint": "Salamba = con soporte, Sarva = todo, Anga = miembro."
     },
@@ -338,7 +524,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se llama en sánscrito la Postura sobre la Cabeza (Headstand)?",
-      "options": ["Pincha Mayurasana", "Sirsasana", "Adho Mukha Vrksasana", "Bakasana"],
+      "options": [
+        "Pincha Mayurasana",
+        "Sirsasana",
+        "Adho Mukha Vrksasana",
+        "Bakasana"
+      ],
       "correct": 1,
       "hint": "Sirsa = cabeza."
     },
@@ -347,7 +538,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se agrupan las posturas en 'familias' en el yoga?",
-      "options": ["Por dificultad: fácil, media y difícil", "Por tipo: flexiones hacia adelante, extensiones de espalda, torsiones, inversiones y equilibrios", "Por sistema corporal: digestivo, circulatorio y nervioso", "Por tradición: hatha, ashtanga, iyengar y kundalini"],
+      "options": [
+        "Por dificultad: fácil, media y difícil",
+        "Por tipo: flexiones hacia adelante, extensiones de espalda, torsiones, inversiones y equilibrios",
+        "Por sistema corporal: digestivo, circulatorio y nervioso",
+        "Por tradición: hatha, ashtanga, iyengar y kundalini"
+      ],
       "correct": 1,
       "hint": "Cada familia tiene efectos fisiológicos distintos."
     },
@@ -356,7 +552,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Qué es una contra-postura (counter-pose) en yoga?",
-      "options": ["Una postura que se hace en la dirección opuesta para equilibrar los efectos de la anterior", "La postura final de la clase", "Una variación más fácil de una postura avanzada", "La misma postura repetida en el lado contrario"],
+      "options": [
+        "Una postura que se hace en la dirección opuesta para equilibrar los efectos de la anterior",
+        "La postura final de la clase",
+        "Una variación más fácil de una postura avanzada",
+        "La misma postura repetida en el lado contrario"
+      ],
       "correct": 0,
       "hint": "Después de una extensión de espalda, se hace una flexión."
     },
@@ -365,7 +566,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cuántas posturas tiene el Saludo al Sol (Surya Namaskar) versión A del Ashtanga?",
-      "options": ["8 posturas", "10 posturas", "12 posturas", "14 posturas"],
+      "options": [
+        "8 posturas",
+        "10 posturas",
+        "12 posturas",
+        "14 posturas"
+      ],
       "correct": 1,
       "hint": "Se repite 5 veces al inicio de la práctica."
     },
@@ -374,7 +580,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cuál es la diferencia principal entre el Surya Namaskar A y el B en el Ashtanga?",
-      "options": ["El B se hace más rápido", "El B incluye las posturas del Guerrero I (Virabhadrasana I) y tiene más pasos", "El A es para principiantes y el B para avanzados", "El B se realiza solo en la mañana"],
+      "options": [
+        "El B se hace más rápido",
+        "El B incluye las posturas del Guerrero I (Virabhadrasana I) y tiene más pasos",
+        "El A es para principiantes y el B para avanzados",
+        "El B se realiza solo en la mañana"
+      ],
       "correct": 1,
       "hint": "El B tiene 17 pasos vs 10 del A."
     },
@@ -383,7 +594,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Qué es Chaturanga Dandasana y por qué es importante en el yoga?",
-      "options": ["Una postura de meditación sentada", "Una plancha baja que fortalece brazos, core y prepara para inversiones; es parte del vinyasa", "Una torsión sentada de nivel avanzado", "La postura del niño extendida"],
+      "options": [
+        "Una postura de meditación sentada",
+        "Una plancha baja que fortalece brazos, core y prepara para inversiones; es parte del vinyasa",
+        "Una torsión sentada de nivel avanzado",
+        "La postura del niño extendida"
+      ],
       "correct": 1,
       "hint": "Chaturanga = cuatro miembros, Danda = bastón."
     },
@@ -392,7 +608,12 @@
       "category": "posturas",
       "level": 2,
       "question": "En la postura de Trikonasana, ¿hacia dónde debe mirar la mano que está elevada?",
-      "options": ["Hacia el suelo", "Hacia el costado", "Hacia arriba, al techo", "Hacia la mano del suelo"],
+      "options": [
+        "Hacia el suelo",
+        "Hacia el costado",
+        "Hacia arriba, al techo",
+        "Hacia la mano del suelo"
+      ],
       "correct": 2,
       "hint": "La mirada sigue la mano superior (drishti)."
     },
@@ -401,7 +622,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cómo se llama en sánscrito la Postura del Cadáver o Relajación Final?",
-      "options": ["Balasana", "Savasana", "Yoga Nidra", "Sukhasana"],
+      "options": [
+        "Balasana",
+        "Savasana",
+        "Yoga Nidra",
+        "Sukhasana"
+      ],
       "correct": 1,
       "hint": "Sava = cadáver."
     },
@@ -410,7 +636,12 @@
       "category": "posturas",
       "level": 2,
       "question": "¿Cuánto tiempo se recomienda mantener Savasana al final de una práctica de yoga?",
-      "options": ["1-2 minutos", "3-5 minutos", "5-10 minutos o más", "Solo 30 segundos"],
+      "options": [
+        "1-2 minutos",
+        "3-5 minutos",
+        "5-10 minutos o más",
+        "Solo 30 segundos"
+      ],
       "correct": 2,
       "hint": "Se sugiere al menos 1 minuto por cada 10 de práctica activa."
     },
@@ -419,7 +650,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Cuántos Bandhas (cierres de energía) principales se practican en yoga?",
-      "options": ["Dos", "Tres", "Cuatro", "Cinco"],
+      "options": [
+        "Dos",
+        "Tres",
+        "Cuatro",
+        "Cinco"
+      ],
       "correct": 1,
       "hint": "Mula, Uddiyana y Jalandhara."
     },
@@ -428,7 +664,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Dónde se localiza el Mula Bandha?",
-      "options": ["En la garganta", "En el abdomen", "En el suelo pélvico, entre el ano y los genitales", "En el entrecejo"],
+      "options": [
+        "En la garganta",
+        "En el abdomen",
+        "En el suelo pélvico, entre el ano y los genitales",
+        "En el entrecejo"
+      ],
       "correct": 2,
       "hint": "Mula = raíz; se contrae hacia arriba."
     },
@@ -437,7 +678,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué hace el Uddiyana Bandha?",
-      "options": ["Cierra la garganta para retener el prana en el tórax", "Contrae el suelo pélvico hacia arriba", "Eleva el diafragma y retrae el abdomen hacia adentro y arriba, masajeando órganos internos", "Estira la columna cervical"],
+      "options": [
+        "Cierra la garganta para retener el prana en el tórax",
+        "Contrae el suelo pélvico hacia arriba",
+        "Eleva el diafragma y retrae el abdomen hacia adentro y arriba, masajeando órganos internos",
+        "Estira la columna cervical"
+      ],
       "correct": 2,
       "hint": "Uddiyana = volar hacia arriba; se practica en retención."
     },
@@ -446,7 +692,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Cuántos chakras principales reconoce el sistema yóguico clásico?",
-      "options": ["Cinco", "Seis", "Siete", "Doce"],
+      "options": [
+        "Cinco",
+        "Seis",
+        "Siete",
+        "Doce"
+      ],
       "correct": 2,
       "hint": "Desde la base de la columna hasta la coronilla."
     },
@@ -455,7 +706,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Cómo se llama el chakra del corazón y dónde se ubica?",
-      "options": ["Manipura, en el plexo solar", "Anahata, en el centro del pecho", "Vishuddha, en la garganta", "Svadhisthana, en el sacro"],
+      "options": [
+        "Manipura, en el plexo solar",
+        "Anahata, en el centro del pecho",
+        "Vishuddha, en la garganta",
+        "Svadhisthana, en el sacro"
+      ],
       "correct": 1,
       "hint": "Anahata = sonido no golpeado; asociado al amor."
     },
@@ -464,7 +720,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Cómo se llama el pranayama de la respiración alternada por las fosas nasales?",
-      "options": ["Kapalabhati", "Ujjayi", "Bhramari", "Nadi Shodhana"],
+      "options": [
+        "Kapalabhati",
+        "Ujjayi",
+        "Bhramari",
+        "Nadi Shodhana"
+      ],
       "correct": 3,
       "hint": "Nadi = canal, Shodhana = purificación."
     },
@@ -473,7 +734,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Cómo se caracteriza el pranayama Kapalabhati?",
-      "options": ["Respiración lenta y profunda por la garganta", "Exhalaciones rápidas y forzadas por la nariz que limpian los pulmones y la mente", "Inhalación lenta por una fosa y exhalación por la otra", "Zumbido al exhalar como una abeja"],
+      "options": [
+        "Respiración lenta y profunda por la garganta",
+        "Exhalaciones rápidas y forzadas por la nariz que limpian los pulmones y la mente",
+        "Inhalación lenta por una fosa y exhalación por la otra",
+        "Zumbido al exhalar como una abeja"
+      ],
       "correct": 1,
       "hint": "Kapala = cráneo; genera calor y limpieza."
     },
@@ -482,7 +748,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Cómo afecta el yoga al sistema nervioso autónomo?",
-      "options": ["Activa principalmente el sistema simpático (respuesta de lucha o huida)", "Estimula el sistema nervioso parasimpático (respuesta de descanso y digestión), reduciendo el estrés", "No tiene efecto comprobado en el sistema nervioso", "Solo afecta el sistema nervioso central, no el autónomo"],
+      "options": [
+        "Activa principalmente el sistema simpático (respuesta de lucha o huida)",
+        "Estimula el sistema nervioso parasimpático (respuesta de descanso y digestión), reduciendo el estrés",
+        "No tiene efecto comprobado en el sistema nervioso",
+        "Solo afecta el sistema nervioso central, no el autónomo"
+      ],
       "correct": 1,
       "hint": "El nervio vago es clave en este proceso."
     },
@@ -491,7 +762,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué músculo del core se activa más profundamente en la práctica de yoga y da estabilidad a la columna?",
-      "options": ["Recto abdominal (six-pack)", "Oblicuo externo", "Transverso abdominal", "Psoas mayor"],
+      "options": [
+        "Recto abdominal (six-pack)",
+        "Oblicuo externo",
+        "Transverso abdominal",
+        "Psoas mayor"
+      ],
       "correct": 2,
       "hint": "El músculo más profundo del abdomen; actúa como corsé natural."
     },
@@ -500,7 +776,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué músculo flexor de cadera, frecuentemente tenso por estar sentado muchas horas, se trabaja mucho en yoga?",
-      "options": ["Cuádriceps", "Isquiotibiales", "Psoas (músculo iliopsoas)", "Glúteo mayor"],
+      "options": [
+        "Cuádriceps",
+        "Isquiotibiales",
+        "Psoas (músculo iliopsoas)",
+        "Glúteo mayor"
+      ],
       "correct": 2,
       "hint": "Conecta la columna lumbar con el fémur."
     },
@@ -509,7 +790,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué nervio craneal, también llamado 'nervio vago', se estimula a través de la respiración profunda en yoga?",
-      "options": ["Nervio trigémino (V par)", "Nervio facial (VII par)", "Nervio vago (X par)", "Nervio hipogloso (XII par)"],
+      "options": [
+        "Nervio trigémino (V par)",
+        "Nervio facial (VII par)",
+        "Nervio vago (X par)",
+        "Nervio hipogloso (XII par)"
+      ],
       "correct": 2,
       "hint": "Regula el corazón, los pulmones y el sistema digestivo."
     },
@@ -518,7 +804,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué músculo de la cadera, cuando está tenso, puede causar compresión del nervio ciático?",
-      "options": ["Glúteo medio", "Tensor de la fascia lata", "Piriforme (músculo piramidal)", "Aductor largo"],
+      "options": [
+        "Glúteo medio",
+        "Tensor de la fascia lata",
+        "Piriforme (músculo piramidal)",
+        "Aductor largo"
+      ],
       "correct": 2,
       "hint": "El nervio ciático a veces pasa por debajo o a través de él."
     },
@@ -527,7 +818,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué es la banda iliotibial (IT band) y por qué se menciona frecuentemente en yoga?",
-      "options": ["Un nervio que recorre la pierna", "Una banda de tejido conectivo que corre por el lado externo del muslo; puede irritarse con posturas de cadera", "Un músculo del muslo interno", "Un ligamento de la rodilla"],
+      "options": [
+        "Un nervio que recorre la pierna",
+        "Una banda de tejido conectivo que corre por el lado externo del muslo; puede irritarse con posturas de cadera",
+        "Un músculo del muslo interno",
+        "Un ligamento de la rodilla"
+      ],
       "correct": 1,
       "hint": "Corre desde la cresta ilíaca hasta la tibia por afuera."
     },
@@ -536,7 +832,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Qué riesgo anatómico presenta Chaturanga Dandasana si no se ejecuta correctamente?",
-      "options": ["Puede comprimir la columna cervical", "Puede sobrecargar y lesionar el manguito rotador y las articulaciones del hombro", "Puede causar contracturas en los isquiotibiales", "Puede lesionar la articulación de la cadera"],
+      "options": [
+        "Puede comprimir la columna cervical",
+        "Puede sobrecargar y lesionar el manguito rotador y las articulaciones del hombro",
+        "Puede causar contracturas en los isquiotibiales",
+        "Puede lesionar la articulación de la cadera"
+      ],
       "correct": 1,
       "hint": "Los codos deben estar a 90° y no dejar que los hombros caigan."
     },
@@ -545,7 +846,12 @@
       "category": "anatomia",
       "level": 2,
       "question": "¿Dónde se localiza el chakra Ajna y con qué función se asocia?",
-      "options": ["En el ombligo; asociado a la voluntad", "En el entrecejo; asociado a la intuición y la percepción sutil", "En la garganta; asociado a la comunicación", "En la coronilla; asociado a la conciencia pura"],
+      "options": [
+        "En el ombligo; asociado a la voluntad",
+        "En el entrecejo; asociado a la intuición y la percepción sutil",
+        "En la garganta; asociado a la comunicación",
+        "En la coronilla; asociado a la conciencia pura"
+      ],
       "correct": 1,
       "hint": "También llamado 'tercer ojo'."
     },
@@ -554,7 +860,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Cuántas posturas específicas se nombran y describen en los Yoga Sutras de Patanjali?",
-      "options": ["84 posturas sagradas", "32 posturas sentadas", "Ninguna; los Sutras no detallan posturas específicas", "Solo Sukhasana y Padmasana"],
+      "options": [
+        "84 posturas sagradas",
+        "32 posturas sentadas",
+        "Ninguna; los Sutras no detallan posturas específicas",
+        "Solo Sukhasana y Padmasana"
+      ],
       "correct": 2,
       "hint": "Los Sutras se enfocan en la mente, no en el cuerpo físico."
     },
@@ -563,7 +874,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿De qué raíz sánscrita viene la palabra 'yoga' y qué significa?",
-      "options": ["De 'yuj', que significa unir o uncir", "De 'yog', que significa paz interior", "De 'yama', que significa control", "De 'yatra', que significa viaje"],
+      "options": [
+        "De 'yuj', que significa unir o uncir",
+        "De 'yog', que significa paz interior",
+        "De 'yama', que significa control",
+        "De 'yatra', que significa viaje"
+      ],
       "correct": 0,
       "hint": "La misma raíz que 'yoke' (yugo) en inglés."
     },
@@ -572,7 +888,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Por qué se empezaron a usar los mats (colchonetas) de yoga?",
-      "options": ["Por razones de higiene en los gimnasios modernos", "Para amortiguar las articulaciones en posturas difíciles", "Para dar agarre y evitar resbalar; Dona Holleman usó una alfombra antideslizante en los 60s y popularizó el concepto", "Por una regulación de seguridad en estudios de yoga"],
+      "options": [
+        "Por razones de higiene en los gimnasios modernos",
+        "Para amortiguar las articulaciones en posturas difíciles",
+        "Para dar agarre y evitar resbalar; Dona Holleman usó una alfombra antideslizante en los 60s y popularizó el concepto",
+        "Por una regulación de seguridad en estudios de yoga"
+      ],
       "correct": 2,
       "hint": "Antes se practicaba sobre alfombras o el suelo."
     },
@@ -581,7 +902,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Qué mecanismo fisiológico explica la sensación de bienestar o euforia ('yoga high') tras la práctica?",
-      "options": ["Solo el efecto placebo de creer que el yoga es bueno", "La liberación de endorfinas y el aumento de GABA (ácido gamma-aminobutírico), que reducen la ansiedad", "Un aumento de adrenalina durante la práctica", "La deshidratación leve que produce sensación de ligereza"],
+      "options": [
+        "Solo el efecto placebo de creer que el yoga es bueno",
+        "La liberación de endorfinas y el aumento de GABA (ácido gamma-aminobutírico), que reducen la ansiedad",
+        "Un aumento de adrenalina durante la práctica",
+        "La deshidratación leve que produce sensación de ligereza"
+      ],
       "correct": 1,
       "hint": "GABA es un neurotransmisor inhibidor que promueve la calma."
     },
@@ -590,7 +916,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Cuál es el récord mundial de la clase de yoga más grande registrada?",
-      "options": ["Menos de 10.000 personas", "Alrededor de 55.000 personas", "Más de 100.000 personas", "Cerca de 200.000 personas"],
+      "options": [
+        "Menos de 10.000 personas",
+        "Alrededor de 55.000 personas",
+        "Más de 100.000 personas",
+        "Cerca de 200.000 personas"
+      ],
       "correct": 2,
       "hint": "Se celebró en India el Día Internacional del Yoga (21 de junio)."
     },
@@ -599,7 +930,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Sabés que los astronautas de la NASA practican yoga? ¿Para qué lo usan principalmente?",
-      "options": ["Para entretenimiento durante los viajes largos", "Para mantener la flexibilidad, reducir el estrés y mejorar la concentración en el espacio", "Solo como parte del protocolo de meditación budista", "Para ganar masa muscular en gravedad cero"],
+      "options": [
+        "Para entretenimiento durante los viajes largos",
+        "Para mantener la flexibilidad, reducir el estrés y mejorar la concentración en el espacio",
+        "Solo como parte del protocolo de meditación budista",
+        "Para ganar masa muscular en gravedad cero"
+      ],
       "correct": 1,
       "hint": "El estrés y el aislamiento son desafíos reales en el espacio."
     },
@@ -608,7 +944,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Cuántas personas se estima que practican yoga en todo el mundo actualmente?",
-      "options": ["Menos de 50 millones", "Alrededor de 100 millones", "Más de 300 millones", "Cerca de 50.000 millones"],
+      "options": [
+        "Menos de 50 millones",
+        "Alrededor de 100 millones",
+        "Más de 300 millones",
+        "Cerca de 50.000 millones"
+      ],
       "correct": 2,
       "hint": "Es una de las actividades de bienestar más populares globalmente."
     },
@@ -617,7 +958,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿En qué contexto se usa el yoga dentro de las fuerzas militares de varios países?",
-      "options": ["Como sistema de combate cuerpo a cuerpo", "Para mejorar la concentración, reducir el estrés postraumático (PTSD) y la resiliencia mental", "Solo como castigo físico alternativo", "Para mejorar la velocidad en las carreras de obstáculos"],
+      "options": [
+        "Como sistema de combate cuerpo a cuerpo",
+        "Para mejorar la concentración, reducir el estrés postraumático (PTSD) y la resiliencia mental",
+        "Solo como castigo físico alternativo",
+        "Para mejorar la velocidad en las carreras de obstáculos"
+      ],
       "correct": 1,
       "hint": "El PTSD es un problema serio en veteranos de guerra."
     },
@@ -626,7 +972,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Quién fundó el Yoga de la Risa (Laughter Yoga) y en qué año?",
-      "options": ["Swami Vivekananda, en 1893", "Madan Kataria, en 1995 en Mumbai", "Osho (Bhagwan Shree Rajneesh), en 1970", "Yogi Bhajan, en 1969"],
+      "options": [
+        "Swami Vivekananda, en 1893",
+        "Madan Kataria, en 1995 en Mumbai",
+        "Osho (Bhagwan Shree Rajneesh), en 1970",
+        "Yogi Bhajan, en 1969"
+      ],
       "correct": 1,
       "hint": "Un médico indio que combinó risa con respiración yóguica."
     },
@@ -635,7 +986,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿En qué consiste el 'Goat Yoga' (yoga con cabras) que se popularizó en redes sociales?",
-      "options": ["Un estilo de yoga que imita los movimientos de las cabras", "Practicar yoga en granjas mientras las cabras caminan sobre y alrededor de los practicantes", "Yoga al aire libre en montañas (donde hay cabras)", "Un tipo de yoga restaurativo con el apoyo de animales de peluche"],
+      "options": [
+        "Un estilo de yoga que imita los movimientos de las cabras",
+        "Practicar yoga en granjas mientras las cabras caminan sobre y alrededor de los practicantes",
+        "Yoga al aire libre en montañas (donde hay cabras)",
+        "Un tipo de yoga restaurativo con el apoyo de animales de peluche"
+      ],
       "correct": 1,
       "hint": "Comenzó en una granja en Oregón, EE.UU., en 2016."
     },
@@ -644,7 +1000,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Por qué el yoga corporativo creció tanto en empresas de Silicon Valley?",
-      "options": ["Por una ley californiana que obliga a las empresas a ofrecer actividad física", "Porque mejora la productividad, reduce el ausentismo y el estrés laboral, y se convirtió en un beneficio atractivo para empleados", "Porque los fundadores de Google son maestros de yoga", "Solo por razones de imagen y marketing de las empresas"],
+      "options": [
+        "Por una ley californiana que obliga a las empresas a ofrecer actividad física",
+        "Porque mejora la productividad, reduce el ausentismo y el estrés laboral, y se convirtió en un beneficio atractivo para empleados",
+        "Porque los fundadores de Google son maestros de yoga",
+        "Solo por razones de imagen y marketing de las empresas"
+      ],
       "correct": 1,
       "hint": "Google, Apple y muchas otras grandes empresas lo adoptaron."
     },
@@ -653,7 +1014,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Qué dice la investigación científica sobre el yoga y el dolor crónico?",
-      "options": ["No hay evidencia de ningún efecto del yoga sobre el dolor crónico", "Estudios muestran que el yoga puede reducir significativamente el dolor crónico de espalda y mejorar la calidad de vida", "El yoga solo sirve para el dolor agudo, no el crónico", "El yoga empeora el dolor crónico por el esfuerzo físico"],
+      "options": [
+        "No hay evidencia de ningún efecto del yoga sobre el dolor crónico",
+        "Estudios muestran que el yoga puede reducir significativamente el dolor crónico de espalda y mejorar la calidad de vida",
+        "El yoga solo sirve para el dolor agudo, no el crónico",
+        "El yoga empeora el dolor crónico por el esfuerzo físico"
+      ],
       "correct": 1,
       "hint": "La Annals of Internal Medicine publicó estudios al respecto."
     },
@@ -662,7 +1028,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Cuál fue la controversia principal que rodeó a Bikram Choudhury, fundador del Bikram Yoga?",
-      "options": ["Plagió las secuencias de otro maestro de yoga", "Fue acusado por múltiples personas de violación y acoso sexual; huyó de EE.UU. en 2017", "Mintió sobre su formación como yogui en India", "Patentó ilegalmente secuencias de yoga que son dominio público"],
+      "options": [
+        "Plagió las secuencias de otro maestro de yoga",
+        "Fue acusado por múltiples personas de violación y acoso sexual; huyó de EE.UU. en 2017",
+        "Mintió sobre su formación como yogui en India",
+        "Patentó ilegalmente secuencias de yoga que son dominio público"
+      ],
       "correct": 1,
       "hint": "Un documental de Netflix (2019) expuso el caso."
     },
@@ -671,7 +1042,12 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Qué es el SUP Yoga (Stand Up Paddle Yoga)?",
-      "options": ["Yoga practicado con soporte de una silla especial", "Yoga practicado sobre una tabla de surf o paddle board en el agua", "Una variante del yoga aéreo con cuerdas", "Yoga practicado de pie en todo momento, sin sentarse"],
+      "options": [
+        "Yoga practicado con soporte de una silla especial",
+        "Yoga practicado sobre una tabla de surf o paddle board en el agua",
+        "Una variante del yoga aéreo con cuerdas",
+        "Yoga practicado de pie en todo momento, sin sentarse"
+      ],
       "correct": 1,
       "hint": "SUP son las siglas de Stand Up Paddleboard."
     },
@@ -680,9 +1056,1064 @@
       "category": "curiosidades",
       "level": 2,
       "question": "¿Cómo se practica el yoga aéreo (aerial yoga) y qué beneficios tiene?",
-      "options": ["Se practica saltando entre plataformas elevadas", "Se usa una tela suspendida del techo (hammock) para realizar posturas en el aire, facilitando inversiones y descompresión de la columna", "Es yoga en aviones o espacios con gravedad reducida", "Solo involucra poses de equilibrio sobre los brazos"],
+      "options": [
+        "Se practica saltando entre plataformas elevadas",
+        "Se usa una tela suspendida del techo (hammock) para realizar posturas en el aire, facilitando inversiones y descompresión de la columna",
+        "Es yoga en aviones o espacios con gravedad reducida",
+        "Solo involucra poses de equilibrio sobre los brazos"
+      ],
       "correct": 1,
       "hint": "El hammock actúa como soporte y herramienta de tracción."
+    },
+    {
+      "id": "hist-216",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué yogui introdujo el Kundalini Yoga en Occidente en 1969?",
+      "options": [
+        "Swami Sivananda",
+        "Yogi Bhajan",
+        "Paramahansa Yogananda",
+        "Maharishi Mahesh Yogi"
+      ],
+      "correct": 1,
+      "hint": "Fundó la organización 3HO (Healthy, Happy, Holy Organization)"
+    },
+    {
+      "id": "hist-217",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué texto del siglo XV describe en detalle las técnicas de pranayama y los mudras?",
+      "options": [
+        "Yoga Sutras",
+        "Hatha Yoga Pradipika",
+        "Bhagavad Gita",
+        "Rig Veda"
+      ],
+      "correct": 1,
+      "hint": "Escrito por Swatmarama, es uno de los tres textos clásicos del Hatha Yoga"
+    },
+    {
+      "id": "hist-218",
+      "category": "historia",
+      "level": 2,
+      "question": "¿En qué década se popularizó el Power Yoga como estilo en Estados Unidos?",
+      "options": [
+        "1970s",
+        "1980s",
+        "1990s",
+        "2000s"
+      ],
+      "correct": 2,
+      "hint": "Bryan Kest y Beryl Bender Birch fueron figuras clave en su difusión"
+    },
+    {
+      "id": "hist-219",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué relación tiene T.K.V. Desikachar con T. Krishnamacharya?",
+      "options": [
+        "Fue su alumno más famoso",
+        "Fue su hijo y continuador de su legado",
+        "No tienen relación",
+        "Fueron contemporáneos rivales"
+      ],
+      "correct": 1,
+      "hint": "Desikachar desarrolló el Viniyoga basándose en las enseñanzas de su padre"
+    },
+    {
+      "id": "hist-220",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué escritora y activista argentina fue pionera del yoga en Buenos Aires?",
+      "options": [
+        "Victoria Ocampo",
+        "Indra Devi",
+        "Alfonsina Storni",
+        "Eva Perón"
+      ],
+      "correct": 1,
+      "hint": "Nació en Letonia como Eugenie Peterson y se radicó en Argentina"
+    },
+    {
+      "id": "hist-221",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Cuántos capítulos tiene el Bhagavad Gita?",
+      "options": [
+        "8",
+        "12",
+        "18",
+        "24"
+      ],
+      "correct": 2,
+      "hint": "Cada capítulo se llama 'adhyaya' y trata un aspecto diferente del yoga"
+    },
+    {
+      "id": "hist-222",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué evento histórico aceleró la popularización del yoga en Occidente durante el siglo XX?",
+      "options": [
+        "La Primera Guerra Mundial",
+        "El movimiento contracultural de los años 60",
+        "La Revolución Industrial",
+        "La caída del Muro de Berlín"
+      ],
+      "correct": 1,
+      "hint": "El interés por la espiritualidad oriental creció enormemente en esa época"
+    },
+    {
+      "id": "hist-223",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué yogui es conocido por haber enseñado la misma secuencia exacta durante más de 60 años?",
+      "options": [
+        "B.K.S. Iyengar",
+        "K. Pattabhi Jois",
+        "Swami Sivananda",
+        "Yogi Bhajan"
+      ],
+      "correct": 1,
+      "hint": "Las series del Ashtanga Vinyasa Yoga no cambian nunca"
+    },
+    {
+      "id": "hist-224",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué organización internacional regula los estándares de formación de profesores de yoga?",
+      "options": [
+        "OMS",
+        "Yoga Alliance",
+        "UNESCO",
+        "Yoga Federation of India"
+      ],
+      "correct": 1,
+      "hint": "Otorga las credenciales RYT-200 y RYT-500"
+    },
+    {
+      "id": "hist-225",
+      "category": "historia",
+      "level": 2,
+      "question": "¿En qué país se desarrolló el Yin Yoga como estilo?",
+      "options": [
+        "India",
+        "China",
+        "Estados Unidos",
+        "Japón"
+      ],
+      "correct": 2,
+      "hint": "Paul Grilley y Sarah Powers lo desarrollaron integrando principios de medicina china"
+    },
+    {
+      "id": "hist-226",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué texto clásico contiene el famoso diálogo entre Krishna y Arjuna sobre el deber y la acción?",
+      "options": [
+        "Yoga Sutras",
+        "Bhagavad Gita",
+        "Upanishads",
+        "Hatha Yoga Pradipika"
+      ],
+      "correct": 1,
+      "hint": "Es parte del poema épico Mahabharata"
+    },
+    {
+      "id": "hist-227",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué estilo de yoga fue creado por Ana Forrest, enfocado en sanación emocional?",
+      "options": [
+        "Jivamukti Yoga",
+        "Forrest Yoga",
+        "Anusara Yoga",
+        "Kripalu Yoga"
+      ],
+      "correct": 1,
+      "hint": "Integra trabajo corporal intenso con exploración emocional y espiritual"
+    },
+    {
+      "id": "hist-228",
+      "category": "historia",
+      "level": 2,
+      "question": "¿En qué siglo se escribieron los Upanishads más antiguos?",
+      "options": [
+        "Siglo XV a.C.",
+        "Siglo VIII-VI a.C.",
+        "Siglo III d.C.",
+        "Siglo X d.C."
+      ],
+      "correct": 1,
+      "hint": "Son textos filosóficos que marcan la transición de los rituales védicos a la filosofía"
+    },
+    {
+      "id": "hist-229",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué pareja fundó el estilo Jivamukti Yoga en Nueva York en 1984?",
+      "options": [
+        "Sharon Gannon y David Life",
+        "Rodney Yee y Colleen Saidman",
+        "Bryan Kest y Ana Forrest",
+        "Baron Baptiste y Seane Corn"
+      ],
+      "correct": 0,
+      "hint": "Combina práctica física intensa con filosofía, música y activismo"
+    },
+    {
+      "id": "hist-230",
+      "category": "historia",
+      "level": 2,
+      "question": "¿Qué institución india otorgó a B.K.S. Iyengar el Padma Vibhushan, uno de los premios civiles más altos?",
+      "options": [
+        "El Parlamento",
+        "El Gobierno de India",
+        "La Universidad de Delhi",
+        "El Ashram de Rishikesh"
+      ],
+      "correct": 1,
+      "hint": "Lo recibió en 2014 por su contribución excepcional al yoga y la cultura"
+    },
+    {
+      "id": "filo-216",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué niyama se refiere a la pureza del cuerpo y la mente?",
+      "options": [
+        "Santosha",
+        "Saucha",
+        "Tapas",
+        "Svadhyaya"
+      ],
+      "correct": 1,
+      "hint": "Incluye tanto la limpieza física como la pureza de pensamiento"
+    },
+    {
+      "id": "filo-217",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué concepto del yoga describe la ilusión que nos impide ver la realidad tal como es?",
+      "options": [
+        "Karma",
+        "Maya",
+        "Dharma",
+        "Prana"
+      ],
+      "correct": 1,
+      "hint": "Es central en el Vedanta — el mundo fenoménico es Maya"
+    },
+    {
+      "id": "filo-218",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Cuál es la diferencia entre Jnana Yoga y Bhakti Yoga?",
+      "options": [
+        "No hay diferencia",
+        "Jnana es el camino del conocimiento, Bhakti es el camino de la devoción",
+        "Jnana es físico, Bhakti es mental",
+        "Jnana es moderno, Bhakti es antiguo"
+      ],
+      "correct": 1,
+      "hint": "Son dos de los cuatro caminos clásicos del yoga"
+    },
+    {
+      "id": "filo-219",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué significa 'Tapas' como niyama del yoga?",
+      "options": [
+        "Calor ritual",
+        "Disciplina, austeridad y ardor en la práctica",
+        "Estudio de textos",
+        "Entrega a lo divino"
+      ],
+      "correct": 1,
+      "hint": "Literalmente significa 'calor' — el fuego interno de la disciplina"
+    },
+    {
+      "id": "filo-220",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué es 'Svadhyaya' en el contexto de los niyamas?",
+      "options": [
+        "Limpieza corporal",
+        "Autoestudio y estudio de textos sagrados",
+        "Contentamiento",
+        "No violencia"
+      ],
+      "correct": 1,
+      "hint": "Incluye tanto la introspección como el estudio de escrituras"
+    },
+    {
+      "id": "filo-221",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué concepto describe los 'nadis' en la tradición yóguica?",
+      "options": [
+        "Tipos de meditación",
+        "Canales energéticos por donde fluye el prana",
+        "Posturas invertidas",
+        "Textos sagrados"
+      ],
+      "correct": 1,
+      "hint": "La tradición describe 72.000 nadis, siendo Ida, Pingala y Sushumna los principales"
+    },
+    {
+      "id": "filo-222",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué nadi se asocia con la energía lunar, femenina y receptiva?",
+      "options": [
+        "Pingala",
+        "Ida",
+        "Sushumna",
+        "Brahma"
+      ],
+      "correct": 1,
+      "hint": "Corre por el lado izquierdo del cuerpo sutil"
+    },
+    {
+      "id": "filo-223",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué práctica de pranayama busca equilibrar los nadis Ida y Pingala?",
+      "options": [
+        "Kapalabhati",
+        "Nadi Shodhana (respiración alterna)",
+        "Bhastrika",
+        "Ujjayi"
+      ],
+      "correct": 1,
+      "hint": "Se alterna la respiración entre las dos fosas nasales"
+    },
+    {
+      "id": "filo-224",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué concepto filosófico describe 'Asteya', el tercer yama?",
+      "options": [
+        "Verdad",
+        "No violencia",
+        "No robar",
+        "Continencia"
+      ],
+      "correct": 2,
+      "hint": "Va más allá de lo material — incluye no robar tiempo, energía o ideas ajenas"
+    },
+    {
+      "id": "filo-225",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué significa 'Brahmacharya', el cuarto yama de Patanjali?",
+      "options": [
+        "Vegetarianismo",
+        "Moderación o continencia (especialmente de la energía sexual)",
+        "Meditación diaria",
+        "Estudio de los Vedas"
+      ],
+      "correct": 1,
+      "hint": "En contexto moderno se interpreta más como moderación que como abstinencia total"
+    },
+    {
+      "id": "filo-226",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué es 'Aparigraha', el quinto yama?",
+      "options": [
+        "No violencia",
+        "Verdad",
+        "No posesividad / no acaparamiento",
+        "Disciplina"
+      ],
+      "correct": 2,
+      "hint": "Invita a soltar el apego a las posesiones materiales y emocionales"
+    },
+    {
+      "id": "filo-227",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué diferencia hay entre 'Atman' y 'Brahman' en la filosofía vedántica?",
+      "options": [
+        "Son opuestos",
+        "Atman es el ser individual, Brahman es la conciencia universal — en Advaita son lo mismo",
+        "Atman es el cuerpo, Brahman es la mente",
+        "No tienen relación con el yoga"
+      ],
+      "correct": 1,
+      "hint": "La frase 'Tat Tvam Asi' (Tú eres Eso) expresa su identidad"
+    },
+    {
+      "id": "filo-228",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué es 'Ishvara Pranidhana', el quinto niyama?",
+      "options": [
+        "Disciplina extrema",
+        "Entrega o devoción a lo divino / a algo mayor que uno mismo",
+        "Estudio académico",
+        "Pureza física"
+      ],
+      "correct": 1,
+      "hint": "No requiere creencia en un dios particular — puede ser entrega al proceso o a la práctica"
+    },
+    {
+      "id": "filo-229",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué chakra se ubica en la garganta y se asocia con la comunicación?",
+      "options": [
+        "Anahata",
+        "Vishuddha",
+        "Ajna",
+        "Sahasrara"
+      ],
+      "correct": 1,
+      "hint": "Bloqueos en este chakra se manifiestan como dificultad para expresarse"
+    },
+    {
+      "id": "filo-230",
+      "category": "filosofia",
+      "level": 2,
+      "question": "¿Qué chakra se conoce como el 'tercer ojo'?",
+      "options": [
+        "Sahasrara",
+        "Vishuddha",
+        "Ajna",
+        "Manipura"
+      ],
+      "correct": 2,
+      "hint": "Se ubica entre las cejas y se asocia con la intuición y la percepción"
+    },
+    {
+      "id": "post-216",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura se llama 'Ardha Chandrasana' y qué forma representa?",
+      "options": [
+        "Media luna",
+        "Medio loto",
+        "Media torsión",
+        "Medio puente"
+      ],
+      "correct": 0,
+      "hint": "Ardha = media, Chandra = luna. Es un equilibrio sobre una pierna con el cuerpo abierto lateralmente"
+    },
+    {
+      "id": "post-217",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura sentada con torsión lleva el nombre del 'señor de los peces'?",
+      "options": [
+        "Bharadvajasana",
+        "Matsyendrasana",
+        "Marichyasana",
+        "Parighasana"
+      ],
+      "correct": 1,
+      "hint": "Matsyendra fue un yogui legendario que se dice aprendió yoga de Shiva mientras estaba en forma de pez"
+    },
+    {
+      "id": "post-218",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura invertida se conoce como 'el arado'?",
+      "options": [
+        "Sarvangasana",
+        "Halasana",
+        "Sirsasana",
+        "Pincha Mayurasana"
+      ],
+      "correct": 1,
+      "hint": "Hala = arado. Las piernas pasan por encima de la cabeza hasta tocar el piso detrás"
+    },
+    {
+      "id": "post-219",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Cuál es la postura preparatoria más común antes de intentar Sirsasana (parada de cabeza)?",
+      "options": [
+        "Adho Mukha Svanasana con cabeza apoyada",
+        "Dolphin Pose (postura del delfín)",
+        "Balasana",
+        "Tadasana"
+      ],
+      "correct": 1,
+      "hint": "Fortalece los hombros y la estabilidad necesaria para la inversión completa"
+    },
+    {
+      "id": "post-220",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura se conoce como 'Malasana' y es una sentadilla profunda?",
+      "options": [
+        "Postura de la guirnalda",
+        "Postura del héroe",
+        "Postura del bastón",
+        "Postura de la montaña"
+      ],
+      "correct": 0,
+      "hint": "Mala = guirnalda. Abre las caderas y fortalece los tobillos"
+    },
+    {
+      "id": "post-221",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura de equilibrio se llama 'Virabhadrasana III'?",
+      "options": [
+        "Guerrero I con brazos arriba",
+        "Guerrero con torso horizontal y una pierna extendida atrás",
+        "Guerrero con piernas abiertas",
+        "Guerrero invertido"
+      ],
+      "correct": 1,
+      "hint": "El cuerpo forma una T — requiere fuerza, equilibrio y concentración"
+    },
+    {
+      "id": "post-222",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué significa el prefijo 'Supta' en nombres de posturas como Supta Virasana?",
+      "options": [
+        "De pie",
+        "Sentado",
+        "Acostado / reclinado",
+        "Invertido"
+      ],
+      "correct": 2,
+      "hint": "Supta Virasana es la versión reclinada de Virasana (héroe)"
+    },
+    {
+      "id": "post-223",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura es Dhanurasana y qué objeto representa?",
+      "options": [
+        "Un barco",
+        "Un arco (de flechas)",
+        "Una rueda",
+        "Un bastón"
+      ],
+      "correct": 1,
+      "hint": "Dhanu = arco. Se hace boca abajo agarrando los tobillos y elevando pecho y piernas"
+    },
+    {
+      "id": "post-224",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura se llama 'Navasana' y fortalece intensamente el core?",
+      "options": [
+        "Postura del barco",
+        "Postura de la plancha",
+        "Postura del puente",
+        "Postura de la silla"
+      ],
+      "correct": 0,
+      "hint": "Nava = barco. El cuerpo forma una V sentado equilibrándose sobre los isquiones"
+    },
+    {
+      "id": "post-225",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué tipo de postura es Parivrtta Trikonasana?",
+      "options": [
+        "Flexión hacia adelante",
+        "Triángulo con torsión (revolución)",
+        "Inversión",
+        "Equilibrio sobre manos"
+      ],
+      "correct": 1,
+      "hint": "Parivrtta = girado/revolución. Agrega torsión al triángulo clásico"
+    },
+    {
+      "id": "post-226",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿En Surya Namaskar A, qué postura sigue inmediatamente después de Uttanasana (flexión hacia adelante)?",
+      "options": [
+        "Chaturanga",
+        "Ardha Uttanasana (media flexión, espalda plana)",
+        "Adho Mukha Svanasana",
+        "Tadasana"
+      ],
+      "correct": 1,
+      "hint": "Se eleva el torso con la espalda plana mirando al frente"
+    },
+    {
+      "id": "post-227",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura se llama 'Matsyasana' y qué animal representa?",
+      "options": [
+        "Tortuga",
+        "Pez",
+        "Cobra",
+        "Grulla"
+      ],
+      "correct": 1,
+      "hint": "Matsya = pez. Se hace acostado con el pecho elevado y la coronilla apoyada en el piso"
+    },
+    {
+      "id": "post-228",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Cuál es la función principal de las posturas de torsión en una secuencia de yoga?",
+      "options": [
+        "Fortalecer los brazos",
+        "Masajear los órganos internos y liberar tensión en la columna",
+        "Mejorar el equilibrio",
+        "Estirar las piernas"
+      ],
+      "correct": 1,
+      "hint": "Se dice que las torsiones tienen efecto 'detox' por la compresión y liberación de los órganos"
+    },
+    {
+      "id": "post-229",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué postura se conoce como 'Gomukhasana' y qué animal representa?",
+      "options": [
+        "Cara de vaca",
+        "Cara de león",
+        "Cara de mono",
+        "Cara de águila"
+      ],
+      "correct": 0,
+      "hint": "Go = vaca, Mukha = cara. Las piernas cruzadas y los brazos entrelazados forman la cara de una vaca"
+    },
+    {
+      "id": "post-230",
+      "category": "posturas",
+      "level": 2,
+      "question": "¿Qué significa 'Utthita' cuando aparece en el nombre de una postura?",
+      "options": [
+        "Reclinado",
+        "Extendido / estirado",
+        "Invertido",
+        "Girado"
+      ],
+      "correct": 1,
+      "hint": "Por ejemplo, Utthita Trikonasana = triángulo extendido"
+    },
+    {
+      "id": "anat-216",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué grupo muscular es el principal estabilizador en las posturas de equilibrio sobre un pie?",
+      "options": [
+        "Cuádriceps",
+        "Glúteo medio y músculos intrínsecos del pie",
+        "Bíceps",
+        "Pectorales"
+      ],
+      "correct": 1,
+      "hint": "El glúteo medio evita que la cadera se caiga hacia un lado"
+    },
+    {
+      "id": "anat-217",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué es la 'respiración diafragmática' y por qué es fundamental en yoga?",
+      "options": [
+        "Respirar solo por la boca",
+        "Respiración donde el diafragma desciende al inhalar, llenando los pulmones desde abajo — es más eficiente y activadora del parasimpático",
+        "Respirar solo por la nariz izquierda",
+        "Contener la respiración"
+      ],
+      "correct": 1,
+      "hint": "La mayoría de las personas respira de forma superficial (torácica) en vez de diafragmática"
+    },
+    {
+      "id": "anat-218",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué articulación es la más compleja del cuerpo y la más vulnerable en posturas como Virasana?",
+      "options": [
+        "Cadera",
+        "Hombro",
+        "Rodilla",
+        "Tobillo"
+      ],
+      "correct": 2,
+      "hint": "Solo permite flexión y extensión — forzar rotación puede dañar meniscos y ligamentos"
+    },
+    {
+      "id": "anat-219",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué efecto tiene la práctica regular de yoga sobre la presión arterial?",
+      "options": [
+        "La aumenta",
+        "Tiende a reducirla en personas con hipertensión leve",
+        "No tiene efecto",
+        "La duplica temporalmente"
+      ],
+      "correct": 1,
+      "hint": "La relajación y la respiración lenta activan el parasimpático, que reduce la presión"
+    },
+    {
+      "id": "anat-220",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué músculo profundo del core conecta la columna lumbar con el fémur y se trabaja en muchas posturas de yoga?",
+      "options": [
+        "Recto abdominal",
+        "Psoas ilíaco",
+        "Oblicuo externo",
+        "Glúteo máximo"
+      ],
+      "correct": 1,
+      "hint": "Se acorta cuando pasás mucho tiempo sentado y se estira en posturas como Anjaneyasana"
+    },
+    {
+      "id": "anat-221",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué tipo de tejido se trabaja principalmente en posturas sostenidas de Yin Yoga?",
+      "options": [
+        "Músculo esquelético",
+        "Fascia, ligamentos y tendones (tejido conectivo)",
+        "Tejido adiposo",
+        "Tejido nervioso"
+      ],
+      "correct": 1,
+      "hint": "Necesita posturas pasivas de 3-5 minutos para que la carga llegue al tejido conectivo"
+    },
+    {
+      "id": "anat-222",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué glándula endócrina se estimula con la postura de Sarvangasana (parada de hombros)?",
+      "options": [
+        "Hipófisis",
+        "Tiroides",
+        "Suprarrenales",
+        "Páncreas"
+      ],
+      "correct": 1,
+      "hint": "La presión del mentón contra el pecho (Jalandhara Bandha) estimula esta glándula del cuello"
+    },
+    {
+      "id": "anat-223",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué sucede fisiológicamente cuando hacés una exhalación más larga que la inhalación?",
+      "options": [
+        "Se activa la respuesta de estrés",
+        "Se estimula el nervio vago y se activa el sistema parasimpático (calma)",
+        "No tiene efecto",
+        "Se aumenta la frecuencia cardíaca"
+      ],
+      "correct": 1,
+      "hint": "Es la base de muchas técnicas de pranayama para la relajación"
+    },
+    {
+      "id": "anat-224",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué músculo del hombro es el más propenso a lesionarse en Chaturanga mal ejecutada?",
+      "options": [
+        "Deltoides",
+        "Manguito rotador (supraespinoso)",
+        "Trapecio",
+        "Pectoral mayor"
+      ],
+      "correct": 1,
+      "hint": "Bajar demasiado o con los codos abiertos comprime el espacio subacromial"
+    },
+    {
+      "id": "anat-225",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué es la 'variabilidad de la frecuencia cardíaca' (HRV) y por qué meditadores tienen mejor HRV?",
+      "options": [
+        "Es lo rápido que late el corazón",
+        "Es la variación en el tiempo entre latidos — mayor HRV indica mejor regulación del sistema nervioso autónomo",
+        "Es la presión arterial",
+        "Es la capacidad pulmonar"
+      ],
+      "correct": 1,
+      "hint": "La meditación y el pranayama aumentan la HRV, lo cual es un marcador de salud"
+    },
+    {
+      "id": "anat-226",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Por qué se recomienda evitar inversiones completas durante la menstruación en algunas tradiciones de yoga?",
+      "options": [
+        "Porque es peligroso",
+        "Por la teoría de que invertir el flujo apana vayu (energía descendente) interfiere con un proceso natural de eliminación",
+        "Porque los músculos están más débiles",
+        "No hay ninguna razón"
+      ],
+      "correct": 1,
+      "hint": "Es un tema debatido — muchas profesoras modernas lo dejan a criterio personal"
+    },
+    {
+      "id": "anat-227",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué estructura anatómica se fortalece al practicar Mula Bandha regularmente?",
+      "options": [
+        "Abdominales superiores",
+        "Suelo pélvico (músculos del periné)",
+        "Cuádriceps",
+        "Bíceps"
+      ],
+      "correct": 1,
+      "hint": "Es similar a los ejercicios de Kegel pero integrado con la respiración y las posturas"
+    },
+    {
+      "id": "anat-228",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Cuántos músculos se activan simultáneamente en una postura como Virabhadrasana II?",
+      "options": [
+        "5-10",
+        "15-20",
+        "Más de 30",
+        "Solo los de las piernas"
+      ],
+      "correct": 2,
+      "hint": "Piernas, core, espalda, hombros, brazos — el yoga es un ejercicio de cuerpo completo"
+    },
+    {
+      "id": "anat-229",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué efecto tiene el yoga sobre los niveles de GABA en el cerebro?",
+      "options": [
+        "Los reduce",
+        "Los aumenta — GABA es un neurotransmisor inhibitorio que reduce la ansiedad",
+        "No tiene efecto",
+        "Solo afecta la dopamina"
+      ],
+      "correct": 1,
+      "hint": "Un estudio de la Universidad de Boston encontró que el yoga aumenta GABA más que caminar"
+    },
+    {
+      "id": "anat-230",
+      "category": "anatomia",
+      "level": 2,
+      "question": "¿Qué significa que una postura sea 'asimétrica' y por qué es importante hacerla de los dos lados?",
+      "options": [
+        "Que se hace con los ojos cerrados",
+        "Que trabaja un lado del cuerpo a la vez — hacerla de ambos lados previene desequilibrios musculares",
+        "Que es una postura difícil",
+        "Que solo se hace una vez"
+      ],
+      "correct": 1,
+      "hint": "Posturas como Virabhadrasana o Vrksasana siempre se practican de los dos lados"
+    },
+    {
+      "id": "curi-216",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué futbolista del Barcelona practicó yoga públicamente como parte de su rutina de recuperación?",
+      "options": [
+        "Xavi",
+        "Gerard Piqué",
+        "Ryan Giggs",
+        "Lionel Messi"
+      ],
+      "correct": 3,
+      "hint": "Adoptó la práctica para extender su carrera y mejorar la flexibilidad"
+    },
+    {
+      "id": "curi-217",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué empresa de tecnología es conocida por ofrecer clases de yoga y meditación a sus empleados desde los años 2000?",
+      "options": [
+        "Microsoft",
+        "Google",
+        "Amazon",
+        "Apple"
+      ],
+      "correct": 1,
+      "hint": "El programa 'Search Inside Yourself' de Google es uno de los más famosos"
+    },
+    {
+      "id": "curi-218",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Cuántos estilos de Surya Namaskar (Saludo al Sol) existen en las diferentes tradiciones?",
+      "options": [
+        "Solo 1",
+        "2 (A y B del Ashtanga)",
+        "Al menos 10 variaciones diferentes",
+        "Exactamente 5"
+      ],
+      "correct": 2,
+      "hint": "Ashtanga, Sivananda, Iyengar y otras tradiciones tienen sus propias versiones"
+    },
+    {
+      "id": "curi-219",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿En qué país se originó el concepto de 'Yoga Teacher Training' (formación de profesores) de 200 horas?",
+      "options": [
+        "India",
+        "Estados Unidos",
+        "Reino Unido",
+        "Australia"
+      ],
+      "correct": 1,
+      "hint": "Yoga Alliance estableció el estándar en 1999 desde Virginia, EEUU"
+    },
+    {
+      "id": "curi-220",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué porcentaje del mercado global de yoga corresponde a productos (mats, ropa, accesorios)?",
+      "options": [
+        "10%",
+        "25%",
+        "Más del 40%",
+        "Menos del 5%"
+      ],
+      "correct": 2,
+      "hint": "La industria de productos de yoga creció enormemente en la última década"
+    },
+    {
+      "id": "curi-221",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué tipo de yoga se practica a temperaturas de 35-42°C para aumentar la sudoración?",
+      "options": [
+        "Yin Yoga",
+        "Hot Yoga / Bikram",
+        "Restorative Yoga",
+        "Kundalini"
+      ],
+      "correct": 1,
+      "hint": "La idea es que el calor facilita la flexibilidad y la desintoxicación"
+    },
+    {
+      "id": "curi-222",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué app de yoga tiene más de 40 millones de descargas y genera secuencias únicas con IA?",
+      "options": [
+        "Glo",
+        "Down Dog",
+        "Yoga Studio",
+        "Asana Rebel"
+      ],
+      "correct": 1,
+      "hint": "Cada sesión es diferente — la app genera la secuencia en tiempo real"
+    },
+    {
+      "id": "curi-223",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Cuántos árboles ha ayudado a plantar Sukha a través de sus partners ambientales?",
+      "options": [
+        "Menos de 100",
+        "Cientos",
+        "Miles",
+        "No tiene programa de reforestación"
+      ],
+      "correct": 2,
+      "hint": "Cada venta contribuye a la reforestación a través de Reforestarg y OneTreePlanted"
+    },
+    {
+      "id": "curi-224",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué país europeo tiene la mayor proporción de practicantes de yoga per cápita?",
+      "options": [
+        "España",
+        "Alemania",
+        "Países Bajos",
+        "Suecia"
+      ],
+      "correct": 2,
+      "hint": "Países escandinavos y del norte de Europa lideran en adopción del yoga"
+    },
+    {
+      "id": "curi-225",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué tendencia de yoga combina la práctica con cerveza artesanal?",
+      "options": [
+        "Wine Yoga",
+        "Beer Yoga (Bier Yoga)",
+        "Cocktail Flow",
+        "Brewery Stretch"
+      ],
+      "correct": 1,
+      "hint": "Surgió en Alemania y se expandió a festivales de todo el mundo"
+    },
+    {
+      "id": "curi-226",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué tipo de yoga se practica en tablas de stand-up paddle sobre el agua?",
+      "options": [
+        "Aqua Yoga",
+        "SUP Yoga",
+        "Float Yoga",
+        "Wave Yoga"
+      ],
+      "correct": 1,
+      "hint": "Agrega el desafío del equilibrio sobre una superficie inestable"
+    },
+    {
+      "id": "curi-227",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué famosa cantante es conocida por su práctica diaria de Ashtanga Yoga?",
+      "options": [
+        "Madonna",
+        "Taylor Swift",
+        "Beyoncé",
+        "Adele"
+      ],
+      "correct": 0,
+      "hint": "Practica Ashtanga desde los años 90 y tiene un estudio en su casa"
+    },
+    {
+      "id": "curi-228",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué significan los colores de los mats de Sukha en relación con la sustentabilidad?",
+      "options": [
+        "Son solo estéticos",
+        "Los tintes son ecológicos y libres de sustancias tóxicas",
+        "Cada color representa un chakra",
+        "Los colores no tienen significado especial"
+      ],
+      "correct": 1,
+      "hint": "La sustentabilidad de Sukha abarca desde los materiales hasta los procesos de tintura"
+    },
+    {
+      "id": "curi-229",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿En qué año el yoga fue incluido en la lista de la UNESCO como Patrimonio Cultural Inmaterial?",
+      "options": [
+        "2010",
+        "2014",
+        "2016",
+        "Todavía no fue incluido"
+      ],
+      "correct": 2,
+      "hint": "India nominó al yoga y fue aceptado por la UNESCO"
+    },
+    {
+      "id": "curi-230",
+      "category": "curiosidades",
+      "level": 2,
+      "question": "¿Qué récord Guinness relacionado con yoga ostenta una mujer de 100+ años?",
+      "options": [
+        "La clase más larga",
+        "La profesora de yoga más longeva del mundo",
+        "La postura sostenida más tiempo",
+        "El retiro más largo"
+      ],
+      "correct": 1,
+      "hint": "Tao Porchon-Lynch enseñó yoga hasta los 101 años"
     }
   ]
 }
