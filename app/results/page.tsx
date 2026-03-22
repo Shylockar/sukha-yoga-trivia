@@ -12,6 +12,7 @@ import {
   getLevel,
   getNextThreshold,
 } from "@/lib/progress";
+import type { Level } from "@/lib/progress";
 import {
   evaluateMessages,
   incrementGamesPlayed,
@@ -23,7 +24,9 @@ import type { ToastMsg, LevelUpMsg } from "@/lib/contextualMessages";
 import UnlockModal from "@/components/UnlockModal";
 import ToastMessage from "@/components/ToastMessage";
 import LevelUpCelebration from "@/components/LevelUpCelebration";
+import CouponModal from "@/components/CouponModal";
 import { generateShareImage } from "@/lib/shareImage";
+import type { TriggerType } from "@/lib/shopify";
 
 const CATEGORY_LABELS: Record<string, string> = {
   historia: "Historia",
@@ -54,6 +57,44 @@ function getAchievement(score: number): { icon: React.ReactNode; title: string; 
   };
 }
 
+const SCORE_THRESHOLDS: Array<{ score: number; trigger: TriggerType }> = [
+  { score: 20000, trigger: "25off" },
+  { score: 12000, trigger: "15off" },
+  { score: 8000,  trigger: "10off" },
+];
+
+function resolveCouponTriggers(
+  prevScore: number,
+  newScore: number,
+  correctCount: number,
+  prevLevel: Level,
+  newLevel: Level,
+): TriggerType[] {
+  const triggers: TriggerType[] = [];
+
+  // Level-up triggers (checked first — they supersede score thresholds)
+  if (prevLevel !== "avanzado" && newLevel === "avanzado") {
+    triggers.push("20off");
+  } else if (prevLevel === "principiante" && newLevel === "intermedio") {
+    triggers.push("free_shipping");
+  } else {
+    // Score threshold triggers
+    for (const { score, trigger } of SCORE_THRESHOLDS) {
+      if (prevScore < score && newScore >= score) {
+        triggers.push(trigger);
+        break; // only one score trigger per game
+      }
+    }
+  }
+
+  // Perfect game (always appended — repeatable)
+  if (correctCount === 10) {
+    triggers.push("15off_perfect");
+  }
+
+  return triggers;
+}
+
 export default function ResultsPage() {
   const router = useRouter();
   const [result, setResult] = useState<GameResult | null>(null);
@@ -66,6 +107,11 @@ export default function ResultsPage() {
   const [sharing, setSharing] = useState<"stories" | "whatsapp" | null>(null);
   const [toastMsg, setToastMsg] = useState<ToastMsg | null>(null);
   const [levelUpData, setLevelUpData] = useState<LevelUpMsg | null>(null);
+  const [coupon, setCoupon] = useState<{
+    code: string;
+    description: string;
+    expiresAt: string;
+  } | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("gameResult");
@@ -93,6 +139,26 @@ export default function ResultsPage() {
     // Check registered user
     const user = getRegisteredUser();
     setRegisteredUser(user);
+
+    // Coupon triggers (only for registered users)
+    if (user) {
+      const triggers = resolveCouponTriggers(prevScore, newTotal, parsed.correctCount, getLevel(prevScore), getLevel(newTotal));
+      for (const trigger of triggers) {
+        fetch("/api/coupon", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: user.email, triggerType: trigger }),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            if (data.code) {
+              setTimeout(() => setCoupon({ code: data.code, description: data.description, expiresAt: data.expiresAt }), 1200);
+            }
+          })
+          .catch(() => {});
+        break; // only first matching trigger per game
+      }
+    }
 
     // Contextual messages
     const games = incrementGamesPlayed();
@@ -252,6 +318,14 @@ export default function ResultsPage() {
         <ToastMessage
           text={toastMsg.text}
           onClose={() => setToastMsg(null)}
+        />
+      )}
+      {coupon && (
+        <CouponModal
+          code={coupon.code}
+          description={coupon.description}
+          expiresAt={coupon.expiresAt}
+          onClose={() => setCoupon(null)}
         />
       )}
 

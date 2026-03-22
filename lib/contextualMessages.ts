@@ -161,7 +161,7 @@ export function evaluateMessages(params: {
     return {
       toast: {
         id: "first_game",
-        text: `¡Bien! Sumaste ${newScore.toLocaleString()} pts. Acumulá puntos para subir de nivel, desbloquear preguntas más difíciles y ganar premios de Sukha.`,
+        text: `¡Bien! Sumaste ${newScore.toLocaleString()} pts. A 5.000 pts desbloqueás envío gratis en la tienda de Sukha. ¡Seguí jugando!`,
       },
       levelUp: null,
     };
@@ -193,7 +193,7 @@ export function evaluateMessages(params: {
     return {
       toast: {
         id: "half_inter",
-        text: `¡Vas por la mitad! Te faltan ${ptsLeft} pts para el nivel Intermedio, donde las preguntas se ponen más interesantes.`,
+        text: `¡Vas por la mitad! Te faltan ${ptsLeft} pts para el nivel Intermedio y tu código de envío gratis en Sukha.`,
       },
       levelUp: null,
     };
@@ -207,7 +207,7 @@ export function evaluateMessages(params: {
     return {
       toast: {
         id: "half_adv",
-        text: `¡Vas por la mitad! Te faltan ${ptsLeft} pts para el nivel Avanzado, donde las preguntas se ponen más interesantes.`,
+        text: `¡Vas por la mitad! Te faltan ${ptsLeft} pts para el nivel Avanzado y un descuento del 20% en Sukha.`,
       },
       levelUp: null,
     };
@@ -220,7 +220,7 @@ export function evaluateMessages(params: {
     return {
       toast: {
         id: "near_inter",
-        text: "¡Casi ahí! Pronto desbloqueás el nivel Intermedio y tu primer premio de Sukha. ¿Te animás a una partida más?",
+        text: "¡Casi ahí! A 5.000 pts desbloqueás envío gratis en la tienda de Sukha. ¿Te animás a una partida más?",
       },
       levelUp: null,
     };
@@ -234,7 +234,7 @@ export function evaluateMessages(params: {
     return {
       toast: {
         id: "near_adv",
-        text: `¡Ya casi! Te faltan ${ptsLeft} pts y desbloqueás el nivel Avanzado. ¿Te animás a una partida más?`,
+        text: `¡Ya casi! Te faltan ${ptsLeft} pts para el nivel Avanzado y un descuento 20% + envío gratis en Sukha.`,
       },
       levelUp: null,
     };
