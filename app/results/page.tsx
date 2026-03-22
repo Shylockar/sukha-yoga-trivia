@@ -7,11 +7,16 @@ import { useRouter } from "next/navigation";
 import { GameResult, LeaderboardEntry } from "@/lib/types";
 import {
   addLocalScore,
+  getLocalScore,
   getRegisteredUser,
   getLevel,
   getNextThreshold,
 } from "@/lib/progress";
+import { evaluateMessages, incrementGamesPlayed } from "@/lib/contextualMessages";
+import type { ToastMsg, LevelUpMsg } from "@/lib/contextualMessages";
 import UnlockModal from "@/components/UnlockModal";
+import ToastMessage from "@/components/ToastMessage";
+import LevelUpCelebration from "@/components/LevelUpCelebration";
 import { generateShareImage } from "@/lib/shareImage";
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -53,6 +58,8 @@ export default function ResultsPage() {
   const [top3, setTop3] = useState<LeaderboardEntry[] | null>(null);
   const [userRankEntry, setUserRankEntry] = useState<LeaderboardEntry | null>(null);
   const [sharing, setSharing] = useState<"stories" | "whatsapp" | null>(null);
+  const [toastMsg, setToastMsg] = useState<ToastMsg | null>(null);
+  const [levelUpData, setLevelUpData] = useState<LevelUpMsg | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("gameResult");
@@ -73,12 +80,27 @@ export default function ResultsPage() {
     }).catch(() => {});
 
     // Accumulate score in localStorage
+    const prevScore = getLocalScore();
     const newTotal = addLocalScore(parsed.totalScore);
     setAccumulatedScore(newTotal);
 
     // Check registered user
     const user = getRegisteredUser();
     setRegisteredUser(user);
+
+    // Contextual messages
+    const games = incrementGamesPlayed();
+    const { toast, levelUp } = evaluateMessages({
+      prevScore,
+      newScore: newTotal,
+      prevLevel: getLevel(prevScore),
+      newLevel: getLevel(newTotal),
+      correctCount: parsed.correctCount,
+      isRegistered: !!user,
+      gamesPlayed: games,
+    });
+    if (levelUp) setTimeout(() => setLevelUpData(levelUp), 900);
+    else if (toast) setTimeout(() => setToastMsg(toast), 900);
 
     if (user) {
       // Sync score to backend
@@ -198,6 +220,18 @@ export default function ResultsPage() {
           localScore={accumulatedScore}
           onSuccess={handleUnlockSuccess}
           onDismiss={() => setShowUnlockModal(false)}
+        />
+      )}
+      {levelUpData && (
+        <LevelUpCelebration
+          level={levelUpData.level}
+          onClose={() => setLevelUpData(null)}
+        />
+      )}
+      {toastMsg && (
+        <ToastMessage
+          text={toastMsg.text}
+          onClose={() => setToastMsg(null)}
         />
       )}
 

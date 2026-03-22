@@ -43,7 +43,11 @@ export default function LevelAwareCategoryGrid() {
     const score = getLocalScore();
     const lv = getLevel(score) === "avanzado" ? 3 : getLevel(score) === "intermedio" ? 2 : 1;
     setMaxLevel(lv as 1 | 2 | 3);
-    setActiveLevel(lv as 1 | 2 | 3);
+
+    // Support ?level= URL param (e.g. from level-up celebration)
+    const urlLevel = parseInt(new URLSearchParams(window.location.search).get("level") ?? "0", 10);
+    const initLevel = (urlLevel >= 1 && urlLevel <= 3 && urlLevel <= lv) ? urlLevel as 1 | 2 | 3 : lv as 1 | 2 | 3;
+    setActiveLevel(initLevel);
     setMounted(true);
   }, []);
 
