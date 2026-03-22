@@ -17,7 +17,7 @@ const STEPS = [
   {
     icon: "📈",
     title: "Tu puntaje se acumula",
-    desc: "Cada partida suma al total. A 3.000 pts desbloqueás preguntas Intermedias; a 10.000 pts, las Avanzadas.",
+    desc: "Cada partida suma al total. A 5.000 pts desbloqueás preguntas Intermedias; a 15.000 pts, las Avanzadas.",
   },
   {
     icon: "🏅",

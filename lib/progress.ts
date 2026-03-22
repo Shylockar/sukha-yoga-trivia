@@ -1,5 +1,5 @@
-export const INTERMEDIATE_THRESHOLD = 3000;
-export const ADVANCED_THRESHOLD = 10000;
+export const INTERMEDIATE_THRESHOLD = 5000;
+export const ADVANCED_THRESHOLD = 15000;
 
 export type Level = "principiante" | "intermedio" | "avanzado";
 
