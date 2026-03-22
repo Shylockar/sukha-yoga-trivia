@@ -9,6 +9,13 @@ import Timer from "@/components/Timer";
 import { getQuestionsByCategory } from "@/lib/questions";
 import { calculateScore, QUESTION_TIMER } from "@/lib/scoring";
 import { AnswerRecord, Category, GameResult, Question } from "@/lib/types";
+import ToastMessage from "@/components/ToastMessage";
+import {
+  shouldShowGameIntro, markGameIntroSeen,
+  shouldShowSpeedBonus, markSpeedBonusSeen,
+  shouldShowTimeout, markTimeoutSeen,
+  shouldShowCategoryFirst, markCategoryFirstSeen,
+} from "@/lib/contextualMessages";
 
 const CATEGORY_LABELS: Record<string, string> = {
   historia: "Historia",
@@ -80,6 +87,7 @@ export default function GamePage({ params }: GamePageProps) {
   const [aiExplanation, setAiExplanation] = useState<string | null>(null);
   const [aiLoading, setAiLoading]         = useState(false);
   const [isLastQuestion, setIsLastQuestion] = useState(false);
+  const [playToast, setPlayToast] = useState<string | null>(null);
 
   const displayedScore = useAnimatedScore(score);
 
@@ -155,6 +163,14 @@ export default function GamePage({ params }: GamePageProps) {
       setLastPoints({ base, bonus });
       if (base > 0) setScoreKey((k) => k + 1);
 
+      if (isCorrect && bonus > 30 && shouldShowSpeedBonus()) {
+        markSpeedBonusSeen();
+        setPlayToast(`¡Velocidad de rayo! +${bonus} pts bonus extra por responder rápido.`);
+      } else if (optionIndex === null && shouldShowTimeout()) {
+        markTimeoutSeen();
+        setPlayToast("Tiempo agotado. En el próximo intento, respondé más rápido para ganar bonus.");
+      }
+
       const record: AnswerRecord = {
         question, selectedOption: optionIndex, isCorrect,
         timeLeft: currentTimeLeft, pointsEarned: base, bonusEarned: bonus,
@@ -214,6 +230,19 @@ export default function GamePage({ params }: GamePageProps) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ event: "game_started" }),
     }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Contextual messages: game intro or first-category-visit
+  useEffect(() => {
+    if (shouldShowGameIntro()) {
+      markGameIntroSeen();
+      setTimeout(() => setPlayToast("¡Bienvenido! Respondé rápido para ganar puntos extra de velocidad."), 1500);
+    } else if (category !== "aleatorio" && shouldShowCategoryFirst(category)) {
+      markCategoryFirstSeen(category);
+      const label = CATEGORY_LABELS[category] ?? category;
+      setTimeout(() => setPlayToast(`Primera vez en ${label}. ¡Vamos a ver cuánto sabés!`), 1500);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -431,6 +460,10 @@ export default function GamePage({ params }: GamePageProps) {
           SUKHA · sukhaonline.com.ar
         </p>
       </div>
+
+      {playToast && (
+        <ToastMessage text={playToast} onClose={() => setPlayToast(null)} />
+      )}
     </main>
   );
 }

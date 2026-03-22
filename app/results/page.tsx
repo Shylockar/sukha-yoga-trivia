@@ -12,7 +12,13 @@ import {
   getLevel,
   getNextThreshold,
 } from "@/lib/progress";
-import { evaluateMessages, incrementGamesPlayed } from "@/lib/contextualMessages";
+import {
+  evaluateMessages,
+  incrementGamesPlayed,
+  updateLastGameTimestamp,
+  getLastRank,
+  saveLastRank,
+} from "@/lib/contextualMessages";
 import type { ToastMsg, LevelUpMsg } from "@/lib/contextualMessages";
 import UnlockModal from "@/components/UnlockModal";
 import ToastMessage from "@/components/ToastMessage";
@@ -99,8 +105,10 @@ export default function ResultsPage() {
       isRegistered: !!user,
       gamesPlayed: games,
     });
-    if (levelUp) setTimeout(() => setLevelUpData(levelUp), 900);
-    else if (toast) setTimeout(() => setToastMsg(toast), 900);
+    updateLastGameTimestamp();
+    let msgQueued = false;
+    if (levelUp) { setTimeout(() => setLevelUpData(levelUp), 900); msgQueued = true; }
+    else if (toast) { setTimeout(() => setToastMsg(toast), 900); msgQueued = true; }
 
     if (user) {
       // Sync score to backend
@@ -125,13 +133,25 @@ export default function ResultsPage() {
       .then((data) => {
         if (!data.entries) return;
         setTop3((data.entries as LeaderboardEntry[]).slice(0, 3));
+        let resolvedEntry: LeaderboardEntry | null = null;
         if (data.userEntry) {
+          resolvedEntry = data.userEntry;
           setUserRankEntry(data.userEntry);
         } else if (user) {
           const found = (data.entries as LeaderboardEntry[]).find(
             (e: LeaderboardEntry) => e.name === user.name
           );
+          resolvedEntry = found ?? null;
           setUserRankEntry(found ?? null);
+        }
+        // Check for rank drop
+        if (resolvedEntry) {
+          const newRank = resolvedEntry.rank;
+          const prevRank = getLastRank();
+          if (!msgQueued && prevRank !== null && newRank > prevRank) {
+            setToastMsg({ id: "rank_drop", text: `¡Te superaron! Bajaste al puesto #${newRank}. ¿Jugás una partida más?` });
+          }
+          saveLastRank(newRank);
         }
       })
       .catch(() => {/* silent fail — card shows without ranking */});

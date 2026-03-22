@@ -2,10 +2,12 @@ import ScoreBadge from "@/components/ScoreBadge";
 import HowToPlayModal from "@/components/HowToPlayModal";
 import MiniLeaderboard from "@/components/MiniLeaderboard";
 import LevelAwareCategoryGrid from "@/components/LevelAwareCategoryGrid";
+import HomeMessages from "@/components/HomeMessages";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <HomeMessages />
 
       <div className="mx-auto w-full max-w-[512px] px-4 pb-16 pt-14">
 

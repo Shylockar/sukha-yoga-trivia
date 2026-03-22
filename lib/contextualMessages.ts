@@ -4,6 +4,7 @@ import type { Level } from "./progress";
 // ── Storage keys ─────────────────────────────────────────────────────────────
 
 const KEYS = {
+  // Results-page messages
   firstGame:          "sukha_msg_first_game",
   halfInter:          "sukha_msg_half_inter",
   halfAdv:            "sukha_msg_half_adv",
@@ -13,8 +14,27 @@ const KEYS = {
   levelupAdv:         "sukha_msg_levelup_adv",
   perfect:            "sukha_msg_perfect",
   register3:          "sukha_msg_register_3",
+  fiveGames:          "sukha_msg_5games",
   gamesPlayed:        "sukha_games_played",
+
+  // Play-page messages
+  gameIntro:          "sukha_msg_game_intro",
+  speedBonus:         "sukha_msg_speed_bonus",
+  timeout:            "sukha_msg_timeout",
+  // Category-first: sukha_msg_cat_{category}
+
+  // Leaderboard message
+  leaderboard:        "sukha_msg_leaderboard",
+
+  // Home / return messages
+  lastGameTs:         "sukha_last_game_ts",
+  lastReturnShown:    "sukha_last_return_shown",
+
+  // Rank tracking (not a "shown once" key)
+  lastRank:           "sukha_last_rank",
 };
+
+// ── Low-level helpers ─────────────────────────────────────────────────────────
 
 function seen(key: string): boolean {
   if (typeof window === "undefined") return true;
@@ -36,6 +56,67 @@ export function incrementGamesPlayed(): number {
   return next;
 }
 
+export function getGamesPlayed(): number {
+  if (typeof window === "undefined") return 0;
+  return parseInt(localStorage.getItem(KEYS.gamesPlayed) ?? "0", 10);
+}
+
+// ── Last game timestamp (for 24h return detection) ────────────────────────────
+
+export function updateLastGameTimestamp(): void {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(KEYS.lastGameTs, String(Date.now()));
+}
+
+export function checkReturnAfter24h(totalScore: number): string | null {
+  if (typeof window === "undefined") return null;
+  const lastTs = parseInt(localStorage.getItem(KEYS.lastGameTs) ?? "0", 10);
+  if (!lastTs) return null; // never played before
+  const hoursAgo = (Date.now() - lastTs) / (1000 * 60 * 60);
+  if (hoursAgo < 24) return null;
+  // Avoid showing again if we already showed within last 24h (page reloads, etc.)
+  const lastShown = parseInt(localStorage.getItem(KEYS.lastReturnShown) ?? "0", 10);
+  if (lastShown && (Date.now() - lastShown) / (1000 * 60 * 60) < 24) return null;
+  localStorage.setItem(KEYS.lastReturnShown, String(Date.now()));
+  return `¡Volviste! Tu puntaje sigue en ${totalScore.toLocaleString()} pts. ¿Seguimos?`;
+}
+
+// ── Rank tracking ─────────────────────────────────────────────────────────────
+
+export function getLastRank(): number | null {
+  if (typeof window === "undefined") return null;
+  const v = localStorage.getItem(KEYS.lastRank);
+  return v !== null ? parseInt(v, 10) : null;
+}
+
+export function saveLastRank(rank: number): void {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(KEYS.lastRank, String(rank));
+}
+
+// ── Play-page one-shot helpers ────────────────────────────────────────────────
+
+export function shouldShowGameIntro(): boolean  { return !seen(KEYS.gameIntro); }
+export function markGameIntroSeen(): void       { markSeen(KEYS.gameIntro); }
+
+export function shouldShowSpeedBonus(): boolean { return !seen(KEYS.speedBonus); }
+export function markSpeedBonusSeen(): void      { markSeen(KEYS.speedBonus); }
+
+export function shouldShowTimeout(): boolean    { return !seen(KEYS.timeout); }
+export function markTimeoutSeen(): void         { markSeen(KEYS.timeout); }
+
+export function shouldShowCategoryFirst(category: string): boolean {
+  return !seen(`sukha_msg_cat_${category}`);
+}
+export function markCategoryFirstSeen(category: string): void {
+  markSeen(`sukha_msg_cat_${category}`);
+}
+
+// ── Leaderboard one-shot helper ───────────────────────────────────────────────
+
+export function shouldShowLeaderboardIntro(): boolean { return !seen(KEYS.leaderboard); }
+export function markLeaderboardIntroSeen(): void      { markSeen(KEYS.leaderboard); }
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 export interface ToastMsg {
@@ -52,7 +133,7 @@ export interface MsgEvalResult {
   levelUp: LevelUpMsg | null;
 }
 
-// ── Evaluation ────────────────────────────────────────────────────────────────
+// ── Evaluation (results page) ─────────────────────────────────────────────────
 
 export function evaluateMessages(params: {
   prevScore: number;
@@ -86,7 +167,16 @@ export function evaluateMessages(params: {
     };
   }
 
-  // 3. Perfect 10/10
+  // 3. 5 games milestone
+  if (gamesPlayed === 5 && !seen(KEYS.fiveGames)) {
+    markSeen(KEYS.fiveGames);
+    return {
+      toast: { id: "5games", text: "¡5 partidas! Ya sos parte de la TribuSukha. Seguí sumando puntos." },
+      levelUp: null,
+    };
+  }
+
+  // 4. Perfect 10/10
   if (correctCount === 10 && !seen(KEYS.perfect)) {
     markSeen(KEYS.perfect);
     return {
@@ -95,7 +185,7 @@ export function evaluateMessages(params: {
     };
   }
 
-  // 4. 50% toward intermediate (principiante only)
+  // 5. 50% toward intermediate (principiante only)
   const halfInter = INTERMEDIATE_THRESHOLD / 2; // 2500
   if (newLevel === "principiante" && prevScore < halfInter && newScore >= halfInter && !seen(KEYS.halfInter)) {
     markSeen(KEYS.halfInter);
@@ -109,7 +199,7 @@ export function evaluateMessages(params: {
     };
   }
 
-  // 5. 50% toward advanced (intermedio only)
+  // 6. 50% toward advanced (intermedio only)
   const halfAdv = INTERMEDIATE_THRESHOLD + (ADVANCED_THRESHOLD - INTERMEDIATE_THRESHOLD) / 2; // 10000
   if (newLevel === "intermedio" && prevScore < halfAdv && newScore >= halfAdv && !seen(KEYS.halfAdv)) {
     markSeen(KEYS.halfAdv);
@@ -123,21 +213,20 @@ export function evaluateMessages(params: {
     };
   }
 
-  // 6. Near intermediate (>80%, principiante only)
+  // 7. Near intermediate — 80% = 4000 pts (includes prize teaser)
   const near80Inter = INTERMEDIATE_THRESHOLD * 0.8; // 4000
   if (newLevel === "principiante" && prevScore < near80Inter && newScore >= near80Inter && !seen(KEYS.nearInter)) {
     markSeen(KEYS.nearInter);
-    const ptsLeft = (INTERMEDIATE_THRESHOLD - newScore).toLocaleString();
     return {
       toast: {
         id: "near_inter",
-        text: `¡Ya casi! Te faltan ${ptsLeft} pts y desbloqueás el nivel Intermedio. ¿Te animás a una partida más?`,
+        text: "¡Casi ahí! Pronto desbloqueás el nivel Intermedio y tu primer premio de Sukha. ¿Te animás a una partida más?",
       },
       levelUp: null,
     };
   }
 
-  // 7. Near advanced (>80%, intermedio only)
+  // 8. Near advanced — 80% (intermedio only)
   const near80Adv = INTERMEDIATE_THRESHOLD + (ADVANCED_THRESHOLD - INTERMEDIATE_THRESHOLD) * 0.8; // 13000
   if (newLevel === "intermedio" && prevScore < near80Adv && newScore >= near80Adv && !seen(KEYS.nearAdv)) {
     markSeen(KEYS.nearAdv);
@@ -151,7 +240,7 @@ export function evaluateMessages(params: {
     };
   }
 
-  // 8. 3+ games unregistered
+  // 9. 3+ games unregistered
   if (gamesPlayed >= 3 && !isRegistered && !seen(KEYS.register3)) {
     markSeen(KEYS.register3);
     return {

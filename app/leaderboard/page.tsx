@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LeaderboardEntry } from "@/lib/types";
 import { getRegisteredUser } from "@/lib/progress";
+import { shouldShowLeaderboardIntro, markLeaderboardIntroSeen } from "@/lib/contextualMessages";
+import ToastMessage from "@/components/ToastMessage";
 
 const MEDALS = ["🥇", "🥈", "🥉"];
 
@@ -12,8 +14,14 @@ export default function LeaderboardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentUser, setCurrentUser] = useState<{ email: string; name: string } | null>(null);
+  const [introToast, setIntroToast] = useState<string | null>(null);
 
   useEffect(() => {
+    if (shouldShowLeaderboardIntro()) {
+      markLeaderboardIntroSeen();
+      setTimeout(() => setIntroToast("Acá ves a los mejores yoguis. ¿Te animás a entrar en el top?"), 800);
+    }
+
     const user = getRegisteredUser();
     setCurrentUser(user);
     const url = user ? `/api/leaderboard?email=${encodeURIComponent(user.email)}` : "/api/leaderboard";
@@ -29,6 +37,7 @@ export default function LeaderboardPage() {
 
   return (
     <main className="min-h-screen">
+      {introToast && <ToastMessage text={introToast} onClose={() => setIntroToast(null)} />}
       {/* Header */}
       <div
         style={{
