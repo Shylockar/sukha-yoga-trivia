@@ -148,7 +148,7 @@ export default function ResultsPage() {
         fetch("/api/coupon", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: user.email, triggerType: trigger }),
+          body: JSON.stringify({ email: user.email, triggerType: trigger, userName: user.name }),
         })
           .then((r) => r.json())
           .then((data) => {
