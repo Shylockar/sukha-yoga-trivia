@@ -111,6 +111,7 @@ export default function ResultsPage() {
     code: string;
     description: string;
     expiresAt: string;
+    hoursValid: number;
   } | null>(null);
 
   useEffect(() => {
@@ -152,7 +153,7 @@ export default function ResultsPage() {
           .then((r) => r.json())
           .then((data) => {
             if (data.code) {
-              setTimeout(() => setCoupon({ code: data.code, description: data.description, expiresAt: data.expiresAt }), 1200);
+              setTimeout(() => setCoupon({ code: data.code, description: data.description, expiresAt: data.expiresAt, hoursValid: data.hoursValid }), 1200);
             }
           })
           .catch(() => {});
@@ -325,6 +326,7 @@ export default function ResultsPage() {
           code={coupon.code}
           description={coupon.description}
           expiresAt={coupon.expiresAt}
+          hoursValid={coupon.hoursValid}
           onClose={() => setCoupon(null)}
         />
       )}

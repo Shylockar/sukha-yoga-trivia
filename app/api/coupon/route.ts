@@ -36,8 +36,8 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Generate Shopify discount code
-    const discount = await createDiscountCode(triggerType as TriggerType);
+    // Generate Shopify discount code (pass email for customer restriction)
+    const discount = await createDiscountCode(triggerType as TriggerType, email);
 
     // Persist reward in Redis (one-time only)
     if (isOneTime) {
@@ -49,6 +49,7 @@ export async function POST(req: NextRequest) {
       expiresAt: discount.expiresAt.toISOString(),
       description: discount.description,
       triggerType: discount.triggerType,
+      hoursValid: discount.hoursValid,
     });
   } catch (err) {
     console.error("[/api/coupon] error:", err);

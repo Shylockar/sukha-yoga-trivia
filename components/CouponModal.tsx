@@ -7,10 +7,11 @@ interface CouponModalProps {
   code: string;
   description: string;
   expiresAt: string; // ISO string
+  hoursValid: number;
   onClose: () => void;
 }
 
-function formatExpiry(isoString: string): string {
+function formatExpiryDate(isoString: string): string {
   const d = new Date(isoString);
   const day = String(d.getDate()).padStart(2, "0");
   const month = String(d.getMonth() + 1).padStart(2, "0");
@@ -19,7 +20,7 @@ function formatExpiry(isoString: string): string {
   return `${day}/${month} a las ${hours}:${mins}`;
 }
 
-export default function CouponModal({ code, description, expiresAt, onClose }: CouponModalProps) {
+export default function CouponModal({ code, description, expiresAt, hoursValid, onClose }: CouponModalProps) {
   const [copied, setCopied] = useState(false);
 
   function handleCopy() {
@@ -137,6 +138,24 @@ export default function CouponModal({ code, description, expiresAt, onClose }: C
             </span>
           </button>
 
+          {/* Validity period — prominent */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            marginBottom: 6,
+          }}>
+            <span style={{
+              fontSize: 15,
+              fontWeight: 700,
+              color: "#9993C0",
+              fontFamily: "var(--font-rubik)",
+            }}>
+              Válido por {hoursValid} horas
+            </span>
+          </div>
+
+          {/* Exact expiry — small, gray */}
           <p style={{
             margin: "0 0 18px",
             fontSize: 12,
@@ -144,7 +163,7 @@ export default function CouponModal({ code, description, expiresAt, onClose }: C
             fontFamily: "var(--font-rubik)",
             lineHeight: 1.5,
           }}>
-            Usá el código en{" "}
+            Vence el {formatExpiryDate(expiresAt)} · Usalo en{" "}
             <a
               href="https://www.sukhaonline.com.ar"
               target="_blank"
@@ -152,8 +171,7 @@ export default function CouponModal({ code, description, expiresAt, onClose }: C
               style={{ color: "#9993C0", textDecoration: "underline" }}
             >
               sukhaonline.com.ar
-            </a>{" "}
-            antes del {formatExpiry(expiresAt)}.
+            </a>
           </p>
 
           <button

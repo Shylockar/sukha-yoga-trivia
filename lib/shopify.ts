@@ -135,10 +135,33 @@ export interface CreatedDiscount {
   expiresAt: Date;
   triggerType: TriggerType;
   description: string;
+  hoursValid: number;
+}
+
+// ── Customer lookup ───────────────────────────────────────────────────────────
+
+async function findShopifyCustomerId(
+  email: string,
+  token: string,
+  apiBase: string,
+): Promise<number | null> {
+  try {
+    const res = await fetch(
+      `${apiBase}/customers/search.json?query=email:${encodeURIComponent(email)}&limit=1`,
+      { headers: { "X-Shopify-Access-Token": token } },
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    const customer = data.customers?.[0];
+    return customer ? Number(customer.id) : null;
+  } catch {
+    return null;
+  }
 }
 
 export async function createDiscountCode(
   triggerType: TriggerType,
+  email: string,
 ): Promise<CreatedDiscount> {
   const config = DISCOUNT_CONFIGS[triggerType];
   const domain = process.env.SHOPIFY_STORE_DOMAIN!;
@@ -148,6 +171,12 @@ export async function createDiscountCode(
   const code = `SUKHA-${config.codePrefix}-${randomSuffix()}`;
   const now = new Date();
   const expiresAt = new Date(now.getTime() + config.hoursValid * 60 * 60 * 1000);
+
+  // Look up Shopify customer to restrict code to that user
+  const customerId = await findShopifyCustomerId(email, token, apiBase);
+  const customerFields = customerId
+    ? { customer_selection: "prerequisite", prerequisite_customer_ids: [customerId] }
+    : { customer_selection: "all" };
 
   // 1. Create price rule
   const priceRuleRes = await fetch(`${apiBase}/price_rules.json`, {
@@ -164,7 +193,7 @@ export async function createDiscountCode(
         allocation_method: config.allocationMethod,
         value_type: config.valueType,
         value: config.value,
-        customer_selection: "all",
+        ...customerFields,
         starts_at: now.toISOString(),
         ends_at: expiresAt.toISOString(),
         usage_limit: 1,
@@ -198,34 +227,24 @@ export async function createDiscountCode(
     throw new Error(`Shopify discount code error ${discountCodeRes.status}: ${text}`);
   }
 
-  const description = buildDescription(triggerType, expiresAt);
+  const description = buildDescription(triggerType);
 
-  return { code, expiresAt, triggerType, description };
+  return { code, expiresAt, triggerType, description, hoursValid: config.hoursValid };
 }
 
-function buildDescription(triggerType: TriggerType, expiresAt: Date): string {
-  const dateStr = expiresAt.toLocaleDateString("es-AR", {
-    day: "2-digit",
-    month: "2-digit",
-  });
-  const timeStr = expiresAt.toLocaleTimeString("es-AR", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  const expiry = `${dateStr} a las ${timeStr}`;
-
+function buildDescription(triggerType: TriggerType): string {
   switch (triggerType) {
     case "free_shipping":
-      return `Envío gratis en tu próxima compra. Válido hasta el ${expiry}.`;
+      return "Envío gratis en tu próxima compra en la tienda de Sukha.";
     case "10off":
-      return `10% de descuento en toda la tienda. Válido hasta el ${expiry}.`;
+      return "10% de descuento en toda la tienda de Sukha.";
     case "15off":
-      return `15% de descuento en toda la tienda. Válido hasta el ${expiry}.`;
+      return "15% de descuento en toda la tienda de Sukha.";
     case "20off":
-      return `20% de descuento + envío gratis. Válido hasta el ${expiry}.`;
+      return "20% de descuento + envío gratis en la tienda de Sukha.";
     case "25off":
-      return `25% de descuento + envío gratis. Válido hasta el ${expiry}.`;
+      return "25% de descuento + envío gratis en la tienda de Sukha.";
     case "15off_perfect":
-      return `15% de descuento flash por tu partida perfecta. Válido hasta el ${expiry}.`;
+      return "15% de descuento flash por tu partida perfecta en la tienda de Sukha.";
   }
 }
