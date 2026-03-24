@@ -67,7 +67,7 @@ export default function UnlockModal({ localScore, onSuccess, onDismiss }: Unlock
             ¿Querés guardar tu puntaje?
           </h2>
           <p style={{ fontSize: 13, color: "rgba(255,255,255,0.8)", margin: 0, fontFamily: "var(--font-rubik)", lineHeight: 1.4 }}>
-            Registrate en 2 segundos y entrá al ranking global. Los jugadores registrados desbloquean cupones de descuento y premios exclusivos de Sukha.
+            Guardá tu progreso y enterate cuándo ganás premios.
           </p>
         </div>
 
@@ -109,6 +109,17 @@ export default function UnlockModal({ localScore, onSuccess, onDismiss }: Unlock
                 {error}
               </p>
             )}
+
+            <p style={{
+              fontSize: 12,
+              color: "#9993C0",
+              fontFamily: "var(--font-rubik)",
+              lineHeight: 1.5,
+              marginBottom: 14,
+              fontWeight: 500,
+            }}>
+              Solo los jugadores registrados pueden acceder a cupones de descuento y premios exclusivos de Sukha.
+            </p>
 
             <button
               type="submit"
