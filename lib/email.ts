@@ -109,6 +109,10 @@ export async function sendCouponEmail({
           <!-- Footer -->
           <tr>
             <td style="background:#f5f4fa;padding:18px 32px;text-align:center;border-top:1px solid #ede9f8;">
+              <p style="margin:0 0 6px;font-size:12px;color:#9993C0;">
+                ¿Querés seguir jugando?
+                <a href="https://trivia.sukhaonline.com.ar" style="color:#9993C0;font-weight:600;text-decoration:underline;">trivia.sukhaonline.com.ar</a>
+              </p>
               <p style="margin:0;font-size:11px;color:#9ca3af;">
                 Una experiencia de <strong style="color:#9993C0;">SUKHA</strong> · sukhaonline.com.ar
               </p>
