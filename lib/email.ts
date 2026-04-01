@@ -130,6 +130,7 @@ export async function sendCouponEmail({
   await resend.emails.send({
     from: "Sukha Trivia <trivia@sukhaonline.com.ar>",
     to,
+    replyTo: "info@sukhaonline.com",
     subject: `🎁 Tu código de descuento: ${code}`,
     html,
   });
