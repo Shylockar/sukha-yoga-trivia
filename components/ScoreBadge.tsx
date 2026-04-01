@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getLocalScore, getLevel, getRegisteredUser } from "@/lib/progress";
+import { getLocalScore, getLevel, getRegisteredUser, getLocalStreak } from "@/lib/progress";
 
 const LEVEL_STAR: Record<string, string> = {
   principiante: "⭐",
@@ -19,13 +19,14 @@ const LEVEL_LABEL: Record<string, string> = {
 export default function ScoreBadge() {
   const [score, setScore] = useState<number | null>(null);
   const [level, setLevel] = useState<string>("principiante");
-  const [registered, setRegistered] = useState(false);
+  const [streak, setStreak] = useState(0);
 
   useEffect(() => {
     const s = getLocalScore();
     setScore(s);
     setLevel(getLevel(s));
-    setRegistered(getRegisteredUser() !== null);
+    getRegisteredUser();
+    setStreak(getLocalStreak());
   }, []);
 
   if (score === null || score === 0) return null;
@@ -36,6 +37,9 @@ export default function ScoreBadge() {
     >
       <span className="text-sm font-medium text-sukha-dark">
         {LEVEL_STAR[level]} {LEVEL_LABEL[level]} · {score.toLocaleString()} pts
+        {streak >= 2 && (
+          <span style={{ marginLeft: 8, color: "#E07A2F" }}>🔥 {streak} días</span>
+        )}
       </span>
       <Link
         href="/leaderboard"

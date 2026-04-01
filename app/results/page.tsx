@@ -11,6 +11,8 @@ import {
   getRegisteredUser,
   getLevel,
   getNextThreshold,
+  getLocalStreak,
+  saveLocalStreak,
 } from "@/lib/progress";
 import type { Level } from "@/lib/progress";
 import {
@@ -93,6 +95,33 @@ function resolveCouponTriggers(
   }
 
   return triggers;
+}
+
+const STREAK_MILESTONES = [
+  { days: 30, key: "sukha_streak_ms_30", text: "🔥 ¡30 días seguidos! Sos un yogui de verdad." },
+  { days: 14, key: "sukha_streak_ms_14", text: "🔥 ¡14 días seguidos! La constancia es tu superpoder." },
+  { days: 7,  key: "sukha_streak_ms_7",  text: "🔥 ¡Una semana seguida! ¡Increíble racha!" },
+  { days: 3,  key: "sukha_streak_ms_3",  text: "🔥 ¡3 días seguidos! Seguí así." },
+];
+
+function resolveStreakToast(
+  streak: number,
+  streakBroken: boolean,
+  prevStreak: number,
+): ToastMsg | null {
+  if (streakBroken && prevStreak >= 2) {
+    return { id: "streak_broken", text: `Tu racha de ${prevStreak} días terminó. ¡Empezá una nueva hoy!` };
+  }
+  if (streak >= 2 && !streakBroken) {
+    for (const ms of STREAK_MILESTONES) {
+      if (streak === ms.days && !localStorage.getItem(ms.key)) {
+        localStorage.setItem(ms.key, "1");
+        return { id: `streak_ms_${ms.days}`, text: ms.text };
+      }
+    }
+    return { id: "streak_extended", text: `🔥 ¡${streak} días seguidos! No pierdas tu racha mañana.` };
+  }
+  return null;
 }
 
 export default function ResultsPage() {
@@ -178,12 +207,27 @@ export default function ResultsPage() {
     else if (toast) { setTimeout(() => setToastMsg(toast), 900); msgQueued = true; }
 
     if (user) {
-      // Sync score to backend
+      // Sync score to backend + handle streak response
+      const prevLocalStreak = getLocalStreak();
       fetch("/api/progress", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: user.email, score: parsed.totalScore }),
-      }).catch(() => {/* silent fail */});
+      })
+        .then((r) => r.json())
+        .then((data) => {
+          if (typeof data.streak === "number") {
+            saveLocalStreak(data.streak);
+            if (!msgQueued) {
+              const streakToast = resolveStreakToast(data.streak, data.streakBroken, data.prevStreak ?? prevLocalStreak);
+              if (streakToast) {
+                setTimeout(() => setToastMsg(streakToast), 1800);
+                msgQueued = true;
+              }
+            }
+          }
+        })
+        .catch(() => {/* silent fail */});
     }
 
     // Show registration modal after 5s for unregistered users
@@ -217,6 +261,7 @@ export default function ResultsPage() {
           const prevRank = getLastRank();
           if (!msgQueued && prevRank !== null && newRank > prevRank) {
             setToastMsg({ id: "rank_drop", text: `¡Te superaron! Bajaste al puesto #${newRank}. ¿Jugás una partida más?` });
+            msgQueued = true;
           }
           saveLastRank(newRank);
         }
@@ -266,7 +311,7 @@ export default function ResultsPage() {
         userName: registeredUser?.name,
       });
       const file = new File([blob], "sukha-trivia.png", { type: "image/png" });
-      const shareText = "¿Cuánto sabés sobre yoga? Jugá en sukha-yoga-trivia.vercel.app";
+      const shareText = "¿Cuánto sabés sobre yoga? Jugá en trivia.sukhaonline.com.ar";
 
       if (mode === "stories") {
         if (navigator.canShare?.({ files: [file] })) {

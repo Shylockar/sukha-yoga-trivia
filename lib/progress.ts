@@ -42,3 +42,14 @@ export function saveRegisteredUser(email: string, name: string) {
   localStorage.setItem(KEY_EMAIL, email);
   localStorage.setItem(KEY_NAME, name);
 }
+
+const KEY_STREAK = "sukha_streak";
+
+export function getLocalStreak(): number {
+  if (typeof window === "undefined") return 0;
+  return parseInt(localStorage.getItem(KEY_STREAK) ?? "0", 10);
+}
+
+export function saveLocalStreak(streak: number) {
+  localStorage.setItem(KEY_STREAK, String(streak));
+}

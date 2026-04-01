@@ -17,8 +17,16 @@ export async function GET(req: NextRequest) {
       for (let i = 0; i < raw.length; i += 2) {
         const e = raw[i] as string;
         const score = Number(raw[i + 1]);
-        const name = (await redis.hget(`user:${e}`, "name")) as string | null;
-        entries.push({ rank: entries.length + 1, name: name ?? e, totalScore: score });
+        const [name, streakRaw] = await Promise.all([
+          redis.hget(`user:${e}`, "name"),
+          redis.hget(`user:${e}`, "streak:current"),
+        ]);
+        entries.push({
+          rank: entries.length + 1,
+          name: (name as string | null) ?? e,
+          totalScore: score,
+          streak: streakRaw ? parseInt(streakRaw as string, 10) : undefined,
+        });
       }
     }
 
@@ -26,22 +34,23 @@ export async function GET(req: NextRequest) {
     let userEntry: LeaderboardEntry | null = null;
     if (email) {
       const inTop = entries.some((_, i) => {
-        // match by checking raw emails
-        const rawEmail = raw[(i * 2)] as string;
+        const rawEmail = raw[i * 2] as string;
         return rawEmail === email;
       });
 
       if (!inTop) {
-        const [rank, score, name] = await Promise.all([
+        const [rank, score, name, streakRaw] = await Promise.all([
           redis.zrevrank("leaderboard", email),
           redis.zscore("leaderboard", email),
           redis.hget(`user:${email}`, "name"),
+          redis.hget(`user:${email}`, "streak:current"),
         ]);
         if (rank !== null && score !== null) {
           userEntry = {
             rank: rank + 1, // zrevrank is 0-indexed
             name: (name as string | null) ?? email,
             totalScore: Number(score),
+            streak: streakRaw ? parseInt(streakRaw as string, 10) : undefined,
           };
         }
       }

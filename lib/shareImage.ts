@@ -203,7 +203,7 @@ export async function generateShareImage(params: ShareImageParams): Promise<Blob
   ctx.fillText("¿Cuánto sabés sobre yoga?", W / 2, brandY);
   ctx.fillStyle = "rgba(255,255,255,0.62)";
   ctx.font      = "400 24px -apple-system, Arial, sans-serif";
-  ctx.fillText("Jugá en sukha-yoga-trivia.vercel.app", W / 2, brandY + 44);
+  ctx.fillText("Jugá en trivia.sukhaonline.com.ar", W / 2, brandY + 44);
 
   return new Promise(res => canvas.toBlob(b => res(b!), "image/png"));
 }

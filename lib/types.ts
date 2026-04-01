@@ -36,6 +36,7 @@ export interface LeaderboardEntry {
   rank: number;
   name: string;
   totalScore: number;
+  streak?: number;
 }
 
 export interface GameResult {

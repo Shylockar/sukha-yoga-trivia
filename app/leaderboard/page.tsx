@@ -118,6 +118,11 @@ export default function LeaderboardPage() {
                       style={{ color: isMe ? "#9993C0" : "#434344" }}
                     >
                       {entry.name}
+                      {entry.streak && entry.streak >= 3 && (
+                        <span className="ml-2 font-rubik text-xs font-normal" style={{ color: "#E07A2F" }}>
+                          🔥 {entry.streak}
+                        </span>
+                      )}
                       {isMe && (
                         <span className="ml-2 font-rubik text-xs font-normal text-sukha-mid">
                           (vos)
